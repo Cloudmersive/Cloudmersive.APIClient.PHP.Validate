@@ -1,6 +1,6 @@
 {
     "name": "cloudmersive/cloudmersive_validate_api_client",
-    "version": "1.4.3",
+    "version": "1.4.4",
     "description": "",
     "keywords": [
         "swagger",
@@ -8,12 +8,12 @@
         "sdk",
         "api"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "https://cloudmersive.com",
     "license": "proprietary",
     "authors": [
         {
-            "name": "https://cloudmersive.com",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "Cloudmersive",
+            "homepage": "https://cloudmersive.com"
         }
     ],
     "require": {
