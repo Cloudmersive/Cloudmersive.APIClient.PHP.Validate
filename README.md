@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.4.4
+- Package version: 1.4.5
 
 
 ## Requirements
@@ -92,6 +92,10 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**emailFullValidation**](docs/Api/EmailApi.md#emailfullvalidation) | **POST** /validate/email/address/full | Fully validate an email address
 *EmailApi* | [**emailPost**](docs/Api/EmailApi.md#emailpost) | **POST** /validate/email/address/syntaxOnly | Validate email adddress for syntactic correctness only
 *IPAddressApi* | [**iPAddressPost**](docs/Api/IPAddressApi.md#ipaddresspost) | **POST** /validate/ip/geolocate | Geolocate an IP address
+*NameApi* | [**nameGetGender**](docs/Api/NameApi.md#namegetgender) | **POST** /validate/name/get-gender | Get the gender of a first name
+*NameApi* | [**nameValidateFirstName**](docs/Api/NameApi.md#namevalidatefirstname) | **POST** /validate/name/first | Validate a first name
+*NameApi* | [**nameValidateFullName**](docs/Api/NameApi.md#namevalidatefullname) | **POST** /validate/name/full-name | Parse and validate a full name
+*NameApi* | [**nameValidateLastName**](docs/Api/NameApi.md#namevalidatelastname) | **POST** /validate/name/last | Validate a last name
 *PhoneNumberApi* | [**phoneNumberSyntaxOnly**](docs/Api/PhoneNumberApi.md#phonenumbersyntaxonly) | **POST** /validate/phonenumber/basic | Validate phone number (basic)
 *VatApi* | [**vatVatLookup**](docs/Api/VatApi.md#vatvatlookup) | **POST** /validate/vat/lookup | Lookup a VAT code
 
@@ -101,8 +105,16 @@ Class | Method | HTTP request | Description
  - [AddressGetServersResponse](docs/Model/AddressGetServersResponse.md)
  - [AddressVerifySyntaxOnlyResponse](docs/Model/AddressVerifySyntaxOnlyResponse.md)
  - [CheckResponse](docs/Model/CheckResponse.md)
+ - [FirstNameValidationRequest](docs/Model/FirstNameValidationRequest.md)
+ - [FirstNameValidationResponse](docs/Model/FirstNameValidationResponse.md)
  - [FullEmailValidationResponse](docs/Model/FullEmailValidationResponse.md)
+ - [FullNameValidationRequest](docs/Model/FullNameValidationRequest.md)
+ - [FullNameValidationResponse](docs/Model/FullNameValidationResponse.md)
  - [GeolocateResponse](docs/Model/GeolocateResponse.md)
+ - [GetGenderRequest](docs/Model/GetGenderRequest.md)
+ - [GetGenderResponse](docs/Model/GetGenderResponse.md)
+ - [LastNameValidationRequest](docs/Model/LastNameValidationRequest.md)
+ - [LastNameValidationResponse](docs/Model/LastNameValidationResponse.md)
  - [PhoneNumberValidateRequest](docs/Model/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/Model/PhoneNumberValidationResponse.md)
  - [VatLookupRequest](docs/Model/VatLookupRequest.md)
