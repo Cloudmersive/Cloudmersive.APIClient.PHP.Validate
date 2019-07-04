@@ -125,4 +125,18 @@ class FullEmailValidationResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyDomain()
     {
     }
+
+    /**
+     * Test attribute "is_free_email_provider"
+     */
+    public function testPropertyIsFreeEmailProvider()
+    {
+    }
+
+    /**
+     * Test attribute "is_disposable"
+     */
+    public function testPropertyIsDisposable()
+    {
+    }
 }

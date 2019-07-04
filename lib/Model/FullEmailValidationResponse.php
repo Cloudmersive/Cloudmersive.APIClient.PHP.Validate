@@ -64,7 +64,9 @@ class FullEmailValidationResponse implements ModelInterface, ArrayAccess
         'valid_domain' => 'bool',
         'valid_smtp' => 'bool',
         'is_catchall_domain' => 'bool',
-        'domain' => 'string'
+        'domain' => 'string',
+        'is_free_email_provider' => 'bool',
+        'is_disposable' => 'bool'
     ];
 
     /**
@@ -79,7 +81,9 @@ class FullEmailValidationResponse implements ModelInterface, ArrayAccess
         'valid_domain' => null,
         'valid_smtp' => null,
         'is_catchall_domain' => null,
-        'domain' => null
+        'domain' => null,
+        'is_free_email_provider' => null,
+        'is_disposable' => null
     ];
 
     /**
@@ -115,7 +119,9 @@ class FullEmailValidationResponse implements ModelInterface, ArrayAccess
         'valid_domain' => 'Valid_Domain',
         'valid_smtp' => 'Valid_SMTP',
         'is_catchall_domain' => 'IsCatchallDomain',
-        'domain' => 'Domain'
+        'domain' => 'Domain',
+        'is_free_email_provider' => 'IsFreeEmailProvider',
+        'is_disposable' => 'IsDisposable'
     ];
 
     /**
@@ -130,7 +136,9 @@ class FullEmailValidationResponse implements ModelInterface, ArrayAccess
         'valid_domain' => 'setValidDomain',
         'valid_smtp' => 'setValidSmtp',
         'is_catchall_domain' => 'setIsCatchallDomain',
-        'domain' => 'setDomain'
+        'domain' => 'setDomain',
+        'is_free_email_provider' => 'setIsFreeEmailProvider',
+        'is_disposable' => 'setIsDisposable'
     ];
 
     /**
@@ -145,7 +153,9 @@ class FullEmailValidationResponse implements ModelInterface, ArrayAccess
         'valid_domain' => 'getValidDomain',
         'valid_smtp' => 'getValidSmtp',
         'is_catchall_domain' => 'getIsCatchallDomain',
-        'domain' => 'getDomain'
+        'domain' => 'getDomain',
+        'is_free_email_provider' => 'getIsFreeEmailProvider',
+        'is_disposable' => 'getIsDisposable'
     ];
 
     /**
@@ -215,6 +225,8 @@ class FullEmailValidationResponse implements ModelInterface, ArrayAccess
         $this->container['valid_smtp'] = isset($data['valid_smtp']) ? $data['valid_smtp'] : null;
         $this->container['is_catchall_domain'] = isset($data['is_catchall_domain']) ? $data['is_catchall_domain'] : null;
         $this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
+        $this->container['is_free_email_provider'] = isset($data['is_free_email_provider']) ? $data['is_free_email_provider'] : null;
+        $this->container['is_disposable'] = isset($data['is_disposable']) ? $data['is_disposable'] : null;
     }
 
     /**
@@ -406,6 +418,54 @@ class FullEmailValidationResponse implements ModelInterface, ArrayAccess
     public function setDomain($domain)
     {
         $this->container['domain'] = $domain;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_free_email_provider
+     *
+     * @return bool
+     */
+    public function getIsFreeEmailProvider()
+    {
+        return $this->container['is_free_email_provider'];
+    }
+
+    /**
+     * Sets is_free_email_provider
+     *
+     * @param bool $is_free_email_provider True if the email domain name is a free provider (typically a free to sign up web email provider for consumers / personal use), false otherwise.
+     *
+     * @return $this
+     */
+    public function setIsFreeEmailProvider($is_free_email_provider)
+    {
+        $this->container['is_free_email_provider'] = $is_free_email_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_disposable
+     *
+     * @return bool
+     */
+    public function getIsDisposable()
+    {
+        return $this->container['is_disposable'];
+    }
+
+    /**
+     * Sets is_disposable
+     *
+     * @param bool $is_disposable True if the email address is a disposable email address, false otherwise; these disposable providers are not typically used to receive email and so will have a low likelihood of opening mail sent there.
+     *
+     * @return $this
+     */
+    public function setIsDisposable($is_disposable)
+    {
+        $this->container['is_disposable'] = $is_disposable;
 
         return $this;
     }
