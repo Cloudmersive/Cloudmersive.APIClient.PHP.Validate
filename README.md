@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.4.7
+- Package version: 1.4.8
 
 
 ## Requirements
@@ -62,19 +62,19 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ap
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Apikey', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\DomainApi(
+$apiInstance = new Swagger\Client\Api\AddressApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$domain = "domain_example"; // string | Domain name to check, for example \"cloudmersive.com\".  The input is a string so be sure to enclose it in double-quotes.
+$input = new \Swagger\Client\Model\ParseAddressRequest(); // \Swagger\Client\Model\ParseAddressRequest | Input parse request
 
 try {
-    $result = $apiInstance->domainCheck($domain);
+    $result = $apiInstance->addressParseString($input);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DomainApi->domainCheck: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddressApi->addressParseString: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -86,6 +86,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AddressApi* | [**addressParseString**](docs/Api/AddressApi.md#addressparsestring) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
 *DomainApi* | [**domainCheck**](docs/Api/DomainApi.md#domaincheck) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domainPost**](docs/Api/DomainApi.md#domainpost) | **POST** /validate/domain/whois | Get WHOIS information for a domain
 *EmailApi* | [**emailAddressGetServers**](docs/Api/EmailApi.md#emailaddressgetservers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
@@ -115,6 +116,8 @@ Class | Method | HTTP request | Description
  - [GetGenderResponse](docs/Model/GetGenderResponse.md)
  - [LastNameValidationRequest](docs/Model/LastNameValidationRequest.md)
  - [LastNameValidationResponse](docs/Model/LastNameValidationResponse.md)
+ - [ParseAddressRequest](docs/Model/ParseAddressRequest.md)
+ - [ParseAddressResponse](docs/Model/ParseAddressResponse.md)
  - [PhoneNumberValidateRequest](docs/Model/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/Model/PhoneNumberValidationResponse.md)
  - [VatLookupRequest](docs/Model/VatLookupRequest.md)
