@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.4.8
+- Package version: 1.4.9
 
 
 ## Requirements
@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
 *AddressApi* | [**addressParseString**](docs/Api/AddressApi.md#addressparsestring) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
 *DomainApi* | [**domainCheck**](docs/Api/DomainApi.md#domaincheck) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domainPost**](docs/Api/DomainApi.md#domainpost) | **POST** /validate/domain/whois | Get WHOIS information for a domain
+*DomainApi* | [**domainUrlSyntaxOnly**](docs/Api/DomainApi.md#domainurlsyntaxonly) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 *EmailApi* | [**emailAddressGetServers**](docs/Api/EmailApi.md#emailaddressgetservers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
 *EmailApi* | [**emailFullValidation**](docs/Api/EmailApi.md#emailfullvalidation) | **POST** /validate/email/address/full | Fully validate an email address
 *EmailApi* | [**emailPost**](docs/Api/EmailApi.md#emailpost) | **POST** /validate/email/address/syntaxOnly | Validate email adddress for syntactic correctness only
@@ -120,6 +121,8 @@ Class | Method | HTTP request | Description
  - [ParseAddressResponse](docs/Model/ParseAddressResponse.md)
  - [PhoneNumberValidateRequest](docs/Model/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/Model/PhoneNumberValidationResponse.md)
+ - [ValidateUrlRequestSyntaxOnly](docs/Model/ValidateUrlRequestSyntaxOnly.md)
+ - [ValidateUrlResponseSyntaxOnly](docs/Model/ValidateUrlResponseSyntaxOnly.md)
  - [VatLookupRequest](docs/Model/VatLookupRequest.md)
  - [VatLookupResponse](docs/Model/VatLookupResponse.md)
  - [WhoisResponse](docs/Model/WhoisResponse.md)
