@@ -1,10 +1,9 @@
-# AddressGetServersResponse
+# ValidateUrlRequestFull
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**success** | **bool** | True if partial address validation was successufl, false otherwise | [optional] 
-**servers** | **string[]** | Email servers for this email address | [optional] 
+**url** | **string** | URL to validate | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

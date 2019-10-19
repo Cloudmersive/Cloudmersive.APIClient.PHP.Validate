@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidateUrlResponseSyntaxOnlyTest
+ * ValidateIdentifierRequestTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ValidateUrlResponseSyntaxOnlyTest Class Doc Comment
+ * ValidateIdentifierRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description Result of validating a URL with syntax only
+// * @description Identifier validation request, including the input identifier as well as various identifier rules
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ValidateUrlResponseSyntaxOnlyTest extends \PHPUnit_Framework_TestCase
+class ValidateIdentifierRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,65 @@ class ValidateUrlResponseSyntaxOnlyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ValidateUrlResponseSyntaxOnly"
+     * Test "ValidateIdentifierRequest"
      */
-    public function testValidateUrlResponseSyntaxOnly()
+    public function testValidateIdentifierRequest()
     {
     }
 
     /**
-     * Test attribute "valid_url"
+     * Test attribute "input"
      */
-    public function testPropertyValidUrl()
+    public function testPropertyInput()
     {
     }
 
     /**
-     * Test attribute "well_formed_url"
+     * Test attribute "allow_whitespace"
      */
-    public function testPropertyWellFormedUrl()
+    public function testPropertyAllowWhitespace()
+    {
+    }
+
+    /**
+     * Test attribute "allow_hyphens"
+     */
+    public function testPropertyAllowHyphens()
+    {
+    }
+
+    /**
+     * Test attribute "allow_underscore"
+     */
+    public function testPropertyAllowUnderscore()
+    {
+    }
+
+    /**
+     * Test attribute "allow_numbers"
+     */
+    public function testPropertyAllowNumbers()
+    {
+    }
+
+    /**
+     * Test attribute "allow_periods"
+     */
+    public function testPropertyAllowPeriods()
+    {
+    }
+
+    /**
+     * Test attribute "max_length"
+     */
+    public function testPropertyMaxLength()
+    {
+    }
+
+    /**
+     * Test attribute "min_length"
+     */
+    public function testPropertyMinLength()
     {
     }
 }

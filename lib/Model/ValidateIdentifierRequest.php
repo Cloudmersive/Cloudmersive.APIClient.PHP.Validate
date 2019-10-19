@@ -1,6 +1,6 @@
 <?php
 /**
- * VatLookupResponse
+ * ValidateIdentifierRequest
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * VatLookupResponse Class Doc Comment
+ * ValidateIdentifierRequest Class Doc Comment
  *
  * @category Class
+ * @description Identifier validation request, including the input identifier as well as various identifier rules
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class VatLookupResponse implements ModelInterface, ArrayAccess
+class ValidateIdentifierRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'VatLookupResponse';
+    protected static $swaggerModelName = 'ValidateIdentifierRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,11 +58,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'country_code' => 'string',
-        'vat_number' => 'string',
-        'is_valid' => 'bool',
-        'business_name' => 'string',
-        'business_address' => 'string'
+        'input' => 'string',
+        'allow_whitespace' => 'bool',
+        'allow_hyphens' => 'bool',
+        'allow_underscore' => 'bool',
+        'allow_numbers' => 'bool',
+        'allow_periods' => 'bool',
+        'max_length' => 'int',
+        'min_length' => 'int'
     ];
 
     /**
@@ -70,11 +74,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'country_code' => null,
-        'vat_number' => null,
-        'is_valid' => null,
-        'business_name' => null,
-        'business_address' => null
+        'input' => null,
+        'allow_whitespace' => null,
+        'allow_hyphens' => null,
+        'allow_underscore' => null,
+        'allow_numbers' => null,
+        'allow_periods' => null,
+        'max_length' => 'int32',
+        'min_length' => 'int32'
     ];
 
     /**
@@ -104,11 +111,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'country_code' => 'CountryCode',
-        'vat_number' => 'VatNumber',
-        'is_valid' => 'IsValid',
-        'business_name' => 'BusinessName',
-        'business_address' => 'BusinessAddress'
+        'input' => 'Input',
+        'allow_whitespace' => 'AllowWhitespace',
+        'allow_hyphens' => 'AllowHyphens',
+        'allow_underscore' => 'AllowUnderscore',
+        'allow_numbers' => 'AllowNumbers',
+        'allow_periods' => 'AllowPeriods',
+        'max_length' => 'MaxLength',
+        'min_length' => 'MinLength'
     ];
 
     /**
@@ -117,11 +127,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'country_code' => 'setCountryCode',
-        'vat_number' => 'setVatNumber',
-        'is_valid' => 'setIsValid',
-        'business_name' => 'setBusinessName',
-        'business_address' => 'setBusinessAddress'
+        'input' => 'setInput',
+        'allow_whitespace' => 'setAllowWhitespace',
+        'allow_hyphens' => 'setAllowHyphens',
+        'allow_underscore' => 'setAllowUnderscore',
+        'allow_numbers' => 'setAllowNumbers',
+        'allow_periods' => 'setAllowPeriods',
+        'max_length' => 'setMaxLength',
+        'min_length' => 'setMinLength'
     ];
 
     /**
@@ -130,11 +143,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'country_code' => 'getCountryCode',
-        'vat_number' => 'getVatNumber',
-        'is_valid' => 'getIsValid',
-        'business_name' => 'getBusinessName',
-        'business_address' => 'getBusinessAddress'
+        'input' => 'getInput',
+        'allow_whitespace' => 'getAllowWhitespace',
+        'allow_hyphens' => 'getAllowHyphens',
+        'allow_underscore' => 'getAllowUnderscore',
+        'allow_numbers' => 'getAllowNumbers',
+        'allow_periods' => 'getAllowPeriods',
+        'max_length' => 'getMaxLength',
+        'min_length' => 'getMinLength'
     ];
 
     /**
@@ -197,11 +213,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
-        $this->container['vat_number'] = isset($data['vat_number']) ? $data['vat_number'] : null;
-        $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;
-        $this->container['business_name'] = isset($data['business_name']) ? $data['business_name'] : null;
-        $this->container['business_address'] = isset($data['business_address']) ? $data['business_address'] : null;
+        $this->container['input'] = isset($data['input']) ? $data['input'] : null;
+        $this->container['allow_whitespace'] = isset($data['allow_whitespace']) ? $data['allow_whitespace'] : null;
+        $this->container['allow_hyphens'] = isset($data['allow_hyphens']) ? $data['allow_hyphens'] : null;
+        $this->container['allow_underscore'] = isset($data['allow_underscore']) ? $data['allow_underscore'] : null;
+        $this->container['allow_numbers'] = isset($data['allow_numbers']) ? $data['allow_numbers'] : null;
+        $this->container['allow_periods'] = isset($data['allow_periods']) ? $data['allow_periods'] : null;
+        $this->container['max_length'] = isset($data['max_length']) ? $data['max_length'] : null;
+        $this->container['min_length'] = isset($data['min_length']) ? $data['min_length'] : null;
     }
 
     /**
@@ -230,121 +249,193 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets country_code
+     * Gets input
      *
      * @return string
      */
-    public function getCountryCode()
+    public function getInput()
     {
-        return $this->container['country_code'];
+        return $this->container['input'];
     }
 
     /**
-     * Sets country_code
+     * Sets input
      *
-     * @param string $country_code Two-letter country code
+     * @param string $input Text string identifier input
      *
      * @return $this
      */
-    public function setCountryCode($country_code)
+    public function setInput($input)
     {
-        $this->container['country_code'] = $country_code;
+        $this->container['input'] = $input;
 
         return $this;
     }
 
     /**
-     * Gets vat_number
-     *
-     * @return string
-     */
-    public function getVatNumber()
-    {
-        return $this->container['vat_number'];
-    }
-
-    /**
-     * Sets vat_number
-     *
-     * @param string $vat_number VAT number
-     *
-     * @return $this
-     */
-    public function setVatNumber($vat_number)
-    {
-        $this->container['vat_number'] = $vat_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_valid
+     * Gets allow_whitespace
      *
      * @return bool
      */
-    public function getIsValid()
+    public function getAllowWhitespace()
     {
-        return $this->container['is_valid'];
+        return $this->container['allow_whitespace'];
     }
 
     /**
-     * Sets is_valid
+     * Sets allow_whitespace
      *
-     * @param bool $is_valid True if the VAT code is valid, false otherwise
+     * @param bool $allow_whitespace True if whitespace is allowed in the identifier, false otherwise
      *
      * @return $this
      */
-    public function setIsValid($is_valid)
+    public function setAllowWhitespace($allow_whitespace)
     {
-        $this->container['is_valid'] = $is_valid;
+        $this->container['allow_whitespace'] = $allow_whitespace;
 
         return $this;
     }
 
     /**
-     * Gets business_name
+     * Gets allow_hyphens
      *
-     * @return string
+     * @return bool
      */
-    public function getBusinessName()
+    public function getAllowHyphens()
     {
-        return $this->container['business_name'];
+        return $this->container['allow_hyphens'];
     }
 
     /**
-     * Sets business_name
+     * Sets allow_hyphens
      *
-     * @param string $business_name Name of the business
+     * @param bool $allow_hyphens True if hyphens are allowd in the identifier, false otherwise
      *
      * @return $this
      */
-    public function setBusinessName($business_name)
+    public function setAllowHyphens($allow_hyphens)
     {
-        $this->container['business_name'] = $business_name;
+        $this->container['allow_hyphens'] = $allow_hyphens;
 
         return $this;
     }
 
     /**
-     * Gets business_address
+     * Gets allow_underscore
      *
-     * @return string
+     * @return bool
      */
-    public function getBusinessAddress()
+    public function getAllowUnderscore()
     {
-        return $this->container['business_address'];
+        return $this->container['allow_underscore'];
     }
 
     /**
-     * Sets business_address
+     * Sets allow_underscore
      *
-     * @param string $business_address Business address
+     * @param bool $allow_underscore True if underscores are allowed in the identifier, false otherwise
      *
      * @return $this
      */
-    public function setBusinessAddress($business_address)
+    public function setAllowUnderscore($allow_underscore)
     {
-        $this->container['business_address'] = $business_address;
+        $this->container['allow_underscore'] = $allow_underscore;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_numbers
+     *
+     * @return bool
+     */
+    public function getAllowNumbers()
+    {
+        return $this->container['allow_numbers'];
+    }
+
+    /**
+     * Sets allow_numbers
+     *
+     * @param bool $allow_numbers True if numbers are allowed in the identifier, false otherwise
+     *
+     * @return $this
+     */
+    public function setAllowNumbers($allow_numbers)
+    {
+        $this->container['allow_numbers'] = $allow_numbers;
+
+        return $this;
+    }
+
+    /**
+     * Gets allow_periods
+     *
+     * @return bool
+     */
+    public function getAllowPeriods()
+    {
+        return $this->container['allow_periods'];
+    }
+
+    /**
+     * Sets allow_periods
+     *
+     * @param bool $allow_periods True if periods are allowed in the identifier, false otherwise
+     *
+     * @return $this
+     */
+    public function setAllowPeriods($allow_periods)
+    {
+        $this->container['allow_periods'] = $allow_periods;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_length
+     *
+     * @return int
+     */
+    public function getMaxLength()
+    {
+        return $this->container['max_length'];
+    }
+
+    /**
+     * Sets max_length
+     *
+     * @param int $max_length Optional; maximum length, if any, of the identifier
+     *
+     * @return $this
+     */
+    public function setMaxLength($max_length)
+    {
+        $this->container['max_length'] = $max_length;
+
+        return $this;
+    }
+
+    /**
+     * Gets min_length
+     *
+     * @return int
+     */
+    public function getMinLength()
+    {
+        return $this->container['min_length'];
+    }
+
+    /**
+     * Sets min_length
+     *
+     * @param int $min_length Optional; minimum length, if any, of the identifier
+     *
+     * @return $this
+     */
+    public function setMinLength($min_length)
+    {
+        $this->container['min_length'] = $min_length;
 
         return $this;
     }

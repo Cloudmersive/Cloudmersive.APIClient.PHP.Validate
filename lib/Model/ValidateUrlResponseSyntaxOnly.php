@@ -36,7 +36,7 @@ use \Swagger\Client\ObjectSerializer;
  * ValidateUrlResponseSyntaxOnly Class Doc Comment
  *
  * @category Class
- * @description Result of validating a URL
+ * @description Result of validating a URL with syntax only
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen

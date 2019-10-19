@@ -1,6 +1,6 @@
 <?php
 /**
- * AddressGetServersResponse
+ * UserAgentValidateRequest
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * AddressGetServersResponse Class Doc Comment
+ * UserAgentValidateRequest Class Doc Comment
  *
  * @category Class
- * @description Result of a partial email address validation
+ * @description User-Agent parse and validation request
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AddressGetServersResponse implements ModelInterface, ArrayAccess
+class UserAgentValidateRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AddressGetServersResponse';
+    protected static $swaggerModelName = 'UserAgentValidateRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-        'servers' => 'string[]'
+        'user_agent_string' => 'string'
     ];
 
     /**
@@ -68,8 +67,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-        'servers' => null
+        'user_agent_string' => null
     ];
 
     /**
@@ -99,8 +97,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'Success',
-        'servers' => 'Servers'
+        'user_agent_string' => 'UserAgentString'
     ];
 
     /**
@@ -109,8 +106,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'servers' => 'setServers'
+        'user_agent_string' => 'setUserAgentString'
     ];
 
     /**
@@ -119,8 +115,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'servers' => 'getServers'
+        'user_agent_string' => 'getUserAgentString'
     ];
 
     /**
@@ -183,8 +178,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['servers'] = isset($data['servers']) ? $data['servers'] : null;
+        $this->container['user_agent_string'] = isset($data['user_agent_string']) ? $data['user_agent_string'] : null;
     }
 
     /**
@@ -213,49 +207,25 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
+     * Gets user_agent_string
      *
-     * @return bool
+     * @return string
      */
-    public function getSuccess()
+    public function getUserAgentString()
     {
-        return $this->container['success'];
+        return $this->container['user_agent_string'];
     }
 
     /**
-     * Sets success
+     * Sets user_agent_string
      *
-     * @param bool $success True if partial address validation was successufl, false otherwise
+     * @param string $user_agent_string The user agent string you wish to parse and validate
      *
      * @return $this
      */
-    public function setSuccess($success)
+    public function setUserAgentString($user_agent_string)
     {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets servers
-     *
-     * @return string[]
-     */
-    public function getServers()
-    {
-        return $this->container['servers'];
-    }
-
-    /**
-     * Sets servers
-     *
-     * @param string[] $servers Email servers for this email address
-     *
-     * @return $this
-     */
-    public function setServers($servers)
-    {
-        $this->container['servers'] = $servers;
+        $this->container['user_agent_string'] = $user_agent_string;
 
         return $this;
     }

@@ -219,7 +219,7 @@ class ValidateUrlRequestSyntaxOnly implements ModelInterface, ArrayAccess
     /**
      * Sets url
      *
-     * @param string $url url
+     * @param string $url URL to validate
      *
      * @return $this
      */

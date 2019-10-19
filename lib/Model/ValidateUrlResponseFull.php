@@ -1,6 +1,6 @@
 <?php
 /**
- * AddressGetServersResponse
+ * ValidateUrlResponseFull
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * AddressGetServersResponse Class Doc Comment
+ * ValidateUrlResponseFull Class Doc Comment
  *
  * @category Class
- * @description Result of a partial email address validation
+ * @description Result of validating a URL with full validation
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AddressGetServersResponse implements ModelInterface, ArrayAccess
+class ValidateUrlResponseFull implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AddressGetServersResponse';
+    protected static $swaggerModelName = 'ValidateUrlResponseFull';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,11 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-        'servers' => 'string[]'
+        'valid_url' => 'bool',
+        'valid_syntax' => 'bool',
+        'valid_domain' => 'bool',
+        'valid_endpoint' => 'bool',
+        'well_formed_url' => 'string'
     ];
 
     /**
@@ -68,8 +71,11 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-        'servers' => null
+        'valid_url' => null,
+        'valid_syntax' => null,
+        'valid_domain' => null,
+        'valid_endpoint' => null,
+        'well_formed_url' => null
     ];
 
     /**
@@ -99,8 +105,11 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'Success',
-        'servers' => 'Servers'
+        'valid_url' => 'ValidURL',
+        'valid_syntax' => 'Valid_Syntax',
+        'valid_domain' => 'Valid_Domain',
+        'valid_endpoint' => 'Valid_Endpoint',
+        'well_formed_url' => 'WellFormedURL'
     ];
 
     /**
@@ -109,8 +118,11 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'servers' => 'setServers'
+        'valid_url' => 'setValidUrl',
+        'valid_syntax' => 'setValidSyntax',
+        'valid_domain' => 'setValidDomain',
+        'valid_endpoint' => 'setValidEndpoint',
+        'well_formed_url' => 'setWellFormedUrl'
     ];
 
     /**
@@ -119,8 +131,11 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'servers' => 'getServers'
+        'valid_url' => 'getValidUrl',
+        'valid_syntax' => 'getValidSyntax',
+        'valid_domain' => 'getValidDomain',
+        'valid_endpoint' => 'getValidEndpoint',
+        'well_formed_url' => 'getWellFormedUrl'
     ];
 
     /**
@@ -183,8 +198,11 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['servers'] = isset($data['servers']) ? $data['servers'] : null;
+        $this->container['valid_url'] = isset($data['valid_url']) ? $data['valid_url'] : null;
+        $this->container['valid_syntax'] = isset($data['valid_syntax']) ? $data['valid_syntax'] : null;
+        $this->container['valid_domain'] = isset($data['valid_domain']) ? $data['valid_domain'] : null;
+        $this->container['valid_endpoint'] = isset($data['valid_endpoint']) ? $data['valid_endpoint'] : null;
+        $this->container['well_formed_url'] = isset($data['well_formed_url']) ? $data['well_formed_url'] : null;
     }
 
     /**
@@ -213,49 +231,121 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
+     * Gets valid_url
      *
      * @return bool
      */
-    public function getSuccess()
+    public function getValidUrl()
     {
-        return $this->container['success'];
+        return $this->container['valid_url'];
     }
 
     /**
-     * Sets success
+     * Sets valid_url
      *
-     * @param bool $success True if partial address validation was successufl, false otherwise
+     * @param bool $valid_url True if the URL has valid syntax, a valid domain, a valid endpoint, and passes virus scan checks; false otherwise
      *
      * @return $this
      */
-    public function setSuccess($success)
+    public function setValidUrl($valid_url)
     {
-        $this->container['success'] = $success;
+        $this->container['valid_url'] = $valid_url;
 
         return $this;
     }
 
     /**
-     * Gets servers
+     * Gets valid_syntax
      *
-     * @return string[]
+     * @return bool
      */
-    public function getServers()
+    public function getValidSyntax()
     {
-        return $this->container['servers'];
+        return $this->container['valid_syntax'];
     }
 
     /**
-     * Sets servers
+     * Sets valid_syntax
      *
-     * @param string[] $servers Email servers for this email address
+     * @param bool $valid_syntax True if the URL has valid syntax, false otherwise
      *
      * @return $this
      */
-    public function setServers($servers)
+    public function setValidSyntax($valid_syntax)
     {
-        $this->container['servers'] = $servers;
+        $this->container['valid_syntax'] = $valid_syntax;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_domain
+     *
+     * @return bool
+     */
+    public function getValidDomain()
+    {
+        return $this->container['valid_domain'];
+    }
+
+    /**
+     * Sets valid_domain
+     *
+     * @param bool $valid_domain True if the domain name is valid and exists, false otherwise
+     *
+     * @return $this
+     */
+    public function setValidDomain($valid_domain)
+    {
+        $this->container['valid_domain'] = $valid_domain;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_endpoint
+     *
+     * @return bool
+     */
+    public function getValidEndpoint()
+    {
+        return $this->container['valid_endpoint'];
+    }
+
+    /**
+     * Sets valid_endpoint
+     *
+     * @param bool $valid_endpoint True if the endpoint is up and responsive and passes a virus scan check, false otherwise
+     *
+     * @return $this
+     */
+    public function setValidEndpoint($valid_endpoint)
+    {
+        $this->container['valid_endpoint'] = $valid_endpoint;
+
+        return $this;
+    }
+
+    /**
+     * Gets well_formed_url
+     *
+     * @return string
+     */
+    public function getWellFormedUrl()
+    {
+        return $this->container['well_formed_url'];
+    }
+
+    /**
+     * Sets well_formed_url
+     *
+     * @param string $well_formed_url Well-formed version of the URL
+     *
+     * @return $this
+     */
+    public function setWellFormedUrl($well_formed_url)
+    {
+        $this->container['well_formed_url'] = $well_formed_url;
 
         return $this;
     }

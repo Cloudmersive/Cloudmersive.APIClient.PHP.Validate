@@ -1,6 +1,6 @@
 <?php
 /**
- * AddressGetServersResponse
+ * ValidateUrlRequestFull
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * AddressGetServersResponse Class Doc Comment
+ * ValidateUrlRequestFull Class Doc Comment
  *
  * @category Class
- * @description Result of a partial email address validation
+ * @description Request to determine if a URL is valid
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AddressGetServersResponse implements ModelInterface, ArrayAccess
+class ValidateUrlRequestFull implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AddressGetServersResponse';
+    protected static $swaggerModelName = 'ValidateUrlRequestFull';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-        'servers' => 'string[]'
+        'url' => 'string'
     ];
 
     /**
@@ -68,8 +67,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-        'servers' => null
+        'url' => null
     ];
 
     /**
@@ -99,8 +97,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'Success',
-        'servers' => 'Servers'
+        'url' => 'URL'
     ];
 
     /**
@@ -109,8 +106,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'servers' => 'setServers'
+        'url' => 'setUrl'
     ];
 
     /**
@@ -119,8 +115,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'servers' => 'getServers'
+        'url' => 'getUrl'
     ];
 
     /**
@@ -183,8 +178,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['servers'] = isset($data['servers']) ? $data['servers'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
     }
 
     /**
@@ -213,49 +207,25 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
+     * Gets url
      *
-     * @return bool
+     * @return string
      */
-    public function getSuccess()
+    public function getUrl()
     {
-        return $this->container['success'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets success
+     * Sets url
      *
-     * @param bool $success True if partial address validation was successufl, false otherwise
+     * @param string $url URL to validate
      *
      * @return $this
      */
-    public function setSuccess($success)
+    public function setUrl($url)
     {
-        $this->container['success'] = $success;
-
-        return $this;
-    }
-
-    /**
-     * Gets servers
-     *
-     * @return string[]
-     */
-    public function getServers()
-    {
-        return $this->container['servers'];
-    }
-
-    /**
-     * Sets servers
-     *
-     * @param string[] $servers Email servers for this email address
-     *
-     * @return $this
-     */
-    public function setServers($servers)
-    {
-        $this->container['servers'] = $servers;
+        $this->container['url'] = $url;
 
         return $this;
     }

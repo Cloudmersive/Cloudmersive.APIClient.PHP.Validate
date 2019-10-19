@@ -1,6 +1,6 @@
 <?php
 /**
- * NameApiTest
+ * UserAgentApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * NameApiTest Class Doc Comment
+ * UserAgentApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class NameApiTest extends \PHPUnit_Framework_TestCase
+class UserAgentApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,52 +72,12 @@ class NameApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for nameGetGender
+     * Test case for userAgentParse
      *
-     * Get the gender of a first name.
-     *
-     */
-    public function testNameGetGender()
-    {
-    }
-
-    /**
-     * Test case for nameIdentifier
-     *
-     * Validate a code identifier.
+     * Parse an HTTP User-Agent string, identify robots.
      *
      */
-    public function testNameIdentifier()
-    {
-    }
-
-    /**
-     * Test case for nameValidateFirstName
-     *
-     * Validate a first name.
-     *
-     */
-    public function testNameValidateFirstName()
-    {
-    }
-
-    /**
-     * Test case for nameValidateFullName
-     *
-     * Parse and validate a full name.
-     *
-     */
-    public function testNameValidateFullName()
-    {
-    }
-
-    /**
-     * Test case for nameValidateLastName
-     *
-     * Validate a last name.
-     *
-     */
-    public function testNameValidateLastName()
+    public function testUserAgentParse()
     {
     }
 }

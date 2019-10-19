@@ -92,6 +92,16 @@ class DomainApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for domainUrlFull
+     *
+     * Validate a URL fully.
+     *
+     */
+    public function testDomainUrlFull()
+    {
+    }
+
+    /**
      * Test case for domainUrlSyntaxOnly
      *
      * Validate a URL syntactically.

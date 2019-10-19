@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.4.9
+- Package version: 1.5.1
 
 
 ## Requirements
@@ -89,16 +89,19 @@ Class | Method | HTTP request | Description
 *AddressApi* | [**addressParseString**](docs/Api/AddressApi.md#addressparsestring) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
 *DomainApi* | [**domainCheck**](docs/Api/DomainApi.md#domaincheck) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domainPost**](docs/Api/DomainApi.md#domainpost) | **POST** /validate/domain/whois | Get WHOIS information for a domain
+*DomainApi* | [**domainUrlFull**](docs/Api/DomainApi.md#domainurlfull) | **POST** /validate/domain/url/full | Validate a URL fully
 *DomainApi* | [**domainUrlSyntaxOnly**](docs/Api/DomainApi.md#domainurlsyntaxonly) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 *EmailApi* | [**emailAddressGetServers**](docs/Api/EmailApi.md#emailaddressgetservers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
 *EmailApi* | [**emailFullValidation**](docs/Api/EmailApi.md#emailfullvalidation) | **POST** /validate/email/address/full | Fully validate an email address
 *EmailApi* | [**emailPost**](docs/Api/EmailApi.md#emailpost) | **POST** /validate/email/address/syntaxOnly | Validate email adddress for syntactic correctness only
 *IPAddressApi* | [**iPAddressPost**](docs/Api/IPAddressApi.md#ipaddresspost) | **POST** /validate/ip/geolocate | Geolocate an IP address
 *NameApi* | [**nameGetGender**](docs/Api/NameApi.md#namegetgender) | **POST** /validate/name/get-gender | Get the gender of a first name
+*NameApi* | [**nameIdentifier**](docs/Api/NameApi.md#nameidentifier) | **POST** /validate/name/identifier | Validate a code identifier
 *NameApi* | [**nameValidateFirstName**](docs/Api/NameApi.md#namevalidatefirstname) | **POST** /validate/name/first | Validate a first name
 *NameApi* | [**nameValidateFullName**](docs/Api/NameApi.md#namevalidatefullname) | **POST** /validate/name/full-name | Parse and validate a full name
 *NameApi* | [**nameValidateLastName**](docs/Api/NameApi.md#namevalidatelastname) | **POST** /validate/name/last | Validate a last name
 *PhoneNumberApi* | [**phoneNumberSyntaxOnly**](docs/Api/PhoneNumberApi.md#phonenumbersyntaxonly) | **POST** /validate/phonenumber/basic | Validate phone number (basic)
+*UserAgentApi* | [**userAgentParse**](docs/Api/UserAgentApi.md#useragentparse) | **POST** /validate/useragent/parse | Parse an HTTP User-Agent string, identify robots
 *VatApi* | [**vatVatLookup**](docs/Api/VatApi.md#vatvatlookup) | **POST** /validate/vat/lookup | Lookup a VAT code
 
 
@@ -121,7 +124,13 @@ Class | Method | HTTP request | Description
  - [ParseAddressResponse](docs/Model/ParseAddressResponse.md)
  - [PhoneNumberValidateRequest](docs/Model/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/Model/PhoneNumberValidationResponse.md)
+ - [UserAgentValidateRequest](docs/Model/UserAgentValidateRequest.md)
+ - [UserAgentValidateResponse](docs/Model/UserAgentValidateResponse.md)
+ - [ValidateIdentifierRequest](docs/Model/ValidateIdentifierRequest.md)
+ - [ValidateIdentifierResponse](docs/Model/ValidateIdentifierResponse.md)
+ - [ValidateUrlRequestFull](docs/Model/ValidateUrlRequestFull.md)
  - [ValidateUrlRequestSyntaxOnly](docs/Model/ValidateUrlRequestSyntaxOnly.md)
+ - [ValidateUrlResponseFull](docs/Model/ValidateUrlResponseFull.md)
  - [ValidateUrlResponseSyntaxOnly](docs/Model/ValidateUrlResponseSyntaxOnly.md)
  - [VatLookupRequest](docs/Model/VatLookupRequest.md)
  - [VatLookupResponse](docs/Model/VatLookupResponse.md)

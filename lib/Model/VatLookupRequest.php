@@ -219,7 +219,7 @@ class VatLookupRequest implements ModelInterface, ArrayAccess
     /**
      * Sets vat_code
      *
-     * @param string $vat_code vat_code
+     * @param string $vat_code VAT code to lookup; example \"CZ25123891\"
      *
      * @return $this
      */

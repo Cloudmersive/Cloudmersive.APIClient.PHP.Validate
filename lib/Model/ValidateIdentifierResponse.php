@@ -1,6 +1,6 @@
 <?php
 /**
- * AddressGetServersResponse
+ * ValidateIdentifierResponse
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * AddressGetServersResponse Class Doc Comment
+ * ValidateIdentifierResponse Class Doc Comment
  *
  * @category Class
- * @description Result of a partial email address validation
+ * @description Result of performing an identifier validation operation
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class AddressGetServersResponse implements ModelInterface, ArrayAccess
+class ValidateIdentifierResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'AddressGetServersResponse';
+    protected static $swaggerModelName = 'ValidateIdentifierResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +58,8 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'success' => 'bool',
-        'servers' => 'string[]'
+        'valid_identifier' => 'bool',
+        'error' => 'string'
     ];
 
     /**
@@ -68,8 +68,8 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'success' => null,
-        'servers' => null
+        'valid_identifier' => null,
+        'error' => null
     ];
 
     /**
@@ -99,8 +99,8 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'success' => 'Success',
-        'servers' => 'Servers'
+        'valid_identifier' => 'ValidIdentifier',
+        'error' => 'Error'
     ];
 
     /**
@@ -109,8 +109,8 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'success' => 'setSuccess',
-        'servers' => 'setServers'
+        'valid_identifier' => 'setValidIdentifier',
+        'error' => 'setError'
     ];
 
     /**
@@ -119,8 +119,8 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'success' => 'getSuccess',
-        'servers' => 'getServers'
+        'valid_identifier' => 'getValidIdentifier',
+        'error' => 'getError'
     ];
 
     /**
@@ -183,8 +183,8 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['success'] = isset($data['success']) ? $data['success'] : null;
-        $this->container['servers'] = isset($data['servers']) ? $data['servers'] : null;
+        $this->container['valid_identifier'] = isset($data['valid_identifier']) ? $data['valid_identifier'] : null;
+        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
     }
 
     /**
@@ -213,49 +213,49 @@ class AddressGetServersResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets success
+     * Gets valid_identifier
      *
      * @return bool
      */
-    public function getSuccess()
+    public function getValidIdentifier()
     {
-        return $this->container['success'];
+        return $this->container['valid_identifier'];
     }
 
     /**
-     * Sets success
+     * Sets valid_identifier
      *
-     * @param bool $success True if partial address validation was successufl, false otherwise
+     * @param bool $valid_identifier True if the input identifier is valid, false otherwise
      *
      * @return $this
      */
-    public function setSuccess($success)
+    public function setValidIdentifier($valid_identifier)
     {
-        $this->container['success'] = $success;
+        $this->container['valid_identifier'] = $valid_identifier;
 
         return $this;
     }
 
     /**
-     * Gets servers
+     * Gets error
      *
-     * @return string[]
+     * @return string
      */
-    public function getServers()
+    public function getError()
     {
-        return $this->container['servers'];
+        return $this->container['error'];
     }
 
     /**
-     * Sets servers
+     * Sets error
      *
-     * @param string[] $servers Email servers for this email address
+     * @param string $error Resulting error from the identifier validation; possible errors are: \"InputIsEmpty\", \"ContainsWhitespace\", \"ContainsNumbers\", \"ContainsHyphen\", \"ContainsUnderscore\", \"ContainsPeriod\", \"TooShort\", \"TooLong\", \"ContainsSpecialCharacters\"
      *
      * @return $this
      */
-    public function setServers($servers)
+    public function setError($error)
     {
-        $this->container['servers'] = $servers;
+        $this->container['error'] = $error;
 
         return $this;
     }
