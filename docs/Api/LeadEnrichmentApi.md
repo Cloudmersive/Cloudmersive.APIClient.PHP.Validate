@@ -1,18 +1,16 @@
-# Swagger\Client\UserAgentApi
+# Swagger\Client\LeadEnrichmentApi
 
 All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**userAgentParse**](UserAgentApi.md#userAgentParse) | **POST** /validate/useragent/parse | Parse an HTTP User-Agent string, identify robots
+[**leadEnrichmentEnrichLead**](LeadEnrichmentApi.md#leadEnrichmentEnrichLead) | **POST** /validate/lead-enrichment/lead/enrich | Enrich an input lead with additional fields of data
 
 
-# **userAgentParse**
-> \Swagger\Client\Model\UserAgentValidateResponse userAgentParse($request)
+# **leadEnrichmentEnrichLead**
+> \Swagger\Client\Model\LeadEnrichmentResponse leadEnrichmentEnrichLead($request)
 
-Parse an HTTP User-Agent string, identify robots
-
-Uses a parsing system and database to parse the User-Agent into its structured component parts, such as Browser, Browser Version, Browser Engine, Operating System, and importantly, Robot identification.
+Enrich an input lead with additional fields of data
 
 ### Example
 ```php
@@ -24,19 +22,19 @@ $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Ap
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 // $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Apikey', 'Bearer');
 
-$apiInstance = new Swagger\Client\Api\UserAgentApi(
+$apiInstance = new Swagger\Client\Api\LeadEnrichmentApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$request = new \Swagger\Client\Model\UserAgentValidateRequest(); // \Swagger\Client\Model\UserAgentValidateRequest | Input parse request
+$request = new \Swagger\Client\Model\LeadEnrichmentRequest(); // \Swagger\Client\Model\LeadEnrichmentRequest | Input lead with known fields set, and unknown fields left blank (null)
 
 try {
-    $result = $apiInstance->userAgentParse($request);
+    $result = $apiInstance->leadEnrichmentEnrichLead($request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UserAgentApi->userAgentParse: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling LeadEnrichmentApi->leadEnrichmentEnrichLead: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```
@@ -45,11 +43,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\Swagger\Client\Model\UserAgentValidateRequest**](../Model/UserAgentValidateRequest.md)| Input parse request |
+ **request** | [**\Swagger\Client\Model\LeadEnrichmentRequest**](../Model/LeadEnrichmentRequest.md)| Input lead with known fields set, and unknown fields left blank (null) |
 
 ### Return type
 
-[**\Swagger\Client\Model\UserAgentValidateResponse**](../Model/UserAgentValidateResponse.md)
+[**\Swagger\Client\Model\LeadEnrichmentResponse**](../Model/LeadEnrichmentResponse.md)
 
 ### Authorization
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * WhoisResponseTest
+ * LeadEnrichmentResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * WhoisResponseTest Class Doc Comment
+ * LeadEnrichmentResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description Result of a WHOIS operation
+// * @description Result of the lead enrichment process
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class WhoisResponseTest extends \PHPUnit_Framework_TestCase
+class LeadEnrichmentResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,114 +71,93 @@ class WhoisResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "WhoisResponse"
+     * Test "LeadEnrichmentResponse"
      */
-    public function testWhoisResponse()
+    public function testLeadEnrichmentResponse()
     {
     }
 
     /**
-     * Test attribute "valid_domain"
+     * Test attribute "successful"
      */
-    public function testPropertyValidDomain()
+    public function testPropertySuccessful()
     {
     }
 
     /**
-     * Test attribute "registrant_name"
+     * Test attribute "contact_business_email"
      */
-    public function testPropertyRegistrantName()
+    public function testPropertyContactBusinessEmail()
     {
     }
 
     /**
-     * Test attribute "registrant_organization"
+     * Test attribute "company_name"
      */
-    public function testPropertyRegistrantOrganization()
+    public function testPropertyCompanyName()
     {
     }
 
     /**
-     * Test attribute "registrant_email"
+     * Test attribute "company_domain_name"
      */
-    public function testPropertyRegistrantEmail()
+    public function testPropertyCompanyDomainName()
     {
     }
 
     /**
-     * Test attribute "registrant_street_number"
+     * Test attribute "company_house_number"
      */
-    public function testPropertyRegistrantStreetNumber()
+    public function testPropertyCompanyHouseNumber()
     {
     }
 
     /**
-     * Test attribute "registrant_street"
+     * Test attribute "company_street"
      */
-    public function testPropertyRegistrantStreet()
+    public function testPropertyCompanyStreet()
     {
     }
 
     /**
-     * Test attribute "registrant_city"
+     * Test attribute "company_city"
      */
-    public function testPropertyRegistrantCity()
+    public function testPropertyCompanyCity()
     {
     }
 
     /**
-     * Test attribute "registrant_state_or_province"
+     * Test attribute "company_state_or_province"
      */
-    public function testPropertyRegistrantStateOrProvince()
+    public function testPropertyCompanyStateOrProvince()
     {
     }
 
     /**
-     * Test attribute "registrant_postal_code"
+     * Test attribute "company_postal_code"
      */
-    public function testPropertyRegistrantPostalCode()
+    public function testPropertyCompanyPostalCode()
     {
     }
 
     /**
-     * Test attribute "registrant_country"
+     * Test attribute "company_country"
      */
-    public function testPropertyRegistrantCountry()
+    public function testPropertyCompanyCountry()
     {
     }
 
     /**
-     * Test attribute "registrant_raw_address"
+     * Test attribute "company_vat_number"
      */
-    public function testPropertyRegistrantRawAddress()
+    public function testPropertyCompanyVatNumber()
     {
     }
 
     /**
-     * Test attribute "registrant_telephone"
+     * Test attribute "employee_count"
      */
-    public function testPropertyRegistrantTelephone()
-    {
-    }
-
-    /**
-     * Test attribute "whois_server"
-     */
-    public function testPropertyWhoisServer()
-    {
-    }
-
-    /**
-     * Test attribute "raw_text_record"
-     */
-    public function testPropertyRawTextRecord()
-    {
-    }
-
-    /**
-     * Test attribute "created_dt"
-     */
-    public function testPropertyCreatedDt()
+    public function testPropertyEmployeeCount()
     {
     }
 }

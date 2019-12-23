@@ -58,7 +58,10 @@ class AddressVerifySyntaxOnlyResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'valid_address' => 'bool'
+        'valid_address' => 'bool',
+        'domain' => 'string',
+        'is_free_email_provider' => 'bool',
+        'is_disposable' => 'bool'
     ];
 
     /**
@@ -67,7 +70,10 @@ class AddressVerifySyntaxOnlyResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'valid_address' => null
+        'valid_address' => null,
+        'domain' => null,
+        'is_free_email_provider' => null,
+        'is_disposable' => null
     ];
 
     /**
@@ -97,7 +103,10 @@ class AddressVerifySyntaxOnlyResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'valid_address' => 'ValidAddress'
+        'valid_address' => 'ValidAddress',
+        'domain' => 'Domain',
+        'is_free_email_provider' => 'IsFreeEmailProvider',
+        'is_disposable' => 'IsDisposable'
     ];
 
     /**
@@ -106,7 +115,10 @@ class AddressVerifySyntaxOnlyResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'valid_address' => 'setValidAddress'
+        'valid_address' => 'setValidAddress',
+        'domain' => 'setDomain',
+        'is_free_email_provider' => 'setIsFreeEmailProvider',
+        'is_disposable' => 'setIsDisposable'
     ];
 
     /**
@@ -115,7 +127,10 @@ class AddressVerifySyntaxOnlyResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'valid_address' => 'getValidAddress'
+        'valid_address' => 'getValidAddress',
+        'domain' => 'getDomain',
+        'is_free_email_provider' => 'getIsFreeEmailProvider',
+        'is_disposable' => 'getIsDisposable'
     ];
 
     /**
@@ -179,6 +194,9 @@ class AddressVerifySyntaxOnlyResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['valid_address'] = isset($data['valid_address']) ? $data['valid_address'] : null;
+        $this->container['domain'] = isset($data['domain']) ? $data['domain'] : null;
+        $this->container['is_free_email_provider'] = isset($data['is_free_email_provider']) ? $data['is_free_email_provider'] : null;
+        $this->container['is_disposable'] = isset($data['is_disposable']) ? $data['is_disposable'] : null;
     }
 
     /**
@@ -226,6 +244,78 @@ class AddressVerifySyntaxOnlyResponse implements ModelInterface, ArrayAccess
     public function setValidAddress($valid_address)
     {
         $this->container['valid_address'] = $valid_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets domain
+     *
+     * @return string
+     */
+    public function getDomain()
+    {
+        return $this->container['domain'];
+    }
+
+    /**
+     * Sets domain
+     *
+     * @param string $domain Domain name of the email address
+     *
+     * @return $this
+     */
+    public function setDomain($domain)
+    {
+        $this->container['domain'] = $domain;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_free_email_provider
+     *
+     * @return bool
+     */
+    public function getIsFreeEmailProvider()
+    {
+        return $this->container['is_free_email_provider'];
+    }
+
+    /**
+     * Sets is_free_email_provider
+     *
+     * @param bool $is_free_email_provider True if the email domain name is a free provider (typically a free to sign up web email provider for consumers / personal use), false otherwise.
+     *
+     * @return $this
+     */
+    public function setIsFreeEmailProvider($is_free_email_provider)
+    {
+        $this->container['is_free_email_provider'] = $is_free_email_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_disposable
+     *
+     * @return bool
+     */
+    public function getIsDisposable()
+    {
+        return $this->container['is_disposable'];
+    }
+
+    /**
+     * Sets is_disposable
+     *
+     * @param bool $is_disposable True if the email address is a disposable email address, false otherwise; these disposable providers are not typically used to receive email and so will have a low likelihood of opening mail sent there.
+     *
+     * @return $this
+     */
+    public function setIsDisposable($is_disposable)
+    {
+        $this->container['is_disposable'] = $is_disposable;
 
         return $this;
     }

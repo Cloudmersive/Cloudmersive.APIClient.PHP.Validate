@@ -285,7 +285,7 @@ class DomainApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']
+                ['text/javascript', 'application/json', 'text/json']
             );
         }
 
@@ -547,7 +547,7 @@ class DomainApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']
+                ['text/javascript', 'application/json', 'text/json']
             );
         }
 
@@ -611,7 +611,7 @@ class DomainApi
      *
      * Validate a URL fully
      *
-     * @param  \Swagger\Client\Model\ValidateUrlRequestFull $request request (required)
+     * @param  \Swagger\Client\Model\ValidateUrlRequestFull $request Input URL request (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -628,7 +628,7 @@ class DomainApi
      *
      * Validate a URL fully
      *
-     * @param  \Swagger\Client\Model\ValidateUrlRequestFull $request (required)
+     * @param  \Swagger\Client\Model\ValidateUrlRequestFull $request Input URL request (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -703,7 +703,7 @@ class DomainApi
      *
      * Validate a URL fully
      *
-     * @param  \Swagger\Client\Model\ValidateUrlRequestFull $request (required)
+     * @param  \Swagger\Client\Model\ValidateUrlRequestFull $request Input URL request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -723,7 +723,7 @@ class DomainApi
      *
      * Validate a URL fully
      *
-     * @param  \Swagger\Client\Model\ValidateUrlRequestFull $request (required)
+     * @param  \Swagger\Client\Model\ValidateUrlRequestFull $request Input URL request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -773,7 +773,7 @@ class DomainApi
     /**
      * Create request for operation 'domainUrlFull'
      *
-     * @param  \Swagger\Client\Model\ValidateUrlRequestFull $request (required)
+     * @param  \Swagger\Client\Model\ValidateUrlRequestFull $request Input URL request (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -809,7 +809,7 @@ class DomainApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']
+                ['application/json', 'text/json']
             );
         }
 
@@ -873,7 +873,7 @@ class DomainApi
      *
      * Validate a URL syntactically
      *
-     * @param  \Swagger\Client\Model\ValidateUrlRequestSyntaxOnly $request request (required)
+     * @param  \Swagger\Client\Model\ValidateUrlRequestSyntaxOnly $request Input URL information (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -890,7 +890,7 @@ class DomainApi
      *
      * Validate a URL syntactically
      *
-     * @param  \Swagger\Client\Model\ValidateUrlRequestSyntaxOnly $request (required)
+     * @param  \Swagger\Client\Model\ValidateUrlRequestSyntaxOnly $request Input URL information (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -965,7 +965,7 @@ class DomainApi
      *
      * Validate a URL syntactically
      *
-     * @param  \Swagger\Client\Model\ValidateUrlRequestSyntaxOnly $request (required)
+     * @param  \Swagger\Client\Model\ValidateUrlRequestSyntaxOnly $request Input URL information (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -985,7 +985,7 @@ class DomainApi
      *
      * Validate a URL syntactically
      *
-     * @param  \Swagger\Client\Model\ValidateUrlRequestSyntaxOnly $request (required)
+     * @param  \Swagger\Client\Model\ValidateUrlRequestSyntaxOnly $request Input URL information (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1035,7 +1035,7 @@ class DomainApi
     /**
      * Create request for operation 'domainUrlSyntaxOnly'
      *
-     * @param  \Swagger\Client\Model\ValidateUrlRequestSyntaxOnly $request (required)
+     * @param  \Swagger\Client\Model\ValidateUrlRequestSyntaxOnly $request Input URL information (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1071,7 +1071,7 @@ class DomainApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded']
+                ['application/json', 'text/json']
             );
         }
 

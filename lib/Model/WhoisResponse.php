@@ -59,6 +59,17 @@ class WhoisResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'valid_domain' => 'bool',
+        'registrant_name' => 'string',
+        'registrant_organization' => 'string',
+        'registrant_email' => 'string',
+        'registrant_street_number' => 'string',
+        'registrant_street' => 'string',
+        'registrant_city' => 'string',
+        'registrant_state_or_province' => 'string',
+        'registrant_postal_code' => 'string',
+        'registrant_country' => 'string',
+        'registrant_raw_address' => 'string',
+        'registrant_telephone' => 'string',
         'whois_server' => 'string',
         'raw_text_record' => 'string',
         'created_dt' => '\DateTime'
@@ -71,6 +82,17 @@ class WhoisResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'valid_domain' => null,
+        'registrant_name' => null,
+        'registrant_organization' => null,
+        'registrant_email' => null,
+        'registrant_street_number' => null,
+        'registrant_street' => null,
+        'registrant_city' => null,
+        'registrant_state_or_province' => null,
+        'registrant_postal_code' => null,
+        'registrant_country' => null,
+        'registrant_raw_address' => null,
+        'registrant_telephone' => null,
         'whois_server' => null,
         'raw_text_record' => null,
         'created_dt' => 'date-time'
@@ -104,6 +126,17 @@ class WhoisResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'valid_domain' => 'ValidDomain',
+        'registrant_name' => 'RegistrantName',
+        'registrant_organization' => 'RegistrantOrganization',
+        'registrant_email' => 'RegistrantEmail',
+        'registrant_street_number' => 'RegistrantStreetNumber',
+        'registrant_street' => 'RegistrantStreet',
+        'registrant_city' => 'RegistrantCity',
+        'registrant_state_or_province' => 'RegistrantStateOrProvince',
+        'registrant_postal_code' => 'RegistrantPostalCode',
+        'registrant_country' => 'RegistrantCountry',
+        'registrant_raw_address' => 'RegistrantRawAddress',
+        'registrant_telephone' => 'RegistrantTelephone',
         'whois_server' => 'WhoisServer',
         'raw_text_record' => 'RawTextRecord',
         'created_dt' => 'CreatedDt'
@@ -116,6 +149,17 @@ class WhoisResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'valid_domain' => 'setValidDomain',
+        'registrant_name' => 'setRegistrantName',
+        'registrant_organization' => 'setRegistrantOrganization',
+        'registrant_email' => 'setRegistrantEmail',
+        'registrant_street_number' => 'setRegistrantStreetNumber',
+        'registrant_street' => 'setRegistrantStreet',
+        'registrant_city' => 'setRegistrantCity',
+        'registrant_state_or_province' => 'setRegistrantStateOrProvince',
+        'registrant_postal_code' => 'setRegistrantPostalCode',
+        'registrant_country' => 'setRegistrantCountry',
+        'registrant_raw_address' => 'setRegistrantRawAddress',
+        'registrant_telephone' => 'setRegistrantTelephone',
         'whois_server' => 'setWhoisServer',
         'raw_text_record' => 'setRawTextRecord',
         'created_dt' => 'setCreatedDt'
@@ -128,6 +172,17 @@ class WhoisResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'valid_domain' => 'getValidDomain',
+        'registrant_name' => 'getRegistrantName',
+        'registrant_organization' => 'getRegistrantOrganization',
+        'registrant_email' => 'getRegistrantEmail',
+        'registrant_street_number' => 'getRegistrantStreetNumber',
+        'registrant_street' => 'getRegistrantStreet',
+        'registrant_city' => 'getRegistrantCity',
+        'registrant_state_or_province' => 'getRegistrantStateOrProvince',
+        'registrant_postal_code' => 'getRegistrantPostalCode',
+        'registrant_country' => 'getRegistrantCountry',
+        'registrant_raw_address' => 'getRegistrantRawAddress',
+        'registrant_telephone' => 'getRegistrantTelephone',
         'whois_server' => 'getWhoisServer',
         'raw_text_record' => 'getRawTextRecord',
         'created_dt' => 'getCreatedDt'
@@ -194,6 +249,17 @@ class WhoisResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['valid_domain'] = isset($data['valid_domain']) ? $data['valid_domain'] : null;
+        $this->container['registrant_name'] = isset($data['registrant_name']) ? $data['registrant_name'] : null;
+        $this->container['registrant_organization'] = isset($data['registrant_organization']) ? $data['registrant_organization'] : null;
+        $this->container['registrant_email'] = isset($data['registrant_email']) ? $data['registrant_email'] : null;
+        $this->container['registrant_street_number'] = isset($data['registrant_street_number']) ? $data['registrant_street_number'] : null;
+        $this->container['registrant_street'] = isset($data['registrant_street']) ? $data['registrant_street'] : null;
+        $this->container['registrant_city'] = isset($data['registrant_city']) ? $data['registrant_city'] : null;
+        $this->container['registrant_state_or_province'] = isset($data['registrant_state_or_province']) ? $data['registrant_state_or_province'] : null;
+        $this->container['registrant_postal_code'] = isset($data['registrant_postal_code']) ? $data['registrant_postal_code'] : null;
+        $this->container['registrant_country'] = isset($data['registrant_country']) ? $data['registrant_country'] : null;
+        $this->container['registrant_raw_address'] = isset($data['registrant_raw_address']) ? $data['registrant_raw_address'] : null;
+        $this->container['registrant_telephone'] = isset($data['registrant_telephone']) ? $data['registrant_telephone'] : null;
         $this->container['whois_server'] = isset($data['whois_server']) ? $data['whois_server'] : null;
         $this->container['raw_text_record'] = isset($data['raw_text_record']) ? $data['raw_text_record'] : null;
         $this->container['created_dt'] = isset($data['created_dt']) ? $data['created_dt'] : null;
@@ -244,6 +310,270 @@ class WhoisResponse implements ModelInterface, ArrayAccess
     public function setValidDomain($valid_domain)
     {
         $this->container['valid_domain'] = $valid_domain;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_name
+     *
+     * @return string
+     */
+    public function getRegistrantName()
+    {
+        return $this->container['registrant_name'];
+    }
+
+    /**
+     * Sets registrant_name
+     *
+     * @param string $registrant_name Name of the domain registrant
+     *
+     * @return $this
+     */
+    public function setRegistrantName($registrant_name)
+    {
+        $this->container['registrant_name'] = $registrant_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_organization
+     *
+     * @return string
+     */
+    public function getRegistrantOrganization()
+    {
+        return $this->container['registrant_organization'];
+    }
+
+    /**
+     * Sets registrant_organization
+     *
+     * @param string $registrant_organization Organization name of the domain registrant
+     *
+     * @return $this
+     */
+    public function setRegistrantOrganization($registrant_organization)
+    {
+        $this->container['registrant_organization'] = $registrant_organization;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_email
+     *
+     * @return string
+     */
+    public function getRegistrantEmail()
+    {
+        return $this->container['registrant_email'];
+    }
+
+    /**
+     * Sets registrant_email
+     *
+     * @param string $registrant_email Email address of the domain registrant
+     *
+     * @return $this
+     */
+    public function setRegistrantEmail($registrant_email)
+    {
+        $this->container['registrant_email'] = $registrant_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_street_number
+     *
+     * @return string
+     */
+    public function getRegistrantStreetNumber()
+    {
+        return $this->container['registrant_street_number'];
+    }
+
+    /**
+     * Sets registrant_street_number
+     *
+     * @param string $registrant_street_number Street number of the address of the domain registrant, if available
+     *
+     * @return $this
+     */
+    public function setRegistrantStreetNumber($registrant_street_number)
+    {
+        $this->container['registrant_street_number'] = $registrant_street_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_street
+     *
+     * @return string
+     */
+    public function getRegistrantStreet()
+    {
+        return $this->container['registrant_street'];
+    }
+
+    /**
+     * Sets registrant_street
+     *
+     * @param string $registrant_street Street name of the address of the domain registrant, if available
+     *
+     * @return $this
+     */
+    public function setRegistrantStreet($registrant_street)
+    {
+        $this->container['registrant_street'] = $registrant_street;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_city
+     *
+     * @return string
+     */
+    public function getRegistrantCity()
+    {
+        return $this->container['registrant_city'];
+    }
+
+    /**
+     * Sets registrant_city
+     *
+     * @param string $registrant_city City of the domain registrant, if available
+     *
+     * @return $this
+     */
+    public function setRegistrantCity($registrant_city)
+    {
+        $this->container['registrant_city'] = $registrant_city;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_state_or_province
+     *
+     * @return string
+     */
+    public function getRegistrantStateOrProvince()
+    {
+        return $this->container['registrant_state_or_province'];
+    }
+
+    /**
+     * Sets registrant_state_or_province
+     *
+     * @param string $registrant_state_or_province State or Province of the address of the domain registrant, if available
+     *
+     * @return $this
+     */
+    public function setRegistrantStateOrProvince($registrant_state_or_province)
+    {
+        $this->container['registrant_state_or_province'] = $registrant_state_or_province;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_postal_code
+     *
+     * @return string
+     */
+    public function getRegistrantPostalCode()
+    {
+        return $this->container['registrant_postal_code'];
+    }
+
+    /**
+     * Sets registrant_postal_code
+     *
+     * @param string $registrant_postal_code Postal code of the address of the domain registrant, if available
+     *
+     * @return $this
+     */
+    public function setRegistrantPostalCode($registrant_postal_code)
+    {
+        $this->container['registrant_postal_code'] = $registrant_postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_country
+     *
+     * @return string
+     */
+    public function getRegistrantCountry()
+    {
+        return $this->container['registrant_country'];
+    }
+
+    /**
+     * Sets registrant_country
+     *
+     * @param string $registrant_country Country of the address of the domain registrant, if available
+     *
+     * @return $this
+     */
+    public function setRegistrantCountry($registrant_country)
+    {
+        $this->container['registrant_country'] = $registrant_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_raw_address
+     *
+     * @return string
+     */
+    public function getRegistrantRawAddress()
+    {
+        return $this->container['registrant_raw_address'];
+    }
+
+    /**
+     * Sets registrant_raw_address
+     *
+     * @param string $registrant_raw_address Raw address string of the domain registrant, if available
+     *
+     * @return $this
+     */
+    public function setRegistrantRawAddress($registrant_raw_address)
+    {
+        $this->container['registrant_raw_address'] = $registrant_raw_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets registrant_telephone
+     *
+     * @return string
+     */
+    public function getRegistrantTelephone()
+    {
+        return $this->container['registrant_telephone'];
+    }
+
+    /**
+     * Sets registrant_telephone
+     *
+     * @param string $registrant_telephone Telephone number of the address of the domain registrant
+     *
+     * @return $this
+     */
+    public function setRegistrantTelephone($registrant_telephone)
+    {
+        $this->container['registrant_telephone'] = $registrant_telephone;
 
         return $this;
     }

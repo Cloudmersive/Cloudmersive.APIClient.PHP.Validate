@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.5.1
+- Package version: 1.5.2
 
 
 ## Requirements
@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**emailFullValidation**](docs/Api/EmailApi.md#emailfullvalidation) | **POST** /validate/email/address/full | Fully validate an email address
 *EmailApi* | [**emailPost**](docs/Api/EmailApi.md#emailpost) | **POST** /validate/email/address/syntaxOnly | Validate email adddress for syntactic correctness only
 *IPAddressApi* | [**iPAddressPost**](docs/Api/IPAddressApi.md#ipaddresspost) | **POST** /validate/ip/geolocate | Geolocate an IP address
+*LeadEnrichmentApi* | [**leadEnrichmentEnrichLead**](docs/Api/LeadEnrichmentApi.md#leadenrichmentenrichlead) | **POST** /validate/lead-enrichment/lead/enrich | Enrich an input lead with additional fields of data
 *NameApi* | [**nameGetGender**](docs/Api/NameApi.md#namegetgender) | **POST** /validate/name/get-gender | Get the gender of a first name
 *NameApi* | [**nameIdentifier**](docs/Api/NameApi.md#nameidentifier) | **POST** /validate/name/identifier | Validate a code identifier
 *NameApi* | [**nameValidateFirstName**](docs/Api/NameApi.md#namevalidatefirstname) | **POST** /validate/name/first | Validate a first name
@@ -120,6 +121,8 @@ Class | Method | HTTP request | Description
  - [GetGenderResponse](docs/Model/GetGenderResponse.md)
  - [LastNameValidationRequest](docs/Model/LastNameValidationRequest.md)
  - [LastNameValidationResponse](docs/Model/LastNameValidationResponse.md)
+ - [LeadEnrichmentRequest](docs/Model/LeadEnrichmentRequest.md)
+ - [LeadEnrichmentResponse](docs/Model/LeadEnrichmentResponse.md)
  - [ParseAddressRequest](docs/Model/ParseAddressRequest.md)
  - [ParseAddressResponse](docs/Model/ParseAddressResponse.md)
  - [PhoneNumberValidateRequest](docs/Model/PhoneNumberValidateRequest.md)

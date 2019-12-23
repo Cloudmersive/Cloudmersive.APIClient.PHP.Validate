@@ -1,6 +1,6 @@
 <?php
 /**
- * AddressVerifySyntaxOnlyResponseTest
+ * LeadEnrichmentRequestTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * AddressVerifySyntaxOnlyResponseTest Class Doc Comment
+ * LeadEnrichmentRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description Syntactic validity of email address
+// * @description Input lead contact; fill in known fields to extend them with matched field values
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class AddressVerifySyntaxOnlyResponseTest extends \PHPUnit_Framework_TestCase
+class LeadEnrichmentRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,37 +71,79 @@ class AddressVerifySyntaxOnlyResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "AddressVerifySyntaxOnlyResponse"
+     * Test "LeadEnrichmentRequest"
      */
-    public function testAddressVerifySyntaxOnlyResponse()
+    public function testLeadEnrichmentRequest()
     {
     }
 
     /**
-     * Test attribute "valid_address"
+     * Test attribute "contact_business_email"
      */
-    public function testPropertyValidAddress()
+    public function testPropertyContactBusinessEmail()
     {
     }
 
     /**
-     * Test attribute "domain"
+     * Test attribute "company_name"
      */
-    public function testPropertyDomain()
+    public function testPropertyCompanyName()
     {
     }
 
     /**
-     * Test attribute "is_free_email_provider"
+     * Test attribute "company_domain_name"
      */
-    public function testPropertyIsFreeEmailProvider()
+    public function testPropertyCompanyDomainName()
     {
     }
 
     /**
-     * Test attribute "is_disposable"
+     * Test attribute "company_house_number"
      */
-    public function testPropertyIsDisposable()
+    public function testPropertyCompanyHouseNumber()
+    {
+    }
+
+    /**
+     * Test attribute "company_street"
+     */
+    public function testPropertyCompanyStreet()
+    {
+    }
+
+    /**
+     * Test attribute "company_city"
+     */
+    public function testPropertyCompanyCity()
+    {
+    }
+
+    /**
+     * Test attribute "company_state_or_province"
+     */
+    public function testPropertyCompanyStateOrProvince()
+    {
+    }
+
+    /**
+     * Test attribute "company_postal_code"
+     */
+    public function testPropertyCompanyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "company_country"
+     */
+    public function testPropertyCompanyCountry()
+    {
+    }
+
+    /**
+     * Test attribute "company_vat_number"
+     */
+    public function testPropertyCompanyVatNumber()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * IPAddressApi
+ * LeadEnrichmentApi
  * PHP version 5
  *
  * @category Class
@@ -40,14 +40,14 @@ use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
 
 /**
- * IPAddressApi Class Doc Comment
+ * LeadEnrichmentApi Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class IPAddressApi
+class LeadEnrichmentApi
 {
     /**
      * @var ClientInterface
@@ -83,37 +83,37 @@ class IPAddressApi
     }
 
     /**
-     * Operation iPAddressPost
+     * Operation leadEnrichmentEnrichLead
      *
-     * Geolocate an IP address
+     * Enrich an input lead with additional fields of data
      *
-     * @param  string $value IP address to geolocate, e.g. \&quot;55.55.55.55\&quot;.  The input is a string so be sure to enclose it in double-quotes. (required)
+     * @param  \Swagger\Client\Model\LeadEnrichmentRequest $request Input lead with known fields set, and unknown fields left blank (null) (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\GeolocateResponse
+     * @return \Swagger\Client\Model\LeadEnrichmentResponse
      */
-    public function iPAddressPost($value)
+    public function leadEnrichmentEnrichLead($request)
     {
-        list($response) = $this->iPAddressPostWithHttpInfo($value);
+        list($response) = $this->leadEnrichmentEnrichLeadWithHttpInfo($request);
         return $response;
     }
 
     /**
-     * Operation iPAddressPostWithHttpInfo
+     * Operation leadEnrichmentEnrichLeadWithHttpInfo
      *
-     * Geolocate an IP address
+     * Enrich an input lead with additional fields of data
      *
-     * @param  string $value IP address to geolocate, e.g. \&quot;55.55.55.55\&quot;.  The input is a string so be sure to enclose it in double-quotes. (required)
+     * @param  \Swagger\Client\Model\LeadEnrichmentRequest $request Input lead with known fields set, and unknown fields left blank (null) (required)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\GeolocateResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\LeadEnrichmentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function iPAddressPostWithHttpInfo($value)
+    public function leadEnrichmentEnrichLeadWithHttpInfo($request)
     {
-        $returnType = '\Swagger\Client\Model\GeolocateResponse';
-        $request = $this->iPAddressPostRequest($value);
+        $returnType = '\Swagger\Client\Model\LeadEnrichmentResponse';
+        $request = $this->leadEnrichmentEnrichLeadRequest($request);
 
         try {
             $options = $this->createHttpClientOption();
@@ -164,7 +164,7 @@ class IPAddressApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Swagger\Client\Model\GeolocateResponse',
+                        '\Swagger\Client\Model\LeadEnrichmentResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -175,18 +175,18 @@ class IPAddressApi
     }
 
     /**
-     * Operation iPAddressPostAsync
+     * Operation leadEnrichmentEnrichLeadAsync
      *
-     * Geolocate an IP address
+     * Enrich an input lead with additional fields of data
      *
-     * @param  string $value IP address to geolocate, e.g. \&quot;55.55.55.55\&quot;.  The input is a string so be sure to enclose it in double-quotes. (required)
+     * @param  \Swagger\Client\Model\LeadEnrichmentRequest $request Input lead with known fields set, and unknown fields left blank (null) (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function iPAddressPostAsync($value)
+    public function leadEnrichmentEnrichLeadAsync($request)
     {
-        return $this->iPAddressPostAsyncWithHttpInfo($value)
+        return $this->leadEnrichmentEnrichLeadAsyncWithHttpInfo($request)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -195,19 +195,19 @@ class IPAddressApi
     }
 
     /**
-     * Operation iPAddressPostAsyncWithHttpInfo
+     * Operation leadEnrichmentEnrichLeadAsyncWithHttpInfo
      *
-     * Geolocate an IP address
+     * Enrich an input lead with additional fields of data
      *
-     * @param  string $value IP address to geolocate, e.g. \&quot;55.55.55.55\&quot;.  The input is a string so be sure to enclose it in double-quotes. (required)
+     * @param  \Swagger\Client\Model\LeadEnrichmentRequest $request Input lead with known fields set, and unknown fields left blank (null) (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function iPAddressPostAsyncWithHttpInfo($value)
+    public function leadEnrichmentEnrichLeadAsyncWithHttpInfo($request)
     {
-        $returnType = '\Swagger\Client\Model\GeolocateResponse';
-        $request = $this->iPAddressPostRequest($value);
+        $returnType = '\Swagger\Client\Model\LeadEnrichmentResponse';
+        $request = $this->leadEnrichmentEnrichLeadRequest($request);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -247,23 +247,23 @@ class IPAddressApi
     }
 
     /**
-     * Create request for operation 'iPAddressPost'
+     * Create request for operation 'leadEnrichmentEnrichLead'
      *
-     * @param  string $value IP address to geolocate, e.g. \&quot;55.55.55.55\&quot;.  The input is a string so be sure to enclose it in double-quotes. (required)
+     * @param  \Swagger\Client\Model\LeadEnrichmentRequest $request Input lead with known fields set, and unknown fields left blank (null) (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function iPAddressPostRequest($value)
+    protected function leadEnrichmentEnrichLeadRequest($request)
     {
-        // verify the required parameter 'value' is set
-        if ($value === null) {
+        // verify the required parameter 'request' is set
+        if ($request === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $value when calling iPAddressPost'
+                'Missing the required parameter $request when calling leadEnrichmentEnrichLead'
             );
         }
 
-        $resourcePath = '/validate/ip/geolocate';
+        $resourcePath = '/validate/lead-enrichment/lead/enrich';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -274,8 +274,8 @@ class IPAddressApi
 
         // body params
         $_tempBody = null;
-        if (isset($value)) {
-            $_tempBody = $value;
+        if (isset($request)) {
+            $_tempBody = $request;
         }
 
         if ($multipart) {
@@ -285,7 +285,7 @@ class IPAddressApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                ['text/javascript', 'application/json', 'text/json']
+                ['application/json', 'text/json']
             );
         }
 
