@@ -85,6 +85,20 @@ class LeadEnrichmentRequestTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "contact_first_name"
+     */
+    public function testPropertyContactFirstName()
+    {
+    }
+
+    /**
+     * Test attribute "contact_last_name"
+     */
+    public function testPropertyContactLastName()
+    {
+    }
+
+    /**
      * Test attribute "company_name"
      */
     public function testPropertyCompanyName()
@@ -137,6 +151,20 @@ class LeadEnrichmentRequestTest extends \PHPUnit_Framework_TestCase
      * Test attribute "company_country"
      */
     public function testPropertyCompanyCountry()
+    {
+    }
+
+    /**
+     * Test attribute "company_country_code"
+     */
+    public function testPropertyCompanyCountryCode()
+    {
+    }
+
+    /**
+     * Test attribute "company_telephone"
+     */
+    public function testPropertyCompanyTelephone()
     {
     }
 

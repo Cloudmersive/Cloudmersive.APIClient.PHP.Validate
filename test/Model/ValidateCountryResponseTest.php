@@ -1,6 +1,6 @@
 <?php
 /**
- * ParseAddressResponseTest
+ * ValidateCountryResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ParseAddressResponseTest Class Doc Comment
+ * ValidateCountryResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description Result of parsing an address into its component parts
+// * @description Result of performing a country validation operation
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ParseAddressResponseTest extends \PHPUnit_Framework_TestCase
+class ValidateCountryResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class ParseAddressResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ParseAddressResponse"
+     * Test "ValidateCountryResponse"
      */
-    public function testParseAddressResponse()
+    public function testValidateCountryResponse()
     {
     }
 
@@ -81,48 +81,6 @@ class ParseAddressResponseTest extends \PHPUnit_Framework_TestCase
      * Test attribute "successful"
      */
     public function testPropertySuccessful()
-    {
-    }
-
-    /**
-     * Test attribute "building"
-     */
-    public function testPropertyBuilding()
-    {
-    }
-
-    /**
-     * Test attribute "street_number"
-     */
-    public function testPropertyStreetNumber()
-    {
-    }
-
-    /**
-     * Test attribute "street"
-     */
-    public function testPropertyStreet()
-    {
-    }
-
-    /**
-     * Test attribute "city"
-     */
-    public function testPropertyCity()
-    {
-    }
-
-    /**
-     * Test attribute "state_or_province"
-     */
-    public function testPropertyStateOrProvince()
-    {
-    }
-
-    /**
-     * Test attribute "postal_code"
-     */
-    public function testPropertyPostalCode()
     {
     }
 
@@ -137,6 +95,20 @@ class ParseAddressResponseTest extends \PHPUnit_Framework_TestCase
      * Test attribute "iso_two_letter_code"
      */
     public function testPropertyIsoTwoLetterCode()
+    {
+    }
+
+    /**
+     * Test attribute "fips_two_letter_code"
+     */
+    public function testPropertyFipsTwoLetterCode()
+    {
+    }
+
+    /**
+     * Test attribute "three_letter_code"
+     */
+    public function testPropertyThreeLetterCode()
     {
     }
 }

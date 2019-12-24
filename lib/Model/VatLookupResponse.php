@@ -61,7 +61,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
         'vat_number' => 'string',
         'is_valid' => 'bool',
         'business_name' => 'string',
-        'business_address' => 'string'
+        'business_address' => 'string',
+        'business_building' => 'string',
+        'business_street_number' => 'string',
+        'business_street' => 'string',
+        'business_city' => 'string',
+        'business_state_or_province' => 'string',
+        'business_postal_code' => 'string',
+        'business_country' => 'string'
     ];
 
     /**
@@ -74,7 +81,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
         'vat_number' => null,
         'is_valid' => null,
         'business_name' => null,
-        'business_address' => null
+        'business_address' => null,
+        'business_building' => null,
+        'business_street_number' => null,
+        'business_street' => null,
+        'business_city' => null,
+        'business_state_or_province' => null,
+        'business_postal_code' => null,
+        'business_country' => null
     ];
 
     /**
@@ -108,7 +122,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
         'vat_number' => 'VatNumber',
         'is_valid' => 'IsValid',
         'business_name' => 'BusinessName',
-        'business_address' => 'BusinessAddress'
+        'business_address' => 'BusinessAddress',
+        'business_building' => 'BusinessBuilding',
+        'business_street_number' => 'BusinessStreetNumber',
+        'business_street' => 'BusinessStreet',
+        'business_city' => 'BusinessCity',
+        'business_state_or_province' => 'BusinessStateOrProvince',
+        'business_postal_code' => 'BusinessPostalCode',
+        'business_country' => 'BusinessCountry'
     ];
 
     /**
@@ -121,7 +142,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
         'vat_number' => 'setVatNumber',
         'is_valid' => 'setIsValid',
         'business_name' => 'setBusinessName',
-        'business_address' => 'setBusinessAddress'
+        'business_address' => 'setBusinessAddress',
+        'business_building' => 'setBusinessBuilding',
+        'business_street_number' => 'setBusinessStreetNumber',
+        'business_street' => 'setBusinessStreet',
+        'business_city' => 'setBusinessCity',
+        'business_state_or_province' => 'setBusinessStateOrProvince',
+        'business_postal_code' => 'setBusinessPostalCode',
+        'business_country' => 'setBusinessCountry'
     ];
 
     /**
@@ -134,7 +162,14 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
         'vat_number' => 'getVatNumber',
         'is_valid' => 'getIsValid',
         'business_name' => 'getBusinessName',
-        'business_address' => 'getBusinessAddress'
+        'business_address' => 'getBusinessAddress',
+        'business_building' => 'getBusinessBuilding',
+        'business_street_number' => 'getBusinessStreetNumber',
+        'business_street' => 'getBusinessStreet',
+        'business_city' => 'getBusinessCity',
+        'business_state_or_province' => 'getBusinessStateOrProvince',
+        'business_postal_code' => 'getBusinessPostalCode',
+        'business_country' => 'getBusinessCountry'
     ];
 
     /**
@@ -202,6 +237,13 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
         $this->container['is_valid'] = isset($data['is_valid']) ? $data['is_valid'] : null;
         $this->container['business_name'] = isset($data['business_name']) ? $data['business_name'] : null;
         $this->container['business_address'] = isset($data['business_address']) ? $data['business_address'] : null;
+        $this->container['business_building'] = isset($data['business_building']) ? $data['business_building'] : null;
+        $this->container['business_street_number'] = isset($data['business_street_number']) ? $data['business_street_number'] : null;
+        $this->container['business_street'] = isset($data['business_street']) ? $data['business_street'] : null;
+        $this->container['business_city'] = isset($data['business_city']) ? $data['business_city'] : null;
+        $this->container['business_state_or_province'] = isset($data['business_state_or_province']) ? $data['business_state_or_province'] : null;
+        $this->container['business_postal_code'] = isset($data['business_postal_code']) ? $data['business_postal_code'] : null;
+        $this->container['business_country'] = isset($data['business_country']) ? $data['business_country'] : null;
     }
 
     /**
@@ -338,13 +380,181 @@ class VatLookupResponse implements ModelInterface, ArrayAccess
     /**
      * Sets business_address
      *
-     * @param string $business_address Business address
+     * @param string $business_address Business address as a single string
      *
      * @return $this
      */
     public function setBusinessAddress($business_address)
     {
         $this->container['business_address'] = $business_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_building
+     *
+     * @return string
+     */
+    public function getBusinessBuilding()
+    {
+        return $this->container['business_building'];
+    }
+
+    /**
+     * Sets business_building
+     *
+     * @param string $business_building For the business address, the name of the building, house or structure if applicable, such as \"Cloudmersive Building 2\".  This will often by null.
+     *
+     * @return $this
+     */
+    public function setBusinessBuilding($business_building)
+    {
+        $this->container['business_building'] = $business_building;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_street_number
+     *
+     * @return string
+     */
+    public function getBusinessStreetNumber()
+    {
+        return $this->container['business_street_number'];
+    }
+
+    /**
+     * Sets business_street_number
+     *
+     * @param string $business_street_number For the business address, the street number or house number of the address.  For example, in the address \"1600 Pennsylvania Avenue NW\" the street number would be \"1600\".  This value will typically be populated for most addresses.
+     *
+     * @return $this
+     */
+    public function setBusinessStreetNumber($business_street_number)
+    {
+        $this->container['business_street_number'] = $business_street_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_street
+     *
+     * @return string
+     */
+    public function getBusinessStreet()
+    {
+        return $this->container['business_street'];
+    }
+
+    /**
+     * Sets business_street
+     *
+     * @param string $business_street For the business address, the name of the street or road of the address.  For example, in the address \"1600 Pennsylvania Avenue NW\" the street number would be \"Pennsylvania Avenue NW\".
+     *
+     * @return $this
+     */
+    public function setBusinessStreet($business_street)
+    {
+        $this->container['business_street'] = $business_street;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_city
+     *
+     * @return string
+     */
+    public function getBusinessCity()
+    {
+        return $this->container['business_city'];
+    }
+
+    /**
+     * Sets business_city
+     *
+     * @param string $business_city For the business address, the city of the address.
+     *
+     * @return $this
+     */
+    public function setBusinessCity($business_city)
+    {
+        $this->container['business_city'] = $business_city;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_state_or_province
+     *
+     * @return string
+     */
+    public function getBusinessStateOrProvince()
+    {
+        return $this->container['business_state_or_province'];
+    }
+
+    /**
+     * Sets business_state_or_province
+     *
+     * @param string $business_state_or_province For the business address, the state or province of the address.
+     *
+     * @return $this
+     */
+    public function setBusinessStateOrProvince($business_state_or_province)
+    {
+        $this->container['business_state_or_province'] = $business_state_or_province;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_postal_code
+     *
+     * @return string
+     */
+    public function getBusinessPostalCode()
+    {
+        return $this->container['business_postal_code'];
+    }
+
+    /**
+     * Sets business_postal_code
+     *
+     * @param string $business_postal_code For the business address, the postal code or zip code of the address.
+     *
+     * @return $this
+     */
+    public function setBusinessPostalCode($business_postal_code)
+    {
+        $this->container['business_postal_code'] = $business_postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets business_country
+     *
+     * @return string
+     */
+    public function getBusinessCountry()
+    {
+        return $this->container['business_country'];
+    }
+
+    /**
+     * Sets business_country
+     *
+     * @param string $business_country For the business address, country of the address, if present in the address.  If not included in the address it will be null.
+     *
+     * @return $this
+     */
+    public function setBusinessCountry($business_country)
+    {
+        $this->container['business_country'] = $business_country;
 
         return $this;
     }

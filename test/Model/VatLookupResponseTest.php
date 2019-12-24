@@ -111,4 +111,53 @@ class VatLookupResponseTest extends \PHPUnit_Framework_TestCase
     public function testPropertyBusinessAddress()
     {
     }
+
+    /**
+     * Test attribute "business_building"
+     */
+    public function testPropertyBusinessBuilding()
+    {
+    }
+
+    /**
+     * Test attribute "business_street_number"
+     */
+    public function testPropertyBusinessStreetNumber()
+    {
+    }
+
+    /**
+     * Test attribute "business_street"
+     */
+    public function testPropertyBusinessStreet()
+    {
+    }
+
+    /**
+     * Test attribute "business_city"
+     */
+    public function testPropertyBusinessCity()
+    {
+    }
+
+    /**
+     * Test attribute "business_state_or_province"
+     */
+    public function testPropertyBusinessStateOrProvince()
+    {
+    }
+
+    /**
+     * Test attribute "business_postal_code"
+     */
+    public function testPropertyBusinessPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "business_country"
+     */
+    public function testPropertyBusinessCountry()
+    {
+    }
 }

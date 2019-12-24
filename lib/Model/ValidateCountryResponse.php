@@ -1,6 +1,6 @@
 <?php
 /**
- * ParseAddressResponse
+ * ValidateCountryResponse
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ParseAddressResponse Class Doc Comment
+ * ValidateCountryResponse Class Doc Comment
  *
  * @category Class
- * @description Result of parsing an address into its component parts
+ * @description Result of performing a country validation operation
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ParseAddressResponse implements ModelInterface, ArrayAccess
+class ValidateCountryResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ParseAddressResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ParseAddressResponse';
+    protected static $swaggerModelName = 'ValidateCountryResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,14 +59,10 @@ class ParseAddressResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'successful' => 'bool',
-        'building' => 'string',
-        'street_number' => 'string',
-        'street' => 'string',
-        'city' => 'string',
-        'state_or_province' => 'string',
-        'postal_code' => 'string',
         'country_full_name' => 'string',
-        'iso_two_letter_code' => 'string'
+        'iso_two_letter_code' => 'string',
+        'fips_two_letter_code' => 'string',
+        'three_letter_code' => 'string'
     ];
 
     /**
@@ -76,14 +72,10 @@ class ParseAddressResponse implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'successful' => null,
-        'building' => null,
-        'street_number' => null,
-        'street' => null,
-        'city' => null,
-        'state_or_province' => null,
-        'postal_code' => null,
         'country_full_name' => null,
-        'iso_two_letter_code' => null
+        'iso_two_letter_code' => null,
+        'fips_two_letter_code' => null,
+        'three_letter_code' => null
     ];
 
     /**
@@ -114,14 +106,10 @@ class ParseAddressResponse implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'successful' => 'Successful',
-        'building' => 'Building',
-        'street_number' => 'StreetNumber',
-        'street' => 'Street',
-        'city' => 'City',
-        'state_or_province' => 'StateOrProvince',
-        'postal_code' => 'PostalCode',
         'country_full_name' => 'CountryFullName',
-        'iso_two_letter_code' => 'ISOTwoLetterCode'
+        'iso_two_letter_code' => 'ISOTwoLetterCode',
+        'fips_two_letter_code' => 'FIPSTwoLetterCode',
+        'three_letter_code' => 'ThreeLetterCode'
     ];
 
     /**
@@ -131,14 +119,10 @@ class ParseAddressResponse implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'successful' => 'setSuccessful',
-        'building' => 'setBuilding',
-        'street_number' => 'setStreetNumber',
-        'street' => 'setStreet',
-        'city' => 'setCity',
-        'state_or_province' => 'setStateOrProvince',
-        'postal_code' => 'setPostalCode',
         'country_full_name' => 'setCountryFullName',
-        'iso_two_letter_code' => 'setIsoTwoLetterCode'
+        'iso_two_letter_code' => 'setIsoTwoLetterCode',
+        'fips_two_letter_code' => 'setFipsTwoLetterCode',
+        'three_letter_code' => 'setThreeLetterCode'
     ];
 
     /**
@@ -148,14 +132,10 @@ class ParseAddressResponse implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'successful' => 'getSuccessful',
-        'building' => 'getBuilding',
-        'street_number' => 'getStreetNumber',
-        'street' => 'getStreet',
-        'city' => 'getCity',
-        'state_or_province' => 'getStateOrProvince',
-        'postal_code' => 'getPostalCode',
         'country_full_name' => 'getCountryFullName',
-        'iso_two_letter_code' => 'getIsoTwoLetterCode'
+        'iso_two_letter_code' => 'getIsoTwoLetterCode',
+        'fips_two_letter_code' => 'getFipsTwoLetterCode',
+        'three_letter_code' => 'getThreeLetterCode'
     ];
 
     /**
@@ -219,14 +199,10 @@ class ParseAddressResponse implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['building'] = isset($data['building']) ? $data['building'] : null;
-        $this->container['street_number'] = isset($data['street_number']) ? $data['street_number'] : null;
-        $this->container['street'] = isset($data['street']) ? $data['street'] : null;
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
-        $this->container['state_or_province'] = isset($data['state_or_province']) ? $data['state_or_province'] : null;
-        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
         $this->container['country_full_name'] = isset($data['country_full_name']) ? $data['country_full_name'] : null;
         $this->container['iso_two_letter_code'] = isset($data['iso_two_letter_code']) ? $data['iso_two_letter_code'] : null;
+        $this->container['fips_two_letter_code'] = isset($data['fips_two_letter_code']) ? $data['fips_two_letter_code'] : null;
+        $this->container['three_letter_code'] = isset($data['three_letter_code']) ? $data['three_letter_code'] : null;
     }
 
     /**
@@ -267,157 +243,13 @@ class ParseAddressResponse implements ModelInterface, ArrayAccess
     /**
      * Sets successful
      *
-     * @param bool $successful True if the parsing operation was successful, false otherwise
+     * @param bool $successful True if successful, false otherwise
      *
      * @return $this
      */
     public function setSuccessful($successful)
     {
         $this->container['successful'] = $successful;
-
-        return $this;
-    }
-
-    /**
-     * Gets building
-     *
-     * @return string
-     */
-    public function getBuilding()
-    {
-        return $this->container['building'];
-    }
-
-    /**
-     * Sets building
-     *
-     * @param string $building The name of the building, house or structure if applicable, such as \"Cloudmersive Building 2\".  This will often by null.
-     *
-     * @return $this
-     */
-    public function setBuilding($building)
-    {
-        $this->container['building'] = $building;
-
-        return $this;
-    }
-
-    /**
-     * Gets street_number
-     *
-     * @return string
-     */
-    public function getStreetNumber()
-    {
-        return $this->container['street_number'];
-    }
-
-    /**
-     * Sets street_number
-     *
-     * @param string $street_number The street number or house number of the address.  For example, in the address \"1600 Pennsylvania Avenue NW\" the street number would be \"1600\".  This value will typically be populated for most addresses.
-     *
-     * @return $this
-     */
-    public function setStreetNumber($street_number)
-    {
-        $this->container['street_number'] = $street_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets street
-     *
-     * @return string
-     */
-    public function getStreet()
-    {
-        return $this->container['street'];
-    }
-
-    /**
-     * Sets street
-     *
-     * @param string $street The name of the street or road of the address.  For example, in the address \"1600 Pennsylvania Avenue NW\" the street number would be \"Pennsylvania Avenue NW\".
-     *
-     * @return $this
-     */
-    public function setStreet($street)
-    {
-        $this->container['street'] = $street;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     *
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string $city The city of the address.
-     *
-     * @return $this
-     */
-    public function setCity($city)
-    {
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets state_or_province
-     *
-     * @return string
-     */
-    public function getStateOrProvince()
-    {
-        return $this->container['state_or_province'];
-    }
-
-    /**
-     * Sets state_or_province
-     *
-     * @param string $state_or_province The state or province of the address.
-     *
-     * @return $this
-     */
-    public function setStateOrProvince($state_or_province)
-    {
-        $this->container['state_or_province'] = $state_or_province;
-
-        return $this;
-    }
-
-    /**
-     * Gets postal_code
-     *
-     * @return string
-     */
-    public function getPostalCode()
-    {
-        return $this->container['postal_code'];
-    }
-
-    /**
-     * Sets postal_code
-     *
-     * @param string $postal_code The postal code or zip code of the address.
-     *
-     * @return $this
-     */
-    public function setPostalCode($postal_code)
-    {
-        $this->container['postal_code'] = $postal_code;
 
         return $this;
     }
@@ -435,7 +267,7 @@ class ParseAddressResponse implements ModelInterface, ArrayAccess
     /**
      * Sets country_full_name
      *
-     * @param string $country_full_name Country of the address, if present in the address.  If not included in the address it will be null.
+     * @param string $country_full_name Full name of the country
      *
      * @return $this
      */
@@ -466,6 +298,54 @@ class ParseAddressResponse implements ModelInterface, ArrayAccess
     public function setIsoTwoLetterCode($iso_two_letter_code)
     {
         $this->container['iso_two_letter_code'] = $iso_two_letter_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets fips_two_letter_code
+     *
+     * @return string
+     */
+    public function getFipsTwoLetterCode()
+    {
+        return $this->container['fips_two_letter_code'];
+    }
+
+    /**
+     * Sets fips_two_letter_code
+     *
+     * @param string $fips_two_letter_code Two-letter FIPS 10-4 country code
+     *
+     * @return $this
+     */
+    public function setFipsTwoLetterCode($fips_two_letter_code)
+    {
+        $this->container['fips_two_letter_code'] = $fips_two_letter_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets three_letter_code
+     *
+     * @return string
+     */
+    public function getThreeLetterCode()
+    {
+        return $this->container['three_letter_code'];
+    }
+
+    /**
+     * Sets three_letter_code
+     *
+     * @param string $three_letter_code Three-letter ISO 3166-1 country code
+     *
+     * @return $this
+     */
+    public function setThreeLetterCode($three_letter_code)
+    {
+        $this->container['three_letter_code'] = $three_letter_code;
 
         return $this;
     }

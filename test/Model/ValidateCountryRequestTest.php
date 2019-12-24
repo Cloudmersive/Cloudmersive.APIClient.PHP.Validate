@@ -1,6 +1,6 @@
 <?php
 /**
- * ParseAddressResponseTest
+ * ValidateCountryRequestTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ParseAddressResponseTest Class Doc Comment
+ * ValidateCountryRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description Result of parsing an address into its component parts
+// * @description Input parameter to a country validation request
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ParseAddressResponseTest extends \PHPUnit_Framework_TestCase
+class ValidateCountryRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,72 +71,16 @@ class ParseAddressResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ParseAddressResponse"
+     * Test "ValidateCountryRequest"
      */
-    public function testParseAddressResponse()
+    public function testValidateCountryRequest()
     {
     }
 
     /**
-     * Test attribute "successful"
+     * Test attribute "raw_country_input"
      */
-    public function testPropertySuccessful()
-    {
-    }
-
-    /**
-     * Test attribute "building"
-     */
-    public function testPropertyBuilding()
-    {
-    }
-
-    /**
-     * Test attribute "street_number"
-     */
-    public function testPropertyStreetNumber()
-    {
-    }
-
-    /**
-     * Test attribute "street"
-     */
-    public function testPropertyStreet()
-    {
-    }
-
-    /**
-     * Test attribute "city"
-     */
-    public function testPropertyCity()
-    {
-    }
-
-    /**
-     * Test attribute "state_or_province"
-     */
-    public function testPropertyStateOrProvince()
-    {
-    }
-
-    /**
-     * Test attribute "postal_code"
-     */
-    public function testPropertyPostalCode()
-    {
-    }
-
-    /**
-     * Test attribute "country_full_name"
-     */
-    public function testPropertyCountryFullName()
-    {
-    }
-
-    /**
-     * Test attribute "iso_two_letter_code"
-     */
-    public function testPropertyIsoTwoLetterCode()
+    public function testPropertyRawCountryInput()
     {
     }
 }

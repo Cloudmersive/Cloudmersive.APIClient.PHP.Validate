@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.5.2
+- Package version: 1.5.3
 
 
 ## Requirements
@@ -68,13 +68,13 @@ $apiInstance = new Swagger\Client\Api\AddressApi(
     new GuzzleHttp\Client(),
     $config
 );
-$input = new \Swagger\Client\Model\ParseAddressRequest(); // \Swagger\Client\Model\ParseAddressRequest | Input parse request
+$input = new \Swagger\Client\Model\ValidateCountryRequest(); // \Swagger\Client\Model\ValidateCountryRequest | Input request
 
 try {
-    $result = $apiInstance->addressParseString($input);
+    $result = $apiInstance->addressCountry($input);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AddressApi->addressParseString: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AddressApi->addressCountry: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -86,6 +86,7 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AddressApi* | [**addressCountry**](docs/Api/AddressApi.md#addresscountry) | **POST** /validate/address/country | Validate and normalize country information, return ISO 3166-1 country codes and country name
 *AddressApi* | [**addressParseString**](docs/Api/AddressApi.md#addressparsestring) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
 *DomainApi* | [**domainCheck**](docs/Api/DomainApi.md#domaincheck) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domainPost**](docs/Api/DomainApi.md#domainpost) | **POST** /validate/domain/whois | Get WHOIS information for a domain
@@ -129,6 +130,8 @@ Class | Method | HTTP request | Description
  - [PhoneNumberValidationResponse](docs/Model/PhoneNumberValidationResponse.md)
  - [UserAgentValidateRequest](docs/Model/UserAgentValidateRequest.md)
  - [UserAgentValidateResponse](docs/Model/UserAgentValidateResponse.md)
+ - [ValidateCountryRequest](docs/Model/ValidateCountryRequest.md)
+ - [ValidateCountryResponse](docs/Model/ValidateCountryResponse.md)
  - [ValidateIdentifierRequest](docs/Model/ValidateIdentifierRequest.md)
  - [ValidateIdentifierResponse](docs/Model/ValidateIdentifierResponse.md)
  - [ValidateUrlRequestFull](docs/Model/ValidateUrlRequestFull.md)

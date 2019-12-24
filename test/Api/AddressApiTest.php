@@ -72,6 +72,16 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addressCountry
+     *
+     * Validate and normalize country information, return ISO 3166-1 country codes and country name.
+     *
+     */
+    public function testAddressCountry()
+    {
+    }
+
+    /**
      * Test case for addressParseString
      *
      * Parse an unstructured input text string into an international, formatted address.

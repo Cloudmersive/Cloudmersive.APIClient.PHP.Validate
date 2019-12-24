@@ -59,6 +59,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'contact_business_email' => 'string',
+        'contact_first_name' => 'string',
+        'contact_last_name' => 'string',
         'company_name' => 'string',
         'company_domain_name' => 'string',
         'company_house_number' => 'string',
@@ -67,6 +69,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
         'company_state_or_province' => 'string',
         'company_postal_code' => 'string',
         'company_country' => 'string',
+        'company_country_code' => 'string',
+        'company_telephone' => 'string',
         'company_vat_number' => 'string'
     ];
 
@@ -77,6 +81,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'contact_business_email' => null,
+        'contact_first_name' => null,
+        'contact_last_name' => null,
         'company_name' => null,
         'company_domain_name' => null,
         'company_house_number' => null,
@@ -85,6 +91,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
         'company_state_or_province' => null,
         'company_postal_code' => null,
         'company_country' => null,
+        'company_country_code' => null,
+        'company_telephone' => null,
         'company_vat_number' => null
     ];
 
@@ -116,6 +124,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'contact_business_email' => 'ContactBusinessEmail',
+        'contact_first_name' => 'ContactFirstName',
+        'contact_last_name' => 'ContactLastName',
         'company_name' => 'CompanyName',
         'company_domain_name' => 'CompanyDomainName',
         'company_house_number' => 'CompanyHouseNumber',
@@ -124,6 +134,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
         'company_state_or_province' => 'CompanyStateOrProvince',
         'company_postal_code' => 'CompanyPostalCode',
         'company_country' => 'CompanyCountry',
+        'company_country_code' => 'CompanyCountryCode',
+        'company_telephone' => 'CompanyTelephone',
         'company_vat_number' => 'CompanyVATNumber'
     ];
 
@@ -134,6 +146,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'contact_business_email' => 'setContactBusinessEmail',
+        'contact_first_name' => 'setContactFirstName',
+        'contact_last_name' => 'setContactLastName',
         'company_name' => 'setCompanyName',
         'company_domain_name' => 'setCompanyDomainName',
         'company_house_number' => 'setCompanyHouseNumber',
@@ -142,6 +156,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
         'company_state_or_province' => 'setCompanyStateOrProvince',
         'company_postal_code' => 'setCompanyPostalCode',
         'company_country' => 'setCompanyCountry',
+        'company_country_code' => 'setCompanyCountryCode',
+        'company_telephone' => 'setCompanyTelephone',
         'company_vat_number' => 'setCompanyVatNumber'
     ];
 
@@ -152,6 +168,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'contact_business_email' => 'getContactBusinessEmail',
+        'contact_first_name' => 'getContactFirstName',
+        'contact_last_name' => 'getContactLastName',
         'company_name' => 'getCompanyName',
         'company_domain_name' => 'getCompanyDomainName',
         'company_house_number' => 'getCompanyHouseNumber',
@@ -160,6 +178,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
         'company_state_or_province' => 'getCompanyStateOrProvince',
         'company_postal_code' => 'getCompanyPostalCode',
         'company_country' => 'getCompanyCountry',
+        'company_country_code' => 'getCompanyCountryCode',
+        'company_telephone' => 'getCompanyTelephone',
         'company_vat_number' => 'getCompanyVatNumber'
     ];
 
@@ -224,6 +244,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['contact_business_email'] = isset($data['contact_business_email']) ? $data['contact_business_email'] : null;
+        $this->container['contact_first_name'] = isset($data['contact_first_name']) ? $data['contact_first_name'] : null;
+        $this->container['contact_last_name'] = isset($data['contact_last_name']) ? $data['contact_last_name'] : null;
         $this->container['company_name'] = isset($data['company_name']) ? $data['company_name'] : null;
         $this->container['company_domain_name'] = isset($data['company_domain_name']) ? $data['company_domain_name'] : null;
         $this->container['company_house_number'] = isset($data['company_house_number']) ? $data['company_house_number'] : null;
@@ -232,6 +254,8 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
         $this->container['company_state_or_province'] = isset($data['company_state_or_province']) ? $data['company_state_or_province'] : null;
         $this->container['company_postal_code'] = isset($data['company_postal_code']) ? $data['company_postal_code'] : null;
         $this->container['company_country'] = isset($data['company_country']) ? $data['company_country'] : null;
+        $this->container['company_country_code'] = isset($data['company_country_code']) ? $data['company_country_code'] : null;
+        $this->container['company_telephone'] = isset($data['company_telephone']) ? $data['company_telephone'] : null;
         $this->container['company_vat_number'] = isset($data['company_vat_number']) ? $data['company_vat_number'] : null;
     }
 
@@ -280,6 +304,54 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
     public function setContactBusinessEmail($contact_business_email)
     {
         $this->container['contact_business_email'] = $contact_business_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_first_name
+     *
+     * @return string
+     */
+    public function getContactFirstName()
+    {
+        return $this->container['contact_first_name'];
+    }
+
+    /**
+     * Sets contact_first_name
+     *
+     * @param string $contact_first_name The person's first name for the lead
+     *
+     * @return $this
+     */
+    public function setContactFirstName($contact_first_name)
+    {
+        $this->container['contact_first_name'] = $contact_first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_last_name
+     *
+     * @return string
+     */
+    public function getContactLastName()
+    {
+        return $this->container['contact_last_name'];
+    }
+
+    /**
+     * Sets contact_last_name
+     *
+     * @param string $contact_last_name The person's last name for the lead
+     *
+     * @return $this
+     */
+    public function setContactLastName($contact_last_name)
+    {
+        $this->container['contact_last_name'] = $contact_last_name;
 
         return $this;
     }
@@ -472,6 +544,54 @@ class LeadEnrichmentRequest implements ModelInterface, ArrayAccess
     public function setCompanyCountry($company_country)
     {
         $this->container['company_country'] = $company_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_country_code
+     *
+     * @return string
+     */
+    public function getCompanyCountryCode()
+    {
+        return $this->container['company_country_code'];
+    }
+
+    /**
+     * Sets company_country_code
+     *
+     * @param string $company_country_code Country Code (2-letter ISO 3166-1) of the address of the company for the lead
+     *
+     * @return $this
+     */
+    public function setCompanyCountryCode($company_country_code)
+    {
+        $this->container['company_country_code'] = $company_country_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_telephone
+     *
+     * @return string
+     */
+    public function getCompanyTelephone()
+    {
+        return $this->container['company_telephone'];
+    }
+
+    /**
+     * Sets company_telephone
+     *
+     * @param string $company_telephone Telephone of the company office for the lead
+     *
+     * @return $this
+     */
+    public function setCompanyTelephone($company_telephone)
+    {
+        $this->container['company_telephone'] = $company_telephone;
 
         return $this;
     }
