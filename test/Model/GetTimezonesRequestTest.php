@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidateCountryResponseTest
+ * GetTimezonesRequestTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ValidateCountryResponseTest Class Doc Comment
+ * GetTimezonesRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description Result of performing a country validation operation
+// * @description Request to get time zones for a country
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ValidateCountryResponseTest extends \PHPUnit_Framework_TestCase
+class GetTimezonesRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,51 +71,16 @@ class ValidateCountryResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ValidateCountryResponse"
+     * Test "GetTimezonesRequest"
      */
-    public function testValidateCountryResponse()
+    public function testGetTimezonesRequest()
     {
     }
 
     /**
-     * Test attribute "successful"
+     * Test attribute "country_code_or_name"
      */
-    public function testPropertySuccessful()
-    {
-    }
-
-    /**
-     * Test attribute "country_full_name"
-     */
-    public function testPropertyCountryFullName()
-    {
-    }
-
-    /**
-     * Test attribute "iso_two_letter_code"
-     */
-    public function testPropertyIsoTwoLetterCode()
-    {
-    }
-
-    /**
-     * Test attribute "fips_two_letter_code"
-     */
-    public function testPropertyFipsTwoLetterCode()
-    {
-    }
-
-    /**
-     * Test attribute "three_letter_code"
-     */
-    public function testPropertyThreeLetterCode()
-    {
-    }
-
-    /**
-     * Test attribute "timezones"
-     */
-    public function testPropertyTimezones()
+    public function testPropertyCountryCodeOrName()
     {
     }
 }

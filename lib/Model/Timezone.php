@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidateCountryResponse
+ * Timezone
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ValidateCountryResponse Class Doc Comment
+ * Timezone Class Doc Comment
  *
  * @category Class
- * @description Result of performing a country validation operation
+ * @description IANA/Olsen time zone
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ValidateCountryResponse implements ModelInterface, ArrayAccess
+class Timezone implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ValidateCountryResponse';
+    protected static $swaggerModelName = 'Timezone';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +58,8 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'successful' => 'bool',
-        'country_full_name' => 'string',
-        'iso_two_letter_code' => 'string',
-        'fips_two_letter_code' => 'string',
-        'three_letter_code' => 'string',
-        'timezones' => '\Swagger\Client\Model\Timezone[]'
+        'name' => 'string',
+        'base_utc_offset' => 'string'
     ];
 
     /**
@@ -72,12 +68,8 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'successful' => null,
-        'country_full_name' => null,
-        'iso_two_letter_code' => null,
-        'fips_two_letter_code' => null,
-        'three_letter_code' => null,
-        'timezones' => null
+        'name' => null,
+        'base_utc_offset' => null
     ];
 
     /**
@@ -107,12 +99,8 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'successful' => 'Successful',
-        'country_full_name' => 'CountryFullName',
-        'iso_two_letter_code' => 'ISOTwoLetterCode',
-        'fips_two_letter_code' => 'FIPSTwoLetterCode',
-        'three_letter_code' => 'ThreeLetterCode',
-        'timezones' => 'Timezones'
+        'name' => 'Name',
+        'base_utc_offset' => 'BaseUTCOffset'
     ];
 
     /**
@@ -121,12 +109,8 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'successful' => 'setSuccessful',
-        'country_full_name' => 'setCountryFullName',
-        'iso_two_letter_code' => 'setIsoTwoLetterCode',
-        'fips_two_letter_code' => 'setFipsTwoLetterCode',
-        'three_letter_code' => 'setThreeLetterCode',
-        'timezones' => 'setTimezones'
+        'name' => 'setName',
+        'base_utc_offset' => 'setBaseUtcOffset'
     ];
 
     /**
@@ -135,12 +119,8 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'successful' => 'getSuccessful',
-        'country_full_name' => 'getCountryFullName',
-        'iso_two_letter_code' => 'getIsoTwoLetterCode',
-        'fips_two_letter_code' => 'getFipsTwoLetterCode',
-        'three_letter_code' => 'getThreeLetterCode',
-        'timezones' => 'getTimezones'
+        'name' => 'getName',
+        'base_utc_offset' => 'getBaseUtcOffset'
     ];
 
     /**
@@ -203,12 +183,8 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['country_full_name'] = isset($data['country_full_name']) ? $data['country_full_name'] : null;
-        $this->container['iso_two_letter_code'] = isset($data['iso_two_letter_code']) ? $data['iso_two_letter_code'] : null;
-        $this->container['fips_two_letter_code'] = isset($data['fips_two_letter_code']) ? $data['fips_two_letter_code'] : null;
-        $this->container['three_letter_code'] = isset($data['three_letter_code']) ? $data['three_letter_code'] : null;
-        $this->container['timezones'] = isset($data['timezones']) ? $data['timezones'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['base_utc_offset'] = isset($data['base_utc_offset']) ? $data['base_utc_offset'] : null;
     }
 
     /**
@@ -237,145 +213,49 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets successful
-     *
-     * @return bool
-     */
-    public function getSuccessful()
-    {
-        return $this->container['successful'];
-    }
-
-    /**
-     * Sets successful
-     *
-     * @param bool $successful True if successful, false otherwise
-     *
-     * @return $this
-     */
-    public function setSuccessful($successful)
-    {
-        $this->container['successful'] = $successful;
-
-        return $this;
-    }
-
-    /**
-     * Gets country_full_name
+     * Gets name
      *
      * @return string
      */
-    public function getCountryFullName()
+    public function getName()
     {
-        return $this->container['country_full_name'];
+        return $this->container['name'];
     }
 
     /**
-     * Sets country_full_name
+     * Sets name
      *
-     * @param string $country_full_name Full name of the country
+     * @param string $name Name of the Time Zone
      *
      * @return $this
      */
-    public function setCountryFullName($country_full_name)
+    public function setName($name)
     {
-        $this->container['country_full_name'] = $country_full_name;
+        $this->container['name'] = $name;
 
         return $this;
     }
 
     /**
-     * Gets iso_two_letter_code
+     * Gets base_utc_offset
      *
      * @return string
      */
-    public function getIsoTwoLetterCode()
+    public function getBaseUtcOffset()
     {
-        return $this->container['iso_two_letter_code'];
+        return $this->container['base_utc_offset'];
     }
 
     /**
-     * Sets iso_two_letter_code
+     * Sets base_utc_offset
      *
-     * @param string $iso_two_letter_code Two-letter ISO 3166-1 country code
+     * @param string $base_utc_offset UTC offset for this time zone
      *
      * @return $this
      */
-    public function setIsoTwoLetterCode($iso_two_letter_code)
+    public function setBaseUtcOffset($base_utc_offset)
     {
-        $this->container['iso_two_letter_code'] = $iso_two_letter_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets fips_two_letter_code
-     *
-     * @return string
-     */
-    public function getFipsTwoLetterCode()
-    {
-        return $this->container['fips_two_letter_code'];
-    }
-
-    /**
-     * Sets fips_two_letter_code
-     *
-     * @param string $fips_two_letter_code Two-letter FIPS 10-4 country code
-     *
-     * @return $this
-     */
-    public function setFipsTwoLetterCode($fips_two_letter_code)
-    {
-        $this->container['fips_two_letter_code'] = $fips_two_letter_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets three_letter_code
-     *
-     * @return string
-     */
-    public function getThreeLetterCode()
-    {
-        return $this->container['three_letter_code'];
-    }
-
-    /**
-     * Sets three_letter_code
-     *
-     * @param string $three_letter_code Three-letter ISO 3166-1 country code
-     *
-     * @return $this
-     */
-    public function setThreeLetterCode($three_letter_code)
-    {
-        $this->container['three_letter_code'] = $three_letter_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets timezones
-     *
-     * @return \Swagger\Client\Model\Timezone[]
-     */
-    public function getTimezones()
-    {
-        return $this->container['timezones'];
-    }
-
-    /**
-     * Sets timezones
-     *
-     * @param \Swagger\Client\Model\Timezone[] $timezones Time zones (IANA/Olsen) in the country
-     *
-     * @return $this
-     */
-    public function setTimezones($timezones)
-    {
-        $this->container['timezones'] = $timezones;
+        $this->container['base_utc_offset'] = $base_utc_offset;
 
         return $this;
     }

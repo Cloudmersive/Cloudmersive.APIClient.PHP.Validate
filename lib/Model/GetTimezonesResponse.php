@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidateCountryResponse
+ * GetTimezonesResponse
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ValidateCountryResponse Class Doc Comment
+ * GetTimezonesResponse Class Doc Comment
  *
  * @category Class
- * @description Result of performing a country validation operation
+ * @description Result of performing a get time zones operation
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ValidateCountryResponse implements ModelInterface, ArrayAccess
+class GetTimezonesResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ValidateCountryResponse';
+    protected static $swaggerModelName = 'GetTimezonesResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization

@@ -82,6 +82,16 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addressGetTimezone
+     *
+     * Gets IANA/Olsen time zones for a country.
+     *
+     */
+    public function testAddressGetTimezone()
+    {
+    }
+
+    /**
      * Test case for addressParseString
      *
      * Parse an unstructured input text string into an international, formatted address.

@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidateCountryResponseTest
+ * GetTimezonesResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ValidateCountryResponseTest Class Doc Comment
+ * GetTimezonesResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description Result of performing a country validation operation
+// * @description Result of performing a get time zones operation
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ValidateCountryResponseTest extends \PHPUnit_Framework_TestCase
+class GetTimezonesResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class ValidateCountryResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ValidateCountryResponse"
+     * Test "GetTimezonesResponse"
      */
-    public function testValidateCountryResponse()
+    public function testGetTimezonesResponse()
     {
     }
 
