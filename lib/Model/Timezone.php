@@ -59,7 +59,8 @@ class Timezone implements ModelInterface, ArrayAccess
       */
     protected static $swaggerTypes = [
         'name' => 'string',
-        'base_utc_offset' => 'string'
+        'base_utc_offset' => 'string',
+        'now' => '\DateTime'
     ];
 
     /**
@@ -69,7 +70,8 @@ class Timezone implements ModelInterface, ArrayAccess
       */
     protected static $swaggerFormats = [
         'name' => null,
-        'base_utc_offset' => null
+        'base_utc_offset' => null,
+        'now' => 'date-time'
     ];
 
     /**
@@ -100,7 +102,8 @@ class Timezone implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'name' => 'Name',
-        'base_utc_offset' => 'BaseUTCOffset'
+        'base_utc_offset' => 'BaseUTCOffset',
+        'now' => 'Now'
     ];
 
     /**
@@ -110,7 +113,8 @@ class Timezone implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'name' => 'setName',
-        'base_utc_offset' => 'setBaseUtcOffset'
+        'base_utc_offset' => 'setBaseUtcOffset',
+        'now' => 'setNow'
     ];
 
     /**
@@ -120,7 +124,8 @@ class Timezone implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'name' => 'getName',
-        'base_utc_offset' => 'getBaseUtcOffset'
+        'base_utc_offset' => 'getBaseUtcOffset',
+        'now' => 'getNow'
     ];
 
     /**
@@ -185,6 +190,7 @@ class Timezone implements ModelInterface, ArrayAccess
     {
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['base_utc_offset'] = isset($data['base_utc_offset']) ? $data['base_utc_offset'] : null;
+        $this->container['now'] = isset($data['now']) ? $data['now'] : null;
     }
 
     /**
@@ -256,6 +262,30 @@ class Timezone implements ModelInterface, ArrayAccess
     public function setBaseUtcOffset($base_utc_offset)
     {
         $this->container['base_utc_offset'] = $base_utc_offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets now
+     *
+     * @return \DateTime
+     */
+    public function getNow()
+    {
+        return $this->container['now'];
+    }
+
+    /**
+     * Sets now
+     *
+     * @param \DateTime $now The current time (Now) in this time zone
+     *
+     * @return $this
+     */
+    public function setNow($now)
+    {
+        $this->container['now'] = $now;
 
         return $this;
     }

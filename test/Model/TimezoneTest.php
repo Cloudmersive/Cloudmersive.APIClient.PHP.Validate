@@ -90,4 +90,11 @@ class TimezoneTest extends \PHPUnit_Framework_TestCase
     public function testPropertyBaseUtcOffset()
     {
     }
+
+    /**
+     * Test attribute "now"
+     */
+    public function testPropertyNow()
+    {
+    }
 }
