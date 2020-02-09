@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.5.5
+- Package version: 1.5.6
 
 
 ## Requirements
@@ -89,6 +89,7 @@ Class | Method | HTTP request | Description
 *AddressApi* | [**addressCountry**](docs/Api/AddressApi.md#addresscountry) | **POST** /validate/address/country | Validate and normalize country information, return ISO 3166-1 country codes and country name
 *AddressApi* | [**addressGetTimezone**](docs/Api/AddressApi.md#addressgettimezone) | **POST** /validate/address/country/get-timezones | Gets IANA/Olsen time zones for a country
 *AddressApi* | [**addressParseString**](docs/Api/AddressApi.md#addressparsestring) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
+*AddressApi* | [**addressValidateAddress**](docs/Api/AddressApi.md#addressvalidateaddress) | **POST** /validate/address/street-address | Validate a street address
 *DomainApi* | [**domainCheck**](docs/Api/DomainApi.md#domaincheck) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domainPost**](docs/Api/DomainApi.md#domainpost) | **POST** /validate/domain/whois | Get WHOIS information for a domain
 *DomainApi* | [**domainUrlFull**](docs/Api/DomainApi.md#domainurlfull) | **POST** /validate/domain/url/full | Validate a URL fully
@@ -105,7 +106,7 @@ Class | Method | HTTP request | Description
 *NameApi* | [**nameValidateLastName**](docs/Api/NameApi.md#namevalidatelastname) | **POST** /validate/name/last | Validate a last name
 *PhoneNumberApi* | [**phoneNumberSyntaxOnly**](docs/Api/PhoneNumberApi.md#phonenumbersyntaxonly) | **POST** /validate/phonenumber/basic | Validate phone number (basic)
 *UserAgentApi* | [**userAgentParse**](docs/Api/UserAgentApi.md#useragentparse) | **POST** /validate/useragent/parse | Parse an HTTP User-Agent string, identify robots
-*VatApi* | [**vatVatLookup**](docs/Api/VatApi.md#vatvatlookup) | **POST** /validate/vat/lookup | Lookup a VAT code
+*VatApi* | [**vatVatLookup**](docs/Api/VatApi.md#vatvatlookup) | **POST** /validate/vat/lookup | Validate a VAT number
 
 
 ## Documentation For Models
@@ -134,6 +135,8 @@ Class | Method | HTTP request | Description
  - [Timezone](docs/Model/Timezone.md)
  - [UserAgentValidateRequest](docs/Model/UserAgentValidateRequest.md)
  - [UserAgentValidateResponse](docs/Model/UserAgentValidateResponse.md)
+ - [ValidateAddressRequest](docs/Model/ValidateAddressRequest.md)
+ - [ValidateAddressResponse](docs/Model/ValidateAddressResponse.md)
  - [ValidateCountryRequest](docs/Model/ValidateCountryRequest.md)
  - [ValidateCountryResponse](docs/Model/ValidateCountryResponse.md)
  - [ValidateIdentifierRequest](docs/Model/ValidateIdentifierRequest.md)

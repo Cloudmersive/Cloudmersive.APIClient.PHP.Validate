@@ -85,7 +85,7 @@ class VatApi
     /**
      * Operation vatVatLookup
      *
-     * Lookup a VAT code
+     * Validate a VAT number
      *
      * @param  \Swagger\Client\Model\VatLookupRequest $input Input VAT code (required)
      *
@@ -102,7 +102,7 @@ class VatApi
     /**
      * Operation vatVatLookupWithHttpInfo
      *
-     * Lookup a VAT code
+     * Validate a VAT number
      *
      * @param  \Swagger\Client\Model\VatLookupRequest $input Input VAT code (required)
      *
@@ -177,7 +177,7 @@ class VatApi
     /**
      * Operation vatVatLookupAsync
      *
-     * Lookup a VAT code
+     * Validate a VAT number
      *
      * @param  \Swagger\Client\Model\VatLookupRequest $input Input VAT code (required)
      *
@@ -197,7 +197,7 @@ class VatApi
     /**
      * Operation vatVatLookupAsyncWithHttpInfo
      *
-     * Lookup a VAT code
+     * Validate a VAT number
      *
      * @param  \Swagger\Client\Model\VatLookupRequest $input Input VAT code (required)
      *
