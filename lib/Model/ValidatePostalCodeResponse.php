@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidateCountryResponse
+ * ValidatePostalCodeResponse
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ValidateCountryResponse Class Doc Comment
+ * ValidatePostalCodeResponse Class Doc Comment
  *
  * @category Class
- * @description Result of performing a country validation operation
+ * @description Result of validating a postal code
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ValidateCountryResponse implements ModelInterface, ArrayAccess
+class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ValidateCountryResponse';
+    protected static $swaggerModelName = 'ValidatePostalCodeResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,13 +58,11 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'successful' => 'bool',
-        'country_full_name' => 'string',
-        'iso_two_letter_code' => 'string',
-        'fips_two_letter_code' => 'string',
-        'three_letter_code' => 'string',
-        'is_european_union_member' => 'bool',
-        'timezones' => '\Swagger\Client\Model\Timezone[]'
+        'valid_postal_code' => 'bool',
+        'city' => 'string',
+        'state_or_province' => 'string',
+        'latitude' => 'double',
+        'longitude' => 'double'
     ];
 
     /**
@@ -73,13 +71,11 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'successful' => null,
-        'country_full_name' => null,
-        'iso_two_letter_code' => null,
-        'fips_two_letter_code' => null,
-        'three_letter_code' => null,
-        'is_european_union_member' => null,
-        'timezones' => null
+        'valid_postal_code' => null,
+        'city' => null,
+        'state_or_province' => null,
+        'latitude' => 'double',
+        'longitude' => 'double'
     ];
 
     /**
@@ -109,13 +105,11 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'successful' => 'Successful',
-        'country_full_name' => 'CountryFullName',
-        'iso_two_letter_code' => 'ISOTwoLetterCode',
-        'fips_two_letter_code' => 'FIPSTwoLetterCode',
-        'three_letter_code' => 'ThreeLetterCode',
-        'is_european_union_member' => 'IsEuropeanUnionMember',
-        'timezones' => 'Timezones'
+        'valid_postal_code' => 'ValidPostalCode',
+        'city' => 'City',
+        'state_or_province' => 'StateOrProvince',
+        'latitude' => 'Latitude',
+        'longitude' => 'Longitude'
     ];
 
     /**
@@ -124,13 +118,11 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'successful' => 'setSuccessful',
-        'country_full_name' => 'setCountryFullName',
-        'iso_two_letter_code' => 'setIsoTwoLetterCode',
-        'fips_two_letter_code' => 'setFipsTwoLetterCode',
-        'three_letter_code' => 'setThreeLetterCode',
-        'is_european_union_member' => 'setIsEuropeanUnionMember',
-        'timezones' => 'setTimezones'
+        'valid_postal_code' => 'setValidPostalCode',
+        'city' => 'setCity',
+        'state_or_province' => 'setStateOrProvince',
+        'latitude' => 'setLatitude',
+        'longitude' => 'setLongitude'
     ];
 
     /**
@@ -139,13 +131,11 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'successful' => 'getSuccessful',
-        'country_full_name' => 'getCountryFullName',
-        'iso_two_letter_code' => 'getIsoTwoLetterCode',
-        'fips_two_letter_code' => 'getFipsTwoLetterCode',
-        'three_letter_code' => 'getThreeLetterCode',
-        'is_european_union_member' => 'getIsEuropeanUnionMember',
-        'timezones' => 'getTimezones'
+        'valid_postal_code' => 'getValidPostalCode',
+        'city' => 'getCity',
+        'state_or_province' => 'getStateOrProvince',
+        'latitude' => 'getLatitude',
+        'longitude' => 'getLongitude'
     ];
 
     /**
@@ -208,13 +198,11 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['successful'] = isset($data['successful']) ? $data['successful'] : null;
-        $this->container['country_full_name'] = isset($data['country_full_name']) ? $data['country_full_name'] : null;
-        $this->container['iso_two_letter_code'] = isset($data['iso_two_letter_code']) ? $data['iso_two_letter_code'] : null;
-        $this->container['fips_two_letter_code'] = isset($data['fips_two_letter_code']) ? $data['fips_two_letter_code'] : null;
-        $this->container['three_letter_code'] = isset($data['three_letter_code']) ? $data['three_letter_code'] : null;
-        $this->container['is_european_union_member'] = isset($data['is_european_union_member']) ? $data['is_european_union_member'] : null;
-        $this->container['timezones'] = isset($data['timezones']) ? $data['timezones'] : null;
+        $this->container['valid_postal_code'] = isset($data['valid_postal_code']) ? $data['valid_postal_code'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['state_or_province'] = isset($data['state_or_province']) ? $data['state_or_province'] : null;
+        $this->container['latitude'] = isset($data['latitude']) ? $data['latitude'] : null;
+        $this->container['longitude'] = isset($data['longitude']) ? $data['longitude'] : null;
     }
 
     /**
@@ -243,169 +231,121 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets successful
+     * Gets valid_postal_code
      *
      * @return bool
      */
-    public function getSuccessful()
+    public function getValidPostalCode()
     {
-        return $this->container['successful'];
+        return $this->container['valid_postal_code'];
     }
 
     /**
-     * Sets successful
+     * Sets valid_postal_code
      *
-     * @param bool $successful True if successful, false otherwise
+     * @param bool $valid_postal_code True if the address is valid, false otherwise
      *
      * @return $this
      */
-    public function setSuccessful($successful)
+    public function setValidPostalCode($valid_postal_code)
     {
-        $this->container['successful'] = $successful;
+        $this->container['valid_postal_code'] = $valid_postal_code;
 
         return $this;
     }
 
     /**
-     * Gets country_full_name
+     * Gets city
      *
      * @return string
      */
-    public function getCountryFullName()
+    public function getCity()
     {
-        return $this->container['country_full_name'];
+        return $this->container['city'];
     }
 
     /**
-     * Sets country_full_name
+     * Sets city
      *
-     * @param string $country_full_name Full name of the country
+     * @param string $city If valid, City corresponding to the input postal code, such as 'Walnut Creek'
      *
      * @return $this
      */
-    public function setCountryFullName($country_full_name)
+    public function setCity($city)
     {
-        $this->container['country_full_name'] = $country_full_name;
+        $this->container['city'] = $city;
 
         return $this;
     }
 
     /**
-     * Gets iso_two_letter_code
+     * Gets state_or_province
      *
      * @return string
      */
-    public function getIsoTwoLetterCode()
+    public function getStateOrProvince()
     {
-        return $this->container['iso_two_letter_code'];
+        return $this->container['state_or_province'];
     }
 
     /**
-     * Sets iso_two_letter_code
+     * Sets state_or_province
      *
-     * @param string $iso_two_letter_code Two-letter ISO 3166-1 country code
+     * @param string $state_or_province If valid; State or province corresponding to the input postal code, such as 'CA' or 'California'
      *
      * @return $this
      */
-    public function setIsoTwoLetterCode($iso_two_letter_code)
+    public function setStateOrProvince($state_or_province)
     {
-        $this->container['iso_two_letter_code'] = $iso_two_letter_code;
+        $this->container['state_or_province'] = $state_or_province;
 
         return $this;
     }
 
     /**
-     * Gets fips_two_letter_code
+     * Gets latitude
      *
-     * @return string
+     * @return double
      */
-    public function getFipsTwoLetterCode()
+    public function getLatitude()
     {
-        return $this->container['fips_two_letter_code'];
+        return $this->container['latitude'];
     }
 
     /**
-     * Sets fips_two_letter_code
+     * Sets latitude
      *
-     * @param string $fips_two_letter_code Two-letter FIPS 10-4 country code
+     * @param double $latitude If the postal code is valid, the degrees latitude of the centroid of the postal code, null otherwise
      *
      * @return $this
      */
-    public function setFipsTwoLetterCode($fips_two_letter_code)
+    public function setLatitude($latitude)
     {
-        $this->container['fips_two_letter_code'] = $fips_two_letter_code;
+        $this->container['latitude'] = $latitude;
 
         return $this;
     }
 
     /**
-     * Gets three_letter_code
+     * Gets longitude
      *
-     * @return string
+     * @return double
      */
-    public function getThreeLetterCode()
+    public function getLongitude()
     {
-        return $this->container['three_letter_code'];
+        return $this->container['longitude'];
     }
 
     /**
-     * Sets three_letter_code
+     * Sets longitude
      *
-     * @param string $three_letter_code Three-letter ISO 3166-1 country code
+     * @param double $longitude If the postal code is valid, the degrees longitude of the centroid of the postal code, null otherwise
      *
      * @return $this
      */
-    public function setThreeLetterCode($three_letter_code)
+    public function setLongitude($longitude)
     {
-        $this->container['three_letter_code'] = $three_letter_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets is_european_union_member
-     *
-     * @return bool
-     */
-    public function getIsEuropeanUnionMember()
-    {
-        return $this->container['is_european_union_member'];
-    }
-
-    /**
-     * Sets is_european_union_member
-     *
-     * @param bool $is_european_union_member True if this country is currently a member of the European Union (EU), false otherwise
-     *
-     * @return $this
-     */
-    public function setIsEuropeanUnionMember($is_european_union_member)
-    {
-        $this->container['is_european_union_member'] = $is_european_union_member;
-
-        return $this;
-    }
-
-    /**
-     * Gets timezones
-     *
-     * @return \Swagger\Client\Model\Timezone[]
-     */
-    public function getTimezones()
-    {
-        return $this->container['timezones'];
-    }
-
-    /**
-     * Sets timezones
-     *
-     * @param \Swagger\Client\Model\Timezone[] $timezones Time zones (IANA/Olsen) in the country
-     *
-     * @return $this
-     */
-    public function setTimezones($timezones)
-    {
-        $this->container['timezones'] = $timezones;
+        $this->container['longitude'] = $longitude;
 
         return $this;
     }

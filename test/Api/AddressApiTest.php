@@ -72,6 +72,16 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addressCheckEUMembership
+     *
+     * Check if a country is a member of the European Union (EU).
+     *
+     */
+    public function testAddressCheckEUMembership()
+    {
+    }
+
+    /**
      * Test case for addressCountry
      *
      * Validate and normalize country information, return ISO 3166-1 country codes and country name.
@@ -108,6 +118,16 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testAddressValidateAddress()
+    {
+    }
+
+    /**
+     * Test case for addressValidatePostalCode
+     *
+     * Validate a postal code, get location information about it.
+     *
+     */
+    public function testAddressValidatePostalCode()
     {
     }
 }

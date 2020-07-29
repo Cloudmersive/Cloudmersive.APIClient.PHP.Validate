@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidateCountryResponseTest
+ * ValidatePostalCodeRequestTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ValidateCountryResponseTest Class Doc Comment
+ * ValidatePostalCodeRequestTest Class Doc Comment
  *
  * @category    Class */
-// * @description Result of performing a country validation operation
+// * @description Request to Validate a Postal Code
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ValidateCountryResponseTest extends \PHPUnit_Framework_TestCase
+class ValidatePostalCodeRequestTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,16 +71,16 @@ class ValidateCountryResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ValidateCountryResponse"
+     * Test "ValidatePostalCodeRequest"
      */
-    public function testValidateCountryResponse()
+    public function testValidatePostalCodeRequest()
     {
     }
 
     /**
-     * Test attribute "successful"
+     * Test attribute "postal_code"
      */
-    public function testPropertySuccessful()
+    public function testPropertyPostalCode()
     {
     }
 
@@ -92,37 +92,9 @@ class ValidateCountryResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "iso_two_letter_code"
+     * Test attribute "country_code"
      */
-    public function testPropertyIsoTwoLetterCode()
-    {
-    }
-
-    /**
-     * Test attribute "fips_two_letter_code"
-     */
-    public function testPropertyFipsTwoLetterCode()
-    {
-    }
-
-    /**
-     * Test attribute "three_letter_code"
-     */
-    public function testPropertyThreeLetterCode()
-    {
-    }
-
-    /**
-     * Test attribute "is_european_union_member"
-     */
-    public function testPropertyIsEuropeanUnionMember()
-    {
-    }
-
-    /**
-     * Test attribute "timezones"
-     */
-    public function testPropertyTimezones()
+    public function testPropertyCountryCode()
     {
     }
 }
