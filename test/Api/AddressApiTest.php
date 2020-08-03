@@ -92,6 +92,16 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addressCountryList
+     *
+     * Get a list of ISO 3166-1 countries.
+     *
+     */
+    public function testAddressCountryList()
+    {
+    }
+
+    /**
      * Test case for addressGetTimezone
      *
      * Gets IANA/Olsen time zones for a country.
@@ -122,12 +132,32 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addressValidateCity
+     *
+     * Validate a City and State/Province combination, get location information about it.
+     *
+     */
+    public function testAddressValidateCity()
+    {
+    }
+
+    /**
      * Test case for addressValidatePostalCode
      *
      * Validate a postal code, get location information about it.
      *
      */
     public function testAddressValidatePostalCode()
+    {
+    }
+
+    /**
+     * Test case for addressValidateState
+     *
+     * Validate a state or province, name or abbreviation, get location information about it.
+     *
+     */
+    public function testAddressValidateState()
     {
     }
 }

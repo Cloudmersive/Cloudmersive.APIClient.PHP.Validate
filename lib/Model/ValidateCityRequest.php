@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidatePostalCodeResponse
+ * ValidateCityRequest
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ValidatePostalCodeResponse Class Doc Comment
+ * ValidateCityRequest Class Doc Comment
  *
  * @category Class
- * @description Result of validating a postal code
+ * @description Request to Validate a City and State or Province in a country
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
+class ValidateCityRequest implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ValidatePostalCodeResponse';
+    protected static $swaggerModelName = 'ValidateCityRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +58,10 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'valid_postal_code' => 'bool',
         'city' => 'string',
         'state_or_province' => 'string',
-        'latitude' => 'double',
-        'longitude' => 'double'
+        'country_full_name' => 'string',
+        'country_code' => 'string'
     ];
 
     /**
@@ -71,11 +70,10 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'valid_postal_code' => null,
         'city' => null,
         'state_or_province' => null,
-        'latitude' => 'double',
-        'longitude' => 'double'
+        'country_full_name' => null,
+        'country_code' => null
     ];
 
     /**
@@ -105,11 +103,10 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'valid_postal_code' => 'ValidPostalCode',
         'city' => 'City',
         'state_or_province' => 'StateOrProvince',
-        'latitude' => 'Latitude',
-        'longitude' => 'Longitude'
+        'country_full_name' => 'CountryFullName',
+        'country_code' => 'CountryCode'
     ];
 
     /**
@@ -118,11 +115,10 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'valid_postal_code' => 'setValidPostalCode',
         'city' => 'setCity',
         'state_or_province' => 'setStateOrProvince',
-        'latitude' => 'setLatitude',
-        'longitude' => 'setLongitude'
+        'country_full_name' => 'setCountryFullName',
+        'country_code' => 'setCountryCode'
     ];
 
     /**
@@ -131,11 +127,10 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'valid_postal_code' => 'getValidPostalCode',
         'city' => 'getCity',
         'state_or_province' => 'getStateOrProvince',
-        'latitude' => 'getLatitude',
-        'longitude' => 'getLongitude'
+        'country_full_name' => 'getCountryFullName',
+        'country_code' => 'getCountryCode'
     ];
 
     /**
@@ -198,11 +193,10 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['valid_postal_code'] = isset($data['valid_postal_code']) ? $data['valid_postal_code'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['state_or_province'] = isset($data['state_or_province']) ? $data['state_or_province'] : null;
-        $this->container['latitude'] = isset($data['latitude']) ? $data['latitude'] : null;
-        $this->container['longitude'] = isset($data['longitude']) ? $data['longitude'] : null;
+        $this->container['country_full_name'] = isset($data['country_full_name']) ? $data['country_full_name'] : null;
+        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
     }
 
     /**
@@ -231,30 +225,6 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets valid_postal_code
-     *
-     * @return bool
-     */
-    public function getValidPostalCode()
-    {
-        return $this->container['valid_postal_code'];
-    }
-
-    /**
-     * Sets valid_postal_code
-     *
-     * @param bool $valid_postal_code True if the Postal Code is valid, false otherwise
-     *
-     * @return $this
-     */
-    public function setValidPostalCode($valid_postal_code)
-    {
-        $this->container['valid_postal_code'] = $valid_postal_code;
-
-        return $this;
-    }
-
-    /**
      * Gets city
      *
      * @return string
@@ -267,7 +237,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
     /**
      * Sets city
      *
-     * @param string $city If valid, City corresponding to the input postal code, such as 'Walnut Creek'
+     * @param string $city Required: City of the address to validate, such as 'San Francisco' or 'London'
      *
      * @return $this
      */
@@ -291,7 +261,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
     /**
      * Sets state_or_province
      *
-     * @param string $state_or_province If valid; State or province corresponding to the input postal code, such as 'CA' or 'California'
+     * @param string $state_or_province Required: State or province of the address to validate, such as 'California' or 'CA'
      *
      * @return $this
      */
@@ -303,49 +273,49 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets latitude
+     * Gets country_full_name
      *
-     * @return double
+     * @return string
      */
-    public function getLatitude()
+    public function getCountryFullName()
     {
-        return $this->container['latitude'];
+        return $this->container['country_full_name'];
     }
 
     /**
-     * Sets latitude
+     * Sets country_full_name
      *
-     * @param double $latitude If the postal code is valid, the degrees latitude of the centroid of the postal code, null otherwise
+     * @param string $country_full_name Optional (recommended); Name of the country, such as 'United States'.  If left blank, and CountryCode is also left blank, will default to United States.  Global countries are supported.
      *
      * @return $this
      */
-    public function setLatitude($latitude)
+    public function setCountryFullName($country_full_name)
     {
-        $this->container['latitude'] = $latitude;
+        $this->container['country_full_name'] = $country_full_name;
 
         return $this;
     }
 
     /**
-     * Gets longitude
+     * Gets country_code
      *
-     * @return double
+     * @return string
      */
-    public function getLongitude()
+    public function getCountryCode()
     {
-        return $this->container['longitude'];
+        return $this->container['country_code'];
     }
 
     /**
-     * Sets longitude
+     * Sets country_code
      *
-     * @param double $longitude If the postal code is valid, the degrees longitude of the centroid of the postal code, null otherwise
+     * @param string $country_code Optional; two-letter country code (Two-letter ISO 3166-1 country code) of the country.  If left blank, and CountryFullName is also left blank, will default to United States.  Global countries are supported.
      *
      * @return $this
      */
-    public function setLongitude($longitude)
+    public function setCountryCode($country_code)
     {
-        $this->container['longitude'] = $longitude;
+        $this->container['country_code'] = $country_code;
 
         return $this;
     }

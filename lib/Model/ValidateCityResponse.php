@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidatePostalCodeResponse
+ * ValidateCityResponse
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ValidatePostalCodeResponse Class Doc Comment
+ * ValidateCityResponse Class Doc Comment
  *
  * @category Class
- * @description Result of validating a postal code
+ * @description Result of validating a city
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
+class ValidateCityResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ValidatePostalCodeResponse';
+    protected static $swaggerModelName = 'ValidateCityResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,7 +58,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'valid_postal_code' => 'bool',
+        'valid_city' => 'bool',
         'city' => 'string',
         'state_or_province' => 'string',
         'latitude' => 'double',
@@ -71,7 +71,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'valid_postal_code' => null,
+        'valid_city' => null,
         'city' => null,
         'state_or_province' => null,
         'latitude' => 'double',
@@ -105,7 +105,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'valid_postal_code' => 'ValidPostalCode',
+        'valid_city' => 'ValidCity',
         'city' => 'City',
         'state_or_province' => 'StateOrProvince',
         'latitude' => 'Latitude',
@@ -118,7 +118,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'valid_postal_code' => 'setValidPostalCode',
+        'valid_city' => 'setValidCity',
         'city' => 'setCity',
         'state_or_province' => 'setStateOrProvince',
         'latitude' => 'setLatitude',
@@ -131,7 +131,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'valid_postal_code' => 'getValidPostalCode',
+        'valid_city' => 'getValidCity',
         'city' => 'getCity',
         'state_or_province' => 'getStateOrProvince',
         'latitude' => 'getLatitude',
@@ -198,7 +198,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['valid_postal_code'] = isset($data['valid_postal_code']) ? $data['valid_postal_code'] : null;
+        $this->container['valid_city'] = isset($data['valid_city']) ? $data['valid_city'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['state_or_province'] = isset($data['state_or_province']) ? $data['state_or_province'] : null;
         $this->container['latitude'] = isset($data['latitude']) ? $data['latitude'] : null;
@@ -231,25 +231,25 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets valid_postal_code
+     * Gets valid_city
      *
      * @return bool
      */
-    public function getValidPostalCode()
+    public function getValidCity()
     {
-        return $this->container['valid_postal_code'];
+        return $this->container['valid_city'];
     }
 
     /**
-     * Sets valid_postal_code
+     * Sets valid_city
      *
-     * @param bool $valid_postal_code True if the Postal Code is valid, false otherwise
+     * @param bool $valid_city True if the city is valid, false otherwise
      *
      * @return $this
      */
-    public function setValidPostalCode($valid_postal_code)
+    public function setValidCity($valid_city)
     {
-        $this->container['valid_postal_code'] = $valid_postal_code;
+        $this->container['valid_city'] = $valid_city;
 
         return $this;
     }
@@ -291,7 +291,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
     /**
      * Sets state_or_province
      *
-     * @param string $state_or_province If valid; State or province corresponding to the input postal code, such as 'CA' or 'California'
+     * @param string $state_or_province If valid; State or province corresponding to the input state name, such as 'CA' or 'California'
      *
      * @return $this
      */
@@ -315,7 +315,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
     /**
      * Sets latitude
      *
-     * @param double $latitude If the postal code is valid, the degrees latitude of the centroid of the postal code, null otherwise
+     * @param double $latitude If the postal code is valid, the degrees latitude of the centroid of the state, null otherwise
      *
      * @return $this
      */
@@ -339,7 +339,7 @@ class ValidatePostalCodeResponse implements ModelInterface, ArrayAccess
     /**
      * Sets longitude
      *
-     * @param double $longitude If the postal code is valid, the degrees longitude of the centroid of the postal code, null otherwise
+     * @param double $longitude If the postal code is valid, the degrees longitude of the centroid of the state, null otherwise
      *
      * @return $this
      */

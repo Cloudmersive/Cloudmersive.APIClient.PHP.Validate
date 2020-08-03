@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.5.7
+- Package version: 1.5.9
 
 
 ## Requirements
@@ -88,10 +88,13 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AddressApi* | [**addressCheckEUMembership**](docs/Api/AddressApi.md#addresscheckeumembership) | **POST** /validate/address/country/check-eu-membership | Check if a country is a member of the European Union (EU)
 *AddressApi* | [**addressCountry**](docs/Api/AddressApi.md#addresscountry) | **POST** /validate/address/country | Validate and normalize country information, return ISO 3166-1 country codes and country name
+*AddressApi* | [**addressCountryList**](docs/Api/AddressApi.md#addresscountrylist) | **POST** /validate/address/country/list | Get a list of ISO 3166-1 countries
 *AddressApi* | [**addressGetTimezone**](docs/Api/AddressApi.md#addressgettimezone) | **POST** /validate/address/country/get-timezones | Gets IANA/Olsen time zones for a country
 *AddressApi* | [**addressParseString**](docs/Api/AddressApi.md#addressparsestring) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
 *AddressApi* | [**addressValidateAddress**](docs/Api/AddressApi.md#addressvalidateaddress) | **POST** /validate/address/street-address | Validate a street address
+*AddressApi* | [**addressValidateCity**](docs/Api/AddressApi.md#addressvalidatecity) | **POST** /validate/address/city | Validate a City and State/Province combination, get location information about it
 *AddressApi* | [**addressValidatePostalCode**](docs/Api/AddressApi.md#addressvalidatepostalcode) | **POST** /validate/address/postal-code | Validate a postal code, get location information about it
+*AddressApi* | [**addressValidateState**](docs/Api/AddressApi.md#addressvalidatestate) | **POST** /validate/address/state | Validate a state or province, name or abbreviation, get location information about it
 *DomainApi* | [**domainCheck**](docs/Api/DomainApi.md#domaincheck) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domainPost**](docs/Api/DomainApi.md#domainpost) | **POST** /validate/domain/whois | Get WHOIS information for a domain
 *DomainApi* | [**domainUrlFull**](docs/Api/DomainApi.md#domainurlfull) | **POST** /validate/domain/url/full | Validate a URL fully
@@ -116,6 +119,8 @@ Class | Method | HTTP request | Description
  - [AddressGetServersResponse](docs/Model/AddressGetServersResponse.md)
  - [AddressVerifySyntaxOnlyResponse](docs/Model/AddressVerifySyntaxOnlyResponse.md)
  - [CheckResponse](docs/Model/CheckResponse.md)
+ - [CountryDetails](docs/Model/CountryDetails.md)
+ - [CountryListResult](docs/Model/CountryListResult.md)
  - [FirstNameValidationRequest](docs/Model/FirstNameValidationRequest.md)
  - [FirstNameValidationResponse](docs/Model/FirstNameValidationResponse.md)
  - [FullEmailValidationResponse](docs/Model/FullEmailValidationResponse.md)
@@ -139,12 +144,16 @@ Class | Method | HTTP request | Description
  - [UserAgentValidateResponse](docs/Model/UserAgentValidateResponse.md)
  - [ValidateAddressRequest](docs/Model/ValidateAddressRequest.md)
  - [ValidateAddressResponse](docs/Model/ValidateAddressResponse.md)
+ - [ValidateCityRequest](docs/Model/ValidateCityRequest.md)
+ - [ValidateCityResponse](docs/Model/ValidateCityResponse.md)
  - [ValidateCountryRequest](docs/Model/ValidateCountryRequest.md)
  - [ValidateCountryResponse](docs/Model/ValidateCountryResponse.md)
  - [ValidateIdentifierRequest](docs/Model/ValidateIdentifierRequest.md)
  - [ValidateIdentifierResponse](docs/Model/ValidateIdentifierResponse.md)
  - [ValidatePostalCodeRequest](docs/Model/ValidatePostalCodeRequest.md)
  - [ValidatePostalCodeResponse](docs/Model/ValidatePostalCodeResponse.md)
+ - [ValidateStateRequest](docs/Model/ValidateStateRequest.md)
+ - [ValidateStateResponse](docs/Model/ValidateStateResponse.md)
  - [ValidateUrlRequestFull](docs/Model/ValidateUrlRequestFull.md)
  - [ValidateUrlRequestSyntaxOnly](docs/Model/ValidateUrlRequestSyntaxOnly.md)
  - [ValidateUrlResponseFull](docs/Model/ValidateUrlResponseFull.md)

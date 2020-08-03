@@ -231,7 +231,7 @@ class ValidatePostalCodeRequest implements ModelInterface, ArrayAccess
     /**
      * Sets postal_code
      *
-     * @param string $postal_code Optional (recommended); Zip code or postal code of the address to validate, such as '94597'
+     * @param string $postal_code Required: Zip code or postal code of the address to validate, such as '94597'
      *
      * @return $this
      */
