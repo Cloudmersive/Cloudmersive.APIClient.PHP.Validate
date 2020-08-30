@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.5.9
+- Package version: 1.6.0
 
 
 ## Requirements
@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**emailAddressGetServers**](docs/Api/EmailApi.md#emailaddressgetservers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
 *EmailApi* | [**emailFullValidation**](docs/Api/EmailApi.md#emailfullvalidation) | **POST** /validate/email/address/full | Fully validate an email address
 *EmailApi* | [**emailPost**](docs/Api/EmailApi.md#emailpost) | **POST** /validate/email/address/syntaxOnly | Validate email adddress for syntactic correctness only
+*IPAddressApi* | [**iPAddressIsTorNode**](docs/Api/IPAddressApi.md#ipaddressistornode) | **POST** /validate/ip/is-tor-node | Check if IP address is a Tor node server
 *IPAddressApi* | [**iPAddressPost**](docs/Api/IPAddressApi.md#ipaddresspost) | **POST** /validate/ip/geolocate | Geolocate an IP address
 *LeadEnrichmentApi* | [**leadEnrichmentEnrichLead**](docs/Api/LeadEnrichmentApi.md#leadenrichmentenrichlead) | **POST** /validate/lead-enrichment/lead/enrich | Enrich an input lead with additional fields of data
 *NameApi* | [**nameGetGender**](docs/Api/NameApi.md#namegetgender) | **POST** /validate/name/get-gender | Get the gender of a first name
@@ -140,6 +141,7 @@ Class | Method | HTTP request | Description
  - [PhoneNumberValidateRequest](docs/Model/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/Model/PhoneNumberValidationResponse.md)
  - [Timezone](docs/Model/Timezone.md)
+ - [TorNodeResponse](docs/Model/TorNodeResponse.md)
  - [UserAgentValidateRequest](docs/Model/UserAgentValidateRequest.md)
  - [UserAgentValidateResponse](docs/Model/UserAgentValidateResponse.md)
  - [ValidateAddressRequest](docs/Model/ValidateAddressRequest.md)
