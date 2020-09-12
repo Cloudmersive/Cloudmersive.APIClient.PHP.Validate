@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.6.0
+- Package version: 1.6.1
 
 
 ## Requirements
@@ -102,6 +102,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**emailAddressGetServers**](docs/Api/EmailApi.md#emailaddressgetservers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
 *EmailApi* | [**emailFullValidation**](docs/Api/EmailApi.md#emailfullvalidation) | **POST** /validate/email/address/full | Fully validate an email address
 *EmailApi* | [**emailPost**](docs/Api/EmailApi.md#emailpost) | **POST** /validate/email/address/syntaxOnly | Validate email adddress for syntactic correctness only
+*IPAddressApi* | [**iPAddressIsThreat**](docs/Api/IPAddressApi.md#ipaddressisthreat) | **POST** /validate/ip/is-threat | Check if IP address is a known threat
 *IPAddressApi* | [**iPAddressIsTorNode**](docs/Api/IPAddressApi.md#ipaddressistornode) | **POST** /validate/ip/is-tor-node | Check if IP address is a Tor node server
 *IPAddressApi* | [**iPAddressPost**](docs/Api/IPAddressApi.md#ipaddresspost) | **POST** /validate/ip/geolocate | Geolocate an IP address
 *LeadEnrichmentApi* | [**leadEnrichmentEnrichLead**](docs/Api/LeadEnrichmentApi.md#leadenrichmentenrichlead) | **POST** /validate/lead-enrichment/lead/enrich | Enrich an input lead with additional fields of data
@@ -132,6 +133,7 @@ Class | Method | HTTP request | Description
  - [GetGenderResponse](docs/Model/GetGenderResponse.md)
  - [GetTimezonesRequest](docs/Model/GetTimezonesRequest.md)
  - [GetTimezonesResponse](docs/Model/GetTimezonesResponse.md)
+ - [IPThreatResponse](docs/Model/IPThreatResponse.md)
  - [LastNameValidationRequest](docs/Model/LastNameValidationRequest.md)
  - [LastNameValidationResponse](docs/Model/LastNameValidationResponse.md)
  - [LeadEnrichmentRequest](docs/Model/LeadEnrichmentRequest.md)
