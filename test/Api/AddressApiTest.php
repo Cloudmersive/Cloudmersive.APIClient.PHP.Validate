@@ -102,6 +102,16 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addressGetCountryCurrency
+     *
+     * Get the currency of the input country.
+     *
+     */
+    public function testAddressGetCountryCurrency()
+    {
+    }
+
+    /**
      * Test case for addressGetTimezone
      *
      * Gets IANA/Olsen time zones for a country.

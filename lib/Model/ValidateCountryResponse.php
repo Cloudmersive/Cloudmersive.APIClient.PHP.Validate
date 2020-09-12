@@ -64,7 +64,10 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         'fips_two_letter_code' => 'string',
         'three_letter_code' => 'string',
         'is_european_union_member' => 'bool',
-        'timezones' => '\Swagger\Client\Model\Timezone[]'
+        'timezones' => '\Swagger\Client\Model\Timezone[]',
+        'iso_currency_code' => 'string',
+        'currency_symbol' => 'string',
+        'currency_english_name' => 'string'
     ];
 
     /**
@@ -79,7 +82,10 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         'fips_two_letter_code' => null,
         'three_letter_code' => null,
         'is_european_union_member' => null,
-        'timezones' => null
+        'timezones' => null,
+        'iso_currency_code' => null,
+        'currency_symbol' => null,
+        'currency_english_name' => null
     ];
 
     /**
@@ -115,7 +121,10 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         'fips_two_letter_code' => 'FIPSTwoLetterCode',
         'three_letter_code' => 'ThreeLetterCode',
         'is_european_union_member' => 'IsEuropeanUnionMember',
-        'timezones' => 'Timezones'
+        'timezones' => 'Timezones',
+        'iso_currency_code' => 'ISOCurrencyCode',
+        'currency_symbol' => 'CurrencySymbol',
+        'currency_english_name' => 'CurrencyEnglishName'
     ];
 
     /**
@@ -130,7 +139,10 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         'fips_two_letter_code' => 'setFipsTwoLetterCode',
         'three_letter_code' => 'setThreeLetterCode',
         'is_european_union_member' => 'setIsEuropeanUnionMember',
-        'timezones' => 'setTimezones'
+        'timezones' => 'setTimezones',
+        'iso_currency_code' => 'setIsoCurrencyCode',
+        'currency_symbol' => 'setCurrencySymbol',
+        'currency_english_name' => 'setCurrencyEnglishName'
     ];
 
     /**
@@ -145,7 +157,10 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         'fips_two_letter_code' => 'getFipsTwoLetterCode',
         'three_letter_code' => 'getThreeLetterCode',
         'is_european_union_member' => 'getIsEuropeanUnionMember',
-        'timezones' => 'getTimezones'
+        'timezones' => 'getTimezones',
+        'iso_currency_code' => 'getIsoCurrencyCode',
+        'currency_symbol' => 'getCurrencySymbol',
+        'currency_english_name' => 'getCurrencyEnglishName'
     ];
 
     /**
@@ -215,6 +230,9 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         $this->container['three_letter_code'] = isset($data['three_letter_code']) ? $data['three_letter_code'] : null;
         $this->container['is_european_union_member'] = isset($data['is_european_union_member']) ? $data['is_european_union_member'] : null;
         $this->container['timezones'] = isset($data['timezones']) ? $data['timezones'] : null;
+        $this->container['iso_currency_code'] = isset($data['iso_currency_code']) ? $data['iso_currency_code'] : null;
+        $this->container['currency_symbol'] = isset($data['currency_symbol']) ? $data['currency_symbol'] : null;
+        $this->container['currency_english_name'] = isset($data['currency_english_name']) ? $data['currency_english_name'] : null;
     }
 
     /**
@@ -406,6 +424,78 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
     public function setTimezones($timezones)
     {
         $this->container['timezones'] = $timezones;
+
+        return $this;
+    }
+
+    /**
+     * Gets iso_currency_code
+     *
+     * @return string
+     */
+    public function getIsoCurrencyCode()
+    {
+        return $this->container['iso_currency_code'];
+    }
+
+    /**
+     * Sets iso_currency_code
+     *
+     * @param string $iso_currency_code ISO 4217 currency three-letter code associated with the country
+     *
+     * @return $this
+     */
+    public function setIsoCurrencyCode($iso_currency_code)
+    {
+        $this->container['iso_currency_code'] = $iso_currency_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency_symbol
+     *
+     * @return string
+     */
+    public function getCurrencySymbol()
+    {
+        return $this->container['currency_symbol'];
+    }
+
+    /**
+     * Sets currency_symbol
+     *
+     * @param string $currency_symbol Symbol associated with the currency
+     *
+     * @return $this
+     */
+    public function setCurrencySymbol($currency_symbol)
+    {
+        $this->container['currency_symbol'] = $currency_symbol;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency_english_name
+     *
+     * @return string
+     */
+    public function getCurrencyEnglishName()
+    {
+        return $this->container['currency_english_name'];
+    }
+
+    /**
+     * Sets currency_english_name
+     *
+     * @param string $currency_english_name Full name of the currency
+     *
+     * @return $this
+     */
+    public function setCurrencyEnglishName($currency_english_name)
+    {
+        $this->container['currency_english_name'] = $currency_english_name;
 
         return $this;
     }

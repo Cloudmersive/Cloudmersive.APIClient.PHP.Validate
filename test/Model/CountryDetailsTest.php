@@ -104,4 +104,25 @@ class CountryDetailsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyIsEuropeanUnionMember()
     {
     }
+
+    /**
+     * Test attribute "iso_currency_code"
+     */
+    public function testPropertyIsoCurrencyCode()
+    {
+    }
+
+    /**
+     * Test attribute "currency_symbol"
+     */
+    public function testPropertyCurrencySymbol()
+    {
+    }
+
+    /**
+     * Test attribute "currency_english_name"
+     */
+    public function testPropertyCurrencyEnglishName()
+    {
+    }
 }
