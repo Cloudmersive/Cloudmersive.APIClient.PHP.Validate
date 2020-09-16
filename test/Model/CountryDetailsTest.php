@@ -125,4 +125,18 @@ class CountryDetailsTest extends \PHPUnit_Framework_TestCase
     public function testPropertyCurrencyEnglishName()
     {
     }
+
+    /**
+     * Test attribute "region"
+     */
+    public function testPropertyRegion()
+    {
+    }
+
+    /**
+     * Test attribute "subregion"
+     */
+    public function testPropertySubregion()
+    {
+    }
 }

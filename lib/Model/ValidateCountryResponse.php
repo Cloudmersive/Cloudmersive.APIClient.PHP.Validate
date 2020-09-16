@@ -67,7 +67,9 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         'timezones' => '\Swagger\Client\Model\Timezone[]',
         'iso_currency_code' => 'string',
         'currency_symbol' => 'string',
-        'currency_english_name' => 'string'
+        'currency_english_name' => 'string',
+        'region' => 'string',
+        'subregion' => 'string'
     ];
 
     /**
@@ -85,7 +87,9 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         'timezones' => null,
         'iso_currency_code' => null,
         'currency_symbol' => null,
-        'currency_english_name' => null
+        'currency_english_name' => null,
+        'region' => null,
+        'subregion' => null
     ];
 
     /**
@@ -124,7 +128,9 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         'timezones' => 'Timezones',
         'iso_currency_code' => 'ISOCurrencyCode',
         'currency_symbol' => 'CurrencySymbol',
-        'currency_english_name' => 'CurrencyEnglishName'
+        'currency_english_name' => 'CurrencyEnglishName',
+        'region' => 'Region',
+        'subregion' => 'Subregion'
     ];
 
     /**
@@ -142,7 +148,9 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         'timezones' => 'setTimezones',
         'iso_currency_code' => 'setIsoCurrencyCode',
         'currency_symbol' => 'setCurrencySymbol',
-        'currency_english_name' => 'setCurrencyEnglishName'
+        'currency_english_name' => 'setCurrencyEnglishName',
+        'region' => 'setRegion',
+        'subregion' => 'setSubregion'
     ];
 
     /**
@@ -160,7 +168,9 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         'timezones' => 'getTimezones',
         'iso_currency_code' => 'getIsoCurrencyCode',
         'currency_symbol' => 'getCurrencySymbol',
-        'currency_english_name' => 'getCurrencyEnglishName'
+        'currency_english_name' => 'getCurrencyEnglishName',
+        'region' => 'getRegion',
+        'subregion' => 'getSubregion'
     ];
 
     /**
@@ -233,6 +243,8 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
         $this->container['iso_currency_code'] = isset($data['iso_currency_code']) ? $data['iso_currency_code'] : null;
         $this->container['currency_symbol'] = isset($data['currency_symbol']) ? $data['currency_symbol'] : null;
         $this->container['currency_english_name'] = isset($data['currency_english_name']) ? $data['currency_english_name'] : null;
+        $this->container['region'] = isset($data['region']) ? $data['region'] : null;
+        $this->container['subregion'] = isset($data['subregion']) ? $data['subregion'] : null;
     }
 
     /**
@@ -496,6 +508,54 @@ class ValidateCountryResponse implements ModelInterface, ArrayAccess
     public function setCurrencyEnglishName($currency_english_name)
     {
         $this->container['currency_english_name'] = $currency_english_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets region
+     *
+     * @return string
+     */
+    public function getRegion()
+    {
+        return $this->container['region'];
+    }
+
+    /**
+     * Sets region
+     *
+     * @param string $region Region (continent) in which the country is located; possible values are None, Europe, Americas, Asia, Africa, Oceania
+     *
+     * @return $this
+     */
+    public function setRegion($region)
+    {
+        $this->container['region'] = $region;
+
+        return $this;
+    }
+
+    /**
+     * Gets subregion
+     *
+     * @return string
+     */
+    public function getSubregion()
+    {
+        return $this->container['subregion'];
+    }
+
+    /**
+     * Sets subregion
+     *
+     * @param string $subregion Subregion in which the country is located; possible values are None, NorthernEurope, WesternEurope, SouthernEurope, EasternEurope, CentralAmerica, NorthernAmerica, SouthAmerica, EasternAfrica, MiddleAfrica, NorthernAfrica , SouthernAfrica , WesternAfrica , CentralAsia , EasternAsia , SouthernAsia , SouthEasternAsia , WesternAsia , Southern , Middle , AustraliaandNewZealand , Melanesia , Polynesia , Micronesia , Caribbean,
+     *
+     * @return $this
+     */
+    public function setSubregion($subregion)
+    {
+        $this->container['subregion'] = $subregion;
 
         return $this;
     }

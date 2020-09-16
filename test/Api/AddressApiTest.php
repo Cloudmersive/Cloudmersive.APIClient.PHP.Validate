@@ -112,6 +112,16 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addressGetCountryRegion
+     *
+     * Get the region, subregion and continent of the country.
+     *
+     */
+    public function testAddressGetCountryRegion()
+    {
+    }
+
+    /**
      * Test case for addressGetTimezone
      *
      * Gets IANA/Olsen time zones for a country.
