@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.6.3
+- Package version: 1.6.4
 
 
 ## Requirements
@@ -99,6 +99,7 @@ Class | Method | HTTP request | Description
 *AddressApi* | [**addressValidateState**](docs/Api/AddressApi.md#addressvalidatestate) | **POST** /validate/address/state | Validate a state or province, name or abbreviation, get location information about it
 *DomainApi* | [**domainCheck**](docs/Api/DomainApi.md#domaincheck) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domainPost**](docs/Api/DomainApi.md#domainpost) | **POST** /validate/domain/whois | Get WHOIS information for a domain
+*DomainApi* | [**domainQualityScore**](docs/Api/DomainApi.md#domainqualityscore) | **POST** /validate/domain/quality-score | Validate a domain name&#39;s quality score
 *DomainApi* | [**domainUrlFull**](docs/Api/DomainApi.md#domainurlfull) | **POST** /validate/domain/url/full | Validate a URL fully
 *DomainApi* | [**domainUrlSyntaxOnly**](docs/Api/DomainApi.md#domainurlsyntaxonly) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 *EmailApi* | [**emailAddressGetServers**](docs/Api/EmailApi.md#emailaddressgetservers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
@@ -125,6 +126,7 @@ Class | Method | HTTP request | Description
  - [CheckResponse](docs/Model/CheckResponse.md)
  - [CountryDetails](docs/Model/CountryDetails.md)
  - [CountryListResult](docs/Model/CountryListResult.md)
+ - [DomainQualityResponse](docs/Model/DomainQualityResponse.md)
  - [FirstNameValidationRequest](docs/Model/FirstNameValidationRequest.md)
  - [FirstNameValidationResponse](docs/Model/FirstNameValidationResponse.md)
  - [FullEmailValidationResponse](docs/Model/FullEmailValidationResponse.md)
