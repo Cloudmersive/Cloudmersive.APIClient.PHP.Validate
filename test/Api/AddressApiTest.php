@@ -102,6 +102,16 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addressGeocode
+     *
+     * Geocode a street address into latitude and longitude.
+     *
+     */
+    public function testAddressGeocode()
+    {
+    }
+
+    /**
      * Test case for addressGetCountryCurrency
      *
      * Get the currency of the input country.
@@ -138,6 +148,16 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testAddressParseString()
+    {
+    }
+
+    /**
+     * Test case for addressReverseGeocodeAddress
+     *
+     * Reverse geocode a lattitude and longitude into an address.
+     *
+     */
+    public function testAddressReverseGeocodeAddress()
     {
     }
 

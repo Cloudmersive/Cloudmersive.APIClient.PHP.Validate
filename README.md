@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.6.4
+- Package version: 1.6.5
 
 
 ## Requirements
@@ -89,10 +89,12 @@ Class | Method | HTTP request | Description
 *AddressApi* | [**addressCheckEUMembership**](docs/Api/AddressApi.md#addresscheckeumembership) | **POST** /validate/address/country/check-eu-membership | Check if a country is a member of the European Union (EU)
 *AddressApi* | [**addressCountry**](docs/Api/AddressApi.md#addresscountry) | **POST** /validate/address/country | Validate and normalize country information, return ISO 3166-1 country codes and country name
 *AddressApi* | [**addressCountryList**](docs/Api/AddressApi.md#addresscountrylist) | **POST** /validate/address/country/list | Get a list of ISO 3166-1 countries
+*AddressApi* | [**addressGeocode**](docs/Api/AddressApi.md#addressgeocode) | **POST** /validate/address/geocode | Geocode a street address into latitude and longitude
 *AddressApi* | [**addressGetCountryCurrency**](docs/Api/AddressApi.md#addressgetcountrycurrency) | **POST** /validate/address/country/get-currency | Get the currency of the input country
 *AddressApi* | [**addressGetCountryRegion**](docs/Api/AddressApi.md#addressgetcountryregion) | **POST** /validate/address/country/get-region | Get the region, subregion and continent of the country
 *AddressApi* | [**addressGetTimezone**](docs/Api/AddressApi.md#addressgettimezone) | **POST** /validate/address/country/get-timezones | Gets IANA/Olsen time zones for a country
 *AddressApi* | [**addressParseString**](docs/Api/AddressApi.md#addressparsestring) | **POST** /validate/address/parse | Parse an unstructured input text string into an international, formatted address
+*AddressApi* | [**addressReverseGeocodeAddress**](docs/Api/AddressApi.md#addressreversegeocodeaddress) | **POST** /validate/address/geocode/reverse | Reverse geocode a lattitude and longitude into an address
 *AddressApi* | [**addressValidateAddress**](docs/Api/AddressApi.md#addressvalidateaddress) | **POST** /validate/address/street-address | Validate a street address
 *AddressApi* | [**addressValidateCity**](docs/Api/AddressApi.md#addressvalidatecity) | **POST** /validate/address/city | Validate a City and State/Province combination, get location information about it
 *AddressApi* | [**addressValidatePostalCode**](docs/Api/AddressApi.md#addressvalidatepostalcode) | **POST** /validate/address/postal-code | Validate a postal code, get location information about it
@@ -146,6 +148,8 @@ Class | Method | HTTP request | Description
  - [ParseAddressResponse](docs/Model/ParseAddressResponse.md)
  - [PhoneNumberValidateRequest](docs/Model/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/Model/PhoneNumberValidationResponse.md)
+ - [ReverseGeocodeAddressRequest](docs/Model/ReverseGeocodeAddressRequest.md)
+ - [ReverseGeocodeAddressResponse](docs/Model/ReverseGeocodeAddressResponse.md)
  - [Timezone](docs/Model/Timezone.md)
  - [TorNodeResponse](docs/Model/TorNodeResponse.md)
  - [UserAgentValidateRequest](docs/Model/UserAgentValidateRequest.md)
