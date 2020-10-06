@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.6.5
+- Package version: 1.6.6
 
 
 ## Requirements
@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**emailAddressGetServers**](docs/Api/EmailApi.md#emailaddressgetservers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
 *EmailApi* | [**emailFullValidation**](docs/Api/EmailApi.md#emailfullvalidation) | **POST** /validate/email/address/full | Fully validate an email address
 *EmailApi* | [**emailPost**](docs/Api/EmailApi.md#emailpost) | **POST** /validate/email/address/syntaxOnly | Validate email adddress for syntactic correctness only
+*IPAddressApi* | [**iPAddressGeolocateStreetAddress**](docs/Api/IPAddressApi.md#ipaddressgeolocatestreetaddress) | **POST** /validate/ip/geolocate/street-address | Geolocate an IP address to a street address
 *IPAddressApi* | [**iPAddressIsThreat**](docs/Api/IPAddressApi.md#ipaddressisthreat) | **POST** /validate/ip/is-threat | Check if IP address is a known threat
 *IPAddressApi* | [**iPAddressIsTorNode**](docs/Api/IPAddressApi.md#ipaddressistornode) | **POST** /validate/ip/is-tor-node | Check if IP address is a Tor node server
 *IPAddressApi* | [**iPAddressPost**](docs/Api/IPAddressApi.md#ipaddresspost) | **POST** /validate/ip/geolocate | Geolocate an IP address
@@ -117,6 +118,8 @@ Class | Method | HTTP request | Description
 *NameApi* | [**nameValidateFullName**](docs/Api/NameApi.md#namevalidatefullname) | **POST** /validate/name/full-name | Parse and validate a full name
 *NameApi* | [**nameValidateLastName**](docs/Api/NameApi.md#namevalidatelastname) | **POST** /validate/name/last | Validate a last name
 *PhoneNumberApi* | [**phoneNumberSyntaxOnly**](docs/Api/PhoneNumberApi.md#phonenumbersyntaxonly) | **POST** /validate/phonenumber/basic | Validate phone number (basic)
+*TextInputApi* | [**textInputCheckXss**](docs/Api/TextInputApi.md#textinputcheckxss) | **POST** /validate/text-input/check/xss | Check text input for Cross-Site-Scripting (XSS) attacks
+*TextInputApi* | [**textInputProtectXss**](docs/Api/TextInputApi.md#textinputprotectxss) | **POST** /validate/text-input/protect/xss | Protect text input from Cross-Site-Scripting (XSS) attacks through normalization
 *UserAgentApi* | [**userAgentParse**](docs/Api/UserAgentApi.md#useragentparse) | **POST** /validate/useragent/parse | Parse an HTTP User-Agent string, identify robots
 *VatApi* | [**vatVatLookup**](docs/Api/VatApi.md#vatvatlookup) | **POST** /validate/vat/lookup | Validate a VAT number
 
@@ -135,6 +138,7 @@ Class | Method | HTTP request | Description
  - [FullNameValidationRequest](docs/Model/FullNameValidationRequest.md)
  - [FullNameValidationResponse](docs/Model/FullNameValidationResponse.md)
  - [GeolocateResponse](docs/Model/GeolocateResponse.md)
+ - [GeolocateStreetAddressResponse](docs/Model/GeolocateStreetAddressResponse.md)
  - [GetGenderRequest](docs/Model/GetGenderRequest.md)
  - [GetGenderResponse](docs/Model/GetGenderResponse.md)
  - [GetTimezonesRequest](docs/Model/GetTimezonesRequest.md)
@@ -173,6 +177,7 @@ Class | Method | HTTP request | Description
  - [VatLookupRequest](docs/Model/VatLookupRequest.md)
  - [VatLookupResponse](docs/Model/VatLookupResponse.md)
  - [WhoisResponse](docs/Model/WhoisResponse.md)
+ - [XssProtectionResult](docs/Model/XssProtectionResult.md)
 
 
 ## Documentation For Authorization

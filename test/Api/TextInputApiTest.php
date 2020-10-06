@@ -1,6 +1,6 @@
 <?php
 /**
- * IPAddressApiTest
+ * TextInputApiTest
  * PHP version 5
  *
  * @category Class
@@ -33,14 +33,14 @@ use \Swagger\Client\ApiException;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * IPAddressApiTest Class Doc Comment
+ * TextInputApiTest Class Doc Comment
  *
  * @category Class
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class IPAddressApiTest extends \PHPUnit_Framework_TestCase
+class TextInputApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -72,42 +72,22 @@ class IPAddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test case for iPAddressGeolocateStreetAddress
+     * Test case for textInputCheckXss
      *
-     * Geolocate an IP address to a street address.
+     * Check text input for Cross-Site-Scripting (XSS) attacks.
      *
      */
-    public function testIPAddressGeolocateStreetAddress()
+    public function testTextInputCheckXss()
     {
     }
 
     /**
-     * Test case for iPAddressIsThreat
+     * Test case for textInputProtectXss
      *
-     * Check if IP address is a known threat.
-     *
-     */
-    public function testIPAddressIsThreat()
-    {
-    }
-
-    /**
-     * Test case for iPAddressIsTorNode
-     *
-     * Check if IP address is a Tor node server.
+     * Protect text input from Cross-Site-Scripting (XSS) attacks through normalization.
      *
      */
-    public function testIPAddressIsTorNode()
-    {
-    }
-
-    /**
-     * Test case for iPAddressPost
-     *
-     * Geolocate an IP address.
-     *
-     */
-    public function testIPAddressPost()
+    public function testTextInputProtectXss()
     {
     }
 }
