@@ -142,6 +142,16 @@ class AddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for addressNormalizeAddress
+     *
+     * Normalize a street address.
+     *
+     */
+    public function testAddressNormalizeAddress()
+    {
+    }
+
+    /**
      * Test case for addressParseString
      *
      * Parse an unstructured input text string into an international, formatted address.

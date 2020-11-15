@@ -285,7 +285,7 @@ class IPAddressApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                ['text/javascript', 'application/json', 'text/json']
+                ['application/json', 'text/json']
             );
         }
 
@@ -547,7 +547,7 @@ class IPAddressApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                ['text/javascript', 'application/json', 'text/json']
+                ['application/json', 'text/json']
             );
         }
 
@@ -809,7 +809,7 @@ class IPAddressApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                ['text/javascript', 'application/json', 'text/json']
+                ['application/json', 'text/json']
             );
         }
 
@@ -1071,7 +1071,7 @@ class IPAddressApi
         } else {
             $headers = $this->headerSelector->selectHeaders(
                 ['application/json', 'text/json', 'application/xml', 'text/xml'],
-                ['text/javascript', 'application/json', 'text/json']
+                ['application/json', 'text/json']
             );
         }
 
