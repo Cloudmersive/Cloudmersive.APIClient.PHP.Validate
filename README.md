@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.6.7
+- Package version: 1.6.8
 
 
 ## Requirements
@@ -124,6 +124,7 @@ Class | Method | HTTP request | Description
 *NameApi* | [**nameValidateLastName**](docs/Api/NameApi.md#namevalidatelastname) | **POST** /validate/name/last | Validate a last name
 *PhoneNumberApi* | [**phoneNumberSyntaxOnly**](docs/Api/PhoneNumberApi.md#phonenumbersyntaxonly) | **POST** /validate/phonenumber/basic | Validate phone number (basic)
 *TextInputApi* | [**textInputCheckXss**](docs/Api/TextInputApi.md#textinputcheckxss) | **POST** /validate/text-input/check/xss | Check text input for Cross-Site-Scripting (XSS) attacks
+*TextInputApi* | [**textInputCheckXssBatch**](docs/Api/TextInputApi.md#textinputcheckxssbatch) | **POST** /validate/text-input/check-and-protect/xss/batch | Check and protect multiple text inputs for Cross-Site-Scripting (XSS) attacks in batch
 *TextInputApi* | [**textInputProtectXss**](docs/Api/TextInputApi.md#textinputprotectxss) | **POST** /validate/text-input/protect/xss | Protect text input from Cross-Site-Scripting (XSS) attacks through normalization
 *UserAgentApi* | [**userAgentParse**](docs/Api/UserAgentApi.md#useragentparse) | **POST** /validate/useragent/parse | Parse an HTTP User-Agent string, identify robots
 *VatApi* | [**vatVatLookup**](docs/Api/VatApi.md#vatvatlookup) | **POST** /validate/vat/lookup | Validate a VAT number
@@ -190,6 +191,9 @@ Class | Method | HTTP request | Description
  - [VatLookupRequest](docs/Model/VatLookupRequest.md)
  - [VatLookupResponse](docs/Model/VatLookupResponse.md)
  - [WhoisResponse](docs/Model/WhoisResponse.md)
+ - [XssProtectionBatchRequest](docs/Model/XssProtectionBatchRequest.md)
+ - [XssProtectionBatchResponse](docs/Model/XssProtectionBatchResponse.md)
+ - [XssProtectionRequestItem](docs/Model/XssProtectionRequestItem.md)
  - [XssProtectionResult](docs/Model/XssProtectionResult.md)
 
 
