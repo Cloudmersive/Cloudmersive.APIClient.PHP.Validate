@@ -110,4 +110,14 @@ class IPAddressApiTest extends \PHPUnit_Framework_TestCase
     public function testIPAddressPost()
     {
     }
+
+    /**
+     * Test case for iPAddressReverseDomainLookup
+     *
+     * Perform a reverse domain name (DNS) lookup on an IP address.
+     *
+     */
+    public function testIPAddressReverseDomainLookup()
+    {
+    }
 }
