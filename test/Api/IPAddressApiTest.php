@@ -82,6 +82,26 @@ class IPAddressApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for iPAddressIpIntelligence
+     *
+     * Get intelligence on an IP address.
+     *
+     */
+    public function testIPAddressIpIntelligence()
+    {
+    }
+
+    /**
+     * Test case for iPAddressIsBot
+     *
+     * Check if IP address is a Bot client.
+     *
+     */
+    public function testIPAddressIsBot()
+    {
+    }
+
+    /**
      * Test case for iPAddressIsThreat
      *
      * Check if IP address is a known threat.

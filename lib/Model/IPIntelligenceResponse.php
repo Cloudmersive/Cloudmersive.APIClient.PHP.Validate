@@ -1,6 +1,6 @@
 <?php
 /**
- * GeolocateResponse
+ * IPIntelligenceResponse
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * GeolocateResponse Class Doc Comment
+ * IPIntelligenceResponse Class Doc Comment
  *
  * @category Class
- * @description Geolocation result of performing an IP address geolocation operation.  This product includes GeoLite2 data created by MaxMind, available from www.maxmind.com.
+ * @description IP address intelligence result
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class GeolocateResponse implements ModelInterface, ArrayAccess
+class IPIntelligenceResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class GeolocateResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'GeolocateResponse';
+    protected static $swaggerModelName = 'IPIntelligenceResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,15 +58,15 @@ class GeolocateResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'country_code' => 'string',
-        'country_name' => 'string',
-        'city' => 'string',
-        'region_code' => 'string',
-        'region_name' => 'string',
-        'zip_code' => 'string',
-        'timezone_standard_name' => 'string',
-        'latitude' => 'double',
-        'longitude' => 'double'
+        'is_bot' => 'bool',
+        'is_tor_node' => 'bool',
+        'is_threat' => 'bool',
+        'is_eu' => 'bool',
+        'location' => '\Swagger\Client\Model\GeolocateResponse',
+        'currency_code' => 'string',
+        'currency_name' => 'string',
+        'region_area' => 'string',
+        'subregion_area' => 'string'
     ];
 
     /**
@@ -75,15 +75,15 @@ class GeolocateResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'country_code' => null,
-        'country_name' => null,
-        'city' => null,
-        'region_code' => null,
-        'region_name' => null,
-        'zip_code' => null,
-        'timezone_standard_name' => null,
-        'latitude' => 'double',
-        'longitude' => 'double'
+        'is_bot' => null,
+        'is_tor_node' => null,
+        'is_threat' => null,
+        'is_eu' => null,
+        'location' => null,
+        'currency_code' => null,
+        'currency_name' => null,
+        'region_area' => null,
+        'subregion_area' => null
     ];
 
     /**
@@ -113,15 +113,15 @@ class GeolocateResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'country_code' => 'CountryCode',
-        'country_name' => 'CountryName',
-        'city' => 'City',
-        'region_code' => 'RegionCode',
-        'region_name' => 'RegionName',
-        'zip_code' => 'ZipCode',
-        'timezone_standard_name' => 'TimezoneStandardName',
-        'latitude' => 'Latitude',
-        'longitude' => 'Longitude'
+        'is_bot' => 'IsBot',
+        'is_tor_node' => 'IsTorNode',
+        'is_threat' => 'IsThreat',
+        'is_eu' => 'IsEU',
+        'location' => 'Location',
+        'currency_code' => 'CurrencyCode',
+        'currency_name' => 'CurrencyName',
+        'region_area' => 'RegionArea',
+        'subregion_area' => 'SubregionArea'
     ];
 
     /**
@@ -130,15 +130,15 @@ class GeolocateResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'country_code' => 'setCountryCode',
-        'country_name' => 'setCountryName',
-        'city' => 'setCity',
-        'region_code' => 'setRegionCode',
-        'region_name' => 'setRegionName',
-        'zip_code' => 'setZipCode',
-        'timezone_standard_name' => 'setTimezoneStandardName',
-        'latitude' => 'setLatitude',
-        'longitude' => 'setLongitude'
+        'is_bot' => 'setIsBot',
+        'is_tor_node' => 'setIsTorNode',
+        'is_threat' => 'setIsThreat',
+        'is_eu' => 'setIsEu',
+        'location' => 'setLocation',
+        'currency_code' => 'setCurrencyCode',
+        'currency_name' => 'setCurrencyName',
+        'region_area' => 'setRegionArea',
+        'subregion_area' => 'setSubregionArea'
     ];
 
     /**
@@ -147,15 +147,15 @@ class GeolocateResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'country_code' => 'getCountryCode',
-        'country_name' => 'getCountryName',
-        'city' => 'getCity',
-        'region_code' => 'getRegionCode',
-        'region_name' => 'getRegionName',
-        'zip_code' => 'getZipCode',
-        'timezone_standard_name' => 'getTimezoneStandardName',
-        'latitude' => 'getLatitude',
-        'longitude' => 'getLongitude'
+        'is_bot' => 'getIsBot',
+        'is_tor_node' => 'getIsTorNode',
+        'is_threat' => 'getIsThreat',
+        'is_eu' => 'getIsEu',
+        'location' => 'getLocation',
+        'currency_code' => 'getCurrencyCode',
+        'currency_name' => 'getCurrencyName',
+        'region_area' => 'getRegionArea',
+        'subregion_area' => 'getSubregionArea'
     ];
 
     /**
@@ -218,15 +218,15 @@ class GeolocateResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['country_code'] = isset($data['country_code']) ? $data['country_code'] : null;
-        $this->container['country_name'] = isset($data['country_name']) ? $data['country_name'] : null;
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
-        $this->container['region_code'] = isset($data['region_code']) ? $data['region_code'] : null;
-        $this->container['region_name'] = isset($data['region_name']) ? $data['region_name'] : null;
-        $this->container['zip_code'] = isset($data['zip_code']) ? $data['zip_code'] : null;
-        $this->container['timezone_standard_name'] = isset($data['timezone_standard_name']) ? $data['timezone_standard_name'] : null;
-        $this->container['latitude'] = isset($data['latitude']) ? $data['latitude'] : null;
-        $this->container['longitude'] = isset($data['longitude']) ? $data['longitude'] : null;
+        $this->container['is_bot'] = isset($data['is_bot']) ? $data['is_bot'] : null;
+        $this->container['is_tor_node'] = isset($data['is_tor_node']) ? $data['is_tor_node'] : null;
+        $this->container['is_threat'] = isset($data['is_threat']) ? $data['is_threat'] : null;
+        $this->container['is_eu'] = isset($data['is_eu']) ? $data['is_eu'] : null;
+        $this->container['location'] = isset($data['location']) ? $data['location'] : null;
+        $this->container['currency_code'] = isset($data['currency_code']) ? $data['currency_code'] : null;
+        $this->container['currency_name'] = isset($data['currency_name']) ? $data['currency_name'] : null;
+        $this->container['region_area'] = isset($data['region_area']) ? $data['region_area'] : null;
+        $this->container['subregion_area'] = isset($data['subregion_area']) ? $data['subregion_area'] : null;
     }
 
     /**
@@ -255,217 +255,217 @@ class GeolocateResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets country_code
+     * Gets is_bot
+     *
+     * @return bool
+     */
+    public function getIsBot()
+    {
+        return $this->container['is_bot'];
+    }
+
+    /**
+     * Sets is_bot
+     *
+     * @param bool $is_bot True if the IP address is a known bot, otherwise false
+     *
+     * @return $this
+     */
+    public function setIsBot($is_bot)
+    {
+        $this->container['is_bot'] = $is_bot;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_tor_node
+     *
+     * @return bool
+     */
+    public function getIsTorNode()
+    {
+        return $this->container['is_tor_node'];
+    }
+
+    /**
+     * Sets is_tor_node
+     *
+     * @param bool $is_tor_node True if the IP address is a known Tor exit node, otherwise false
+     *
+     * @return $this
+     */
+    public function setIsTorNode($is_tor_node)
+    {
+        $this->container['is_tor_node'] = $is_tor_node;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_threat
+     *
+     * @return bool
+     */
+    public function getIsThreat()
+    {
+        return $this->container['is_threat'];
+    }
+
+    /**
+     * Sets is_threat
+     *
+     * @param bool $is_threat True if the IP address is a known threat IP, otherwise false
+     *
+     * @return $this
+     */
+    public function setIsThreat($is_threat)
+    {
+        $this->container['is_threat'] = $is_threat;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_eu
+     *
+     * @return bool
+     */
+    public function getIsEu()
+    {
+        return $this->container['is_eu'];
+    }
+
+    /**
+     * Sets is_eu
+     *
+     * @param bool $is_eu True if the IP address is in the European Union, otherwise false
+     *
+     * @return $this
+     */
+    public function setIsEu($is_eu)
+    {
+        $this->container['is_eu'] = $is_eu;
+
+        return $this;
+    }
+
+    /**
+     * Gets location
+     *
+     * @return \Swagger\Client\Model\GeolocateResponse
+     */
+    public function getLocation()
+    {
+        return $this->container['location'];
+    }
+
+    /**
+     * Sets location
+     *
+     * @param \Swagger\Client\Model\GeolocateResponse $location Returns the location of the IP address
+     *
+     * @return $this
+     */
+    public function setLocation($location)
+    {
+        $this->container['location'] = $location;
+
+        return $this;
+    }
+
+    /**
+     * Gets currency_code
      *
      * @return string
      */
-    public function getCountryCode()
+    public function getCurrencyCode()
     {
-        return $this->container['country_code'];
+        return $this->container['currency_code'];
     }
 
     /**
-     * Sets country_code
+     * Sets currency_code
      *
-     * @param string $country_code Two-letter country code of IP address
+     * @param string $currency_code ISO 4217 currency code for the IP address location
      *
      * @return $this
      */
-    public function setCountryCode($country_code)
+    public function setCurrencyCode($currency_code)
     {
-        $this->container['country_code'] = $country_code;
+        $this->container['currency_code'] = $currency_code;
 
         return $this;
     }
 
     /**
-     * Gets country_name
+     * Gets currency_name
      *
      * @return string
      */
-    public function getCountryName()
+    public function getCurrencyName()
     {
-        return $this->container['country_name'];
+        return $this->container['currency_name'];
     }
 
     /**
-     * Sets country_name
+     * Sets currency_name
      *
-     * @param string $country_name Country name of IP address
+     * @param string $currency_name Name of the currency in English
      *
      * @return $this
      */
-    public function setCountryName($country_name)
+    public function setCurrencyName($currency_name)
     {
-        $this->container['country_name'] = $country_name;
+        $this->container['currency_name'] = $currency_name;
 
         return $this;
     }
 
     /**
-     * Gets city
+     * Gets region_area
      *
      * @return string
      */
-    public function getCity()
+    public function getRegionArea()
     {
-        return $this->container['city'];
+        return $this->container['region_area'];
     }
 
     /**
-     * Sets city
+     * Sets region_area
      *
-     * @param string $city City of IP address
+     * @param string $region_area Region (continent) in which the country is located; possible values are None, Europe, Americas, Asia, Africa, Oceania
      *
      * @return $this
      */
-    public function setCity($city)
+    public function setRegionArea($region_area)
     {
-        $this->container['city'] = $city;
+        $this->container['region_area'] = $region_area;
 
         return $this;
     }
 
     /**
-     * Gets region_code
+     * Gets subregion_area
      *
      * @return string
      */
-    public function getRegionCode()
+    public function getSubregionArea()
     {
-        return $this->container['region_code'];
+        return $this->container['subregion_area'];
     }
 
     /**
-     * Sets region_code
+     * Sets subregion_area
      *
-     * @param string $region_code State/region code of IP address
+     * @param string $subregion_area Subregion in which the country is located; possible values are None, NorthernEurope, WesternEurope, SouthernEurope, EasternEurope, CentralAmerica, NorthernAmerica, SouthAmerica, EasternAfrica, MiddleAfrica, NorthernAfrica , SouthernAfrica , WesternAfrica , CentralAsia , EasternAsia , SouthernAsia , SouthEasternAsia , WesternAsia , Southern , Middle , AustraliaandNewZealand , Melanesia , Polynesia , Micronesia , Caribbean,
      *
      * @return $this
      */
-    public function setRegionCode($region_code)
+    public function setSubregionArea($subregion_area)
     {
-        $this->container['region_code'] = $region_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets region_name
-     *
-     * @return string
-     */
-    public function getRegionName()
-    {
-        return $this->container['region_name'];
-    }
-
-    /**
-     * Sets region_name
-     *
-     * @param string $region_name State/region of IP address
-     *
-     * @return $this
-     */
-    public function setRegionName($region_name)
-    {
-        $this->container['region_name'] = $region_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets zip_code
-     *
-     * @return string
-     */
-    public function getZipCode()
-    {
-        return $this->container['zip_code'];
-    }
-
-    /**
-     * Sets zip_code
-     *
-     * @param string $zip_code Zip or postal code of IP address
-     *
-     * @return $this
-     */
-    public function setZipCode($zip_code)
-    {
-        $this->container['zip_code'] = $zip_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets timezone_standard_name
-     *
-     * @return string
-     */
-    public function getTimezoneStandardName()
-    {
-        return $this->container['timezone_standard_name'];
-    }
-
-    /**
-     * Sets timezone_standard_name
-     *
-     * @param string $timezone_standard_name Timezone of IP address
-     *
-     * @return $this
-     */
-    public function setTimezoneStandardName($timezone_standard_name)
-    {
-        $this->container['timezone_standard_name'] = $timezone_standard_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets latitude
-     *
-     * @return double
-     */
-    public function getLatitude()
-    {
-        return $this->container['latitude'];
-    }
-
-    /**
-     * Sets latitude
-     *
-     * @param double $latitude Latitude of IP address
-     *
-     * @return $this
-     */
-    public function setLatitude($latitude)
-    {
-        $this->container['latitude'] = $latitude;
-
-        return $this;
-    }
-
-    /**
-     * Gets longitude
-     *
-     * @return double
-     */
-    public function getLongitude()
-    {
-        return $this->container['longitude'];
-    }
-
-    /**
-     * Sets longitude
-     *
-     * @param double $longitude Longitude of IP address
-     *
-     * @return $this
-     */
-    public function setLongitude($longitude)
-    {
-        $this->container['longitude'] = $longitude;
+        $this->container['subregion_area'] = $subregion_area;
 
         return $this;
     }

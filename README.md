@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.6.9
+- Package version: 1.7.0
 
 
 ## Requirements
@@ -113,6 +113,8 @@ Class | Method | HTTP request | Description
 *EmailApi* | [**emailFullValidation**](docs/Api/EmailApi.md#emailfullvalidation) | **POST** /validate/email/address/full | Fully validate an email address
 *EmailApi* | [**emailPost**](docs/Api/EmailApi.md#emailpost) | **POST** /validate/email/address/syntaxOnly | Validate email adddress for syntactic correctness only
 *IPAddressApi* | [**iPAddressGeolocateStreetAddress**](docs/Api/IPAddressApi.md#ipaddressgeolocatestreetaddress) | **POST** /validate/ip/geolocate/street-address | Geolocate an IP address to a street address
+*IPAddressApi* | [**iPAddressIpIntelligence**](docs/Api/IPAddressApi.md#ipaddressipintelligence) | **POST** /validate/ip/intelligence | Get intelligence on an IP address
+*IPAddressApi* | [**iPAddressIsBot**](docs/Api/IPAddressApi.md#ipaddressisbot) | **POST** /validate/ip/is-bot | Check if IP address is a Bot client
 *IPAddressApi* | [**iPAddressIsThreat**](docs/Api/IPAddressApi.md#ipaddressisthreat) | **POST** /validate/ip/is-threat | Check if IP address is a known threat
 *IPAddressApi* | [**iPAddressIsTorNode**](docs/Api/IPAddressApi.md#ipaddressistornode) | **POST** /validate/ip/is-tor-node | Check if IP address is a Tor node server
 *IPAddressApi* | [**iPAddressPost**](docs/Api/IPAddressApi.md#ipaddresspost) | **POST** /validate/ip/geolocate | Geolocate an IP address
@@ -135,6 +137,7 @@ Class | Method | HTTP request | Description
 
  - [AddressGetServersResponse](docs/Model/AddressGetServersResponse.md)
  - [AddressVerifySyntaxOnlyResponse](docs/Model/AddressVerifySyntaxOnlyResponse.md)
+ - [BotCheckResponse](docs/Model/BotCheckResponse.md)
  - [CheckResponse](docs/Model/CheckResponse.md)
  - [CountryDetails](docs/Model/CountryDetails.md)
  - [CountryListResult](docs/Model/CountryListResult.md)
@@ -155,6 +158,7 @@ Class | Method | HTTP request | Description
  - [GetPublicHolidaysRequest](docs/Model/GetPublicHolidaysRequest.md)
  - [GetTimezonesRequest](docs/Model/GetTimezonesRequest.md)
  - [GetTimezonesResponse](docs/Model/GetTimezonesResponse.md)
+ - [IPIntelligenceResponse](docs/Model/IPIntelligenceResponse.md)
  - [IPReverseDNSLookupResponse](docs/Model/IPReverseDNSLookupResponse.md)
  - [IPThreatResponse](docs/Model/IPThreatResponse.md)
  - [LastNameValidationRequest](docs/Model/LastNameValidationRequest.md)

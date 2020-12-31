@@ -1,6 +1,6 @@
 <?php
 /**
- * GeolocateResponseTest
+ * BotCheckResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * GeolocateResponseTest Class Doc Comment
+ * BotCheckResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description Geolocation result of performing an IP address geolocation operation.  This product includes GeoLite2 data created by MaxMind, available from www.maxmind.com.
+// * @description Result of performing a Bot check on an IP address
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GeolocateResponseTest extends \PHPUnit_Framework_TestCase
+class BotCheckResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,72 +71,16 @@ class GeolocateResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GeolocateResponse"
+     * Test "BotCheckResponse"
      */
-    public function testGeolocateResponse()
+    public function testBotCheckResponse()
     {
     }
 
     /**
-     * Test attribute "country_code"
+     * Test attribute "is_bot"
      */
-    public function testPropertyCountryCode()
-    {
-    }
-
-    /**
-     * Test attribute "country_name"
-     */
-    public function testPropertyCountryName()
-    {
-    }
-
-    /**
-     * Test attribute "city"
-     */
-    public function testPropertyCity()
-    {
-    }
-
-    /**
-     * Test attribute "region_code"
-     */
-    public function testPropertyRegionCode()
-    {
-    }
-
-    /**
-     * Test attribute "region_name"
-     */
-    public function testPropertyRegionName()
-    {
-    }
-
-    /**
-     * Test attribute "zip_code"
-     */
-    public function testPropertyZipCode()
-    {
-    }
-
-    /**
-     * Test attribute "timezone_standard_name"
-     */
-    public function testPropertyTimezoneStandardName()
-    {
-    }
-
-    /**
-     * Test attribute "latitude"
-     */
-    public function testPropertyLatitude()
-    {
-    }
-
-    /**
-     * Test attribute "longitude"
-     */
-    public function testPropertyLongitude()
+    public function testPropertyIsBot()
     {
     }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * GeolocateResponseTest
+ * IPIntelligenceResponseTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * GeolocateResponseTest Class Doc Comment
+ * IPIntelligenceResponseTest Class Doc Comment
  *
  * @category    Class */
-// * @description Geolocation result of performing an IP address geolocation operation.  This product includes GeoLite2 data created by MaxMind, available from www.maxmind.com.
+// * @description IP address intelligence result
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class GeolocateResponseTest extends \PHPUnit_Framework_TestCase
+class IPIntelligenceResponseTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,72 +71,72 @@ class GeolocateResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "GeolocateResponse"
+     * Test "IPIntelligenceResponse"
      */
-    public function testGeolocateResponse()
+    public function testIPIntelligenceResponse()
     {
     }
 
     /**
-     * Test attribute "country_code"
+     * Test attribute "is_bot"
      */
-    public function testPropertyCountryCode()
+    public function testPropertyIsBot()
     {
     }
 
     /**
-     * Test attribute "country_name"
+     * Test attribute "is_tor_node"
      */
-    public function testPropertyCountryName()
+    public function testPropertyIsTorNode()
     {
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "is_threat"
      */
-    public function testPropertyCity()
+    public function testPropertyIsThreat()
     {
     }
 
     /**
-     * Test attribute "region_code"
+     * Test attribute "is_eu"
      */
-    public function testPropertyRegionCode()
+    public function testPropertyIsEu()
     {
     }
 
     /**
-     * Test attribute "region_name"
+     * Test attribute "location"
      */
-    public function testPropertyRegionName()
+    public function testPropertyLocation()
     {
     }
 
     /**
-     * Test attribute "zip_code"
+     * Test attribute "currency_code"
      */
-    public function testPropertyZipCode()
+    public function testPropertyCurrencyCode()
     {
     }
 
     /**
-     * Test attribute "timezone_standard_name"
+     * Test attribute "currency_name"
      */
-    public function testPropertyTimezoneStandardName()
+    public function testPropertyCurrencyName()
     {
     }
 
     /**
-     * Test attribute "latitude"
+     * Test attribute "region_area"
      */
-    public function testPropertyLatitude()
+    public function testPropertyRegionArea()
     {
     }
 
     /**
-     * Test attribute "longitude"
+     * Test attribute "subregion_area"
      */
-    public function testPropertyLongitude()
+    public function testPropertySubregionArea()
     {
     }
 }
