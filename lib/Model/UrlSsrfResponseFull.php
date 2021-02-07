@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidateUrlResponseSyntaxOnly
+ * UrlSsrfResponseFull
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ValidateUrlResponseSyntaxOnly Class Doc Comment
+ * UrlSsrfResponseFull Class Doc Comment
  *
  * @category Class
- * @description Result of validating a URL with syntax only
+ * @description Result of checking a URL for SSRF threats
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
+class UrlSsrfResponseFull implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ValidateUrlResponseSyntaxOnly';
+    protected static $swaggerModelName = 'UrlSsrfResponseFull';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,8 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'valid_url' => 'bool',
-        'well_formed_url' => 'string',
-        'top_level_domain_name' => 'string'
+        'clean_url' => 'bool',
+        'threat_level' => 'string'
     ];
 
     /**
@@ -69,9 +68,8 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'valid_url' => null,
-        'well_formed_url' => null,
-        'top_level_domain_name' => null
+        'clean_url' => null,
+        'threat_level' => null
     ];
 
     /**
@@ -101,9 +99,8 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'valid_url' => 'ValidURL',
-        'well_formed_url' => 'WellFormedURL',
-        'top_level_domain_name' => 'TopLevelDomainName'
+        'clean_url' => 'CleanURL',
+        'threat_level' => 'ThreatLevel'
     ];
 
     /**
@@ -112,9 +109,8 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'valid_url' => 'setValidUrl',
-        'well_formed_url' => 'setWellFormedUrl',
-        'top_level_domain_name' => 'setTopLevelDomainName'
+        'clean_url' => 'setCleanUrl',
+        'threat_level' => 'setThreatLevel'
     ];
 
     /**
@@ -123,9 +119,8 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'valid_url' => 'getValidUrl',
-        'well_formed_url' => 'getWellFormedUrl',
-        'top_level_domain_name' => 'getTopLevelDomainName'
+        'clean_url' => 'getCleanUrl',
+        'threat_level' => 'getThreatLevel'
     ];
 
     /**
@@ -188,9 +183,8 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['valid_url'] = isset($data['valid_url']) ? $data['valid_url'] : null;
-        $this->container['well_formed_url'] = isset($data['well_formed_url']) ? $data['well_formed_url'] : null;
-        $this->container['top_level_domain_name'] = isset($data['top_level_domain_name']) ? $data['top_level_domain_name'] : null;
+        $this->container['clean_url'] = isset($data['clean_url']) ? $data['clean_url'] : null;
+        $this->container['threat_level'] = isset($data['threat_level']) ? $data['threat_level'] : null;
     }
 
     /**
@@ -219,73 +213,49 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets valid_url
+     * Gets clean_url
      *
      * @return bool
      */
-    public function getValidUrl()
+    public function getCleanUrl()
     {
-        return $this->container['valid_url'];
+        return $this->container['clean_url'];
     }
 
     /**
-     * Sets valid_url
+     * Sets clean_url
      *
-     * @param bool $valid_url True if the URL is valid, false otherwise
+     * @param bool $clean_url True if the URL is clean, false if it is at risk of containing an SSRF threat or attack
      *
      * @return $this
      */
-    public function setValidUrl($valid_url)
+    public function setCleanUrl($clean_url)
     {
-        $this->container['valid_url'] = $valid_url;
+        $this->container['clean_url'] = $clean_url;
 
         return $this;
     }
 
     /**
-     * Gets well_formed_url
+     * Gets threat_level
      *
      * @return string
      */
-    public function getWellFormedUrl()
+    public function getThreatLevel()
     {
-        return $this->container['well_formed_url'];
+        return $this->container['threat_level'];
     }
 
     /**
-     * Sets well_formed_url
+     * Sets threat_level
      *
-     * @param string $well_formed_url Well-formed version of the URL
+     * @param string $threat_level Threat level of the URL; possible values are High, Medium, Low and None
      *
      * @return $this
      */
-    public function setWellFormedUrl($well_formed_url)
+    public function setThreatLevel($threat_level)
     {
-        $this->container['well_formed_url'] = $well_formed_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets top_level_domain_name
-     *
-     * @return string
-     */
-    public function getTopLevelDomainName()
-    {
-        return $this->container['top_level_domain_name'];
-    }
-
-    /**
-     * Sets top_level_domain_name
-     *
-     * @param string $top_level_domain_name The top-level domain name of the URL, e.g. mydomain.com
-     *
-     * @return $this
-     */
-    public function setTopLevelDomainName($top_level_domain_name)
-    {
-        $this->container['top_level_domain_name'] = $top_level_domain_name;
+        $this->container['threat_level'] = $threat_level;
 
         return $this;
     }

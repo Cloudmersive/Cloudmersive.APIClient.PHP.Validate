@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidateUrlResponseSyntaxOnly
+ * UrlSsrfResponseBatch
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \Swagger\Client\ObjectSerializer;
 
 /**
- * ValidateUrlResponseSyntaxOnly Class Doc Comment
+ * UrlSsrfResponseBatch Class Doc Comment
  *
  * @category Class
- * @description Result of validating a URL with syntax only
+ * @description Result of performing SSRF threat checks on multiple URLs
  * @package  Swagger\Client
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
+class UrlSsrfResponseBatch implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ValidateUrlResponseSyntaxOnly';
+    protected static $swaggerModelName = 'UrlSsrfResponseBatch';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,7 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'valid_url' => 'bool',
-        'well_formed_url' => 'string',
-        'top_level_domain_name' => 'string'
+        'output_items' => '\Swagger\Client\Model\UrlSsrfResponseFull[]'
     ];
 
     /**
@@ -69,9 +67,7 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'valid_url' => null,
-        'well_formed_url' => null,
-        'top_level_domain_name' => null
+        'output_items' => null
     ];
 
     /**
@@ -101,9 +97,7 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'valid_url' => 'ValidURL',
-        'well_formed_url' => 'WellFormedURL',
-        'top_level_domain_name' => 'TopLevelDomainName'
+        'output_items' => 'OutputItems'
     ];
 
     /**
@@ -112,9 +106,7 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'valid_url' => 'setValidUrl',
-        'well_formed_url' => 'setWellFormedUrl',
-        'top_level_domain_name' => 'setTopLevelDomainName'
+        'output_items' => 'setOutputItems'
     ];
 
     /**
@@ -123,9 +115,7 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'valid_url' => 'getValidUrl',
-        'well_formed_url' => 'getWellFormedUrl',
-        'top_level_domain_name' => 'getTopLevelDomainName'
+        'output_items' => 'getOutputItems'
     ];
 
     /**
@@ -188,9 +178,7 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['valid_url'] = isset($data['valid_url']) ? $data['valid_url'] : null;
-        $this->container['well_formed_url'] = isset($data['well_formed_url']) ? $data['well_formed_url'] : null;
-        $this->container['top_level_domain_name'] = isset($data['top_level_domain_name']) ? $data['top_level_domain_name'] : null;
+        $this->container['output_items'] = isset($data['output_items']) ? $data['output_items'] : null;
     }
 
     /**
@@ -219,73 +207,25 @@ class ValidateUrlResponseSyntaxOnly implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets valid_url
+     * Gets output_items
      *
-     * @return bool
+     * @return \Swagger\Client\Model\UrlSsrfResponseFull[]
      */
-    public function getValidUrl()
+    public function getOutputItems()
     {
-        return $this->container['valid_url'];
+        return $this->container['output_items'];
     }
 
     /**
-     * Sets valid_url
+     * Sets output_items
      *
-     * @param bool $valid_url True if the URL is valid, false otherwise
+     * @param \Swagger\Client\Model\UrlSsrfResponseFull[] $output_items Results of the operation, with indexes matched to input values
      *
      * @return $this
      */
-    public function setValidUrl($valid_url)
+    public function setOutputItems($output_items)
     {
-        $this->container['valid_url'] = $valid_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets well_formed_url
-     *
-     * @return string
-     */
-    public function getWellFormedUrl()
-    {
-        return $this->container['well_formed_url'];
-    }
-
-    /**
-     * Sets well_formed_url
-     *
-     * @param string $well_formed_url Well-formed version of the URL
-     *
-     * @return $this
-     */
-    public function setWellFormedUrl($well_formed_url)
-    {
-        $this->container['well_formed_url'] = $well_formed_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets top_level_domain_name
-     *
-     * @return string
-     */
-    public function getTopLevelDomainName()
-    {
-        return $this->container['top_level_domain_name'];
-    }
-
-    /**
-     * Sets top_level_domain_name
-     *
-     * @param string $top_level_domain_name The top-level domain name of the URL, e.g. mydomain.com
-     *
-     * @return $this
-     */
-    public function setTopLevelDomainName($top_level_domain_name)
-    {
-        $this->container['top_level_domain_name'] = $top_level_domain_name;
+        $this->container['output_items'] = $output_items;
 
         return $this;
     }

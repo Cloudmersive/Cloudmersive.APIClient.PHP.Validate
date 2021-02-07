@@ -82,6 +82,16 @@ class DomainApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for domainGetTopLevelDomainFromUrl
+     *
+     * Get top-level domain name from URL.
+     *
+     */
+    public function testDomainGetTopLevelDomainFromUrl()
+    {
+    }
+
+    /**
      * Test case for domainPost
      *
      * Get WHOIS information for a domain.
@@ -98,6 +108,26 @@ class DomainApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testDomainQualityScore()
+    {
+    }
+
+    /**
+     * Test case for domainSsrfCheck
+     *
+     * Check a URL for SSRF threats.
+     *
+     */
+    public function testDomainSsrfCheck()
+    {
+    }
+
+    /**
+     * Test case for domainSsrfCheckBatch
+     *
+     * Check a URL for SSRF threats in batches.
+     *
+     */
+    public function testDomainSsrfCheckBatch()
     {
     }
 

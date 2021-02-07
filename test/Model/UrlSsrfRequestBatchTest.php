@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidateUrlResponseSyntaxOnlyTest
+ * UrlSsrfRequestBatchTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace Swagger\Client;
 
 /**
- * ValidateUrlResponseSyntaxOnlyTest Class Doc Comment
+ * UrlSsrfRequestBatchTest Class Doc Comment
  *
  * @category    Class */
-// * @description Result of validating a URL with syntax only
+// * @description Batch operation to perform SSRF threat checks on multiple URLs
 /**
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class ValidateUrlResponseSyntaxOnlyTest extends \PHPUnit_Framework_TestCase
+class UrlSsrfRequestBatchTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,30 +71,16 @@ class ValidateUrlResponseSyntaxOnlyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "ValidateUrlResponseSyntaxOnly"
+     * Test "UrlSsrfRequestBatch"
      */
-    public function testValidateUrlResponseSyntaxOnly()
+    public function testUrlSsrfRequestBatch()
     {
     }
 
     /**
-     * Test attribute "valid_url"
+     * Test attribute "input_items"
      */
-    public function testPropertyValidUrl()
-    {
-    }
-
-    /**
-     * Test attribute "well_formed_url"
-     */
-    public function testPropertyWellFormedUrl()
-    {
-    }
-
-    /**
-     * Test attribute "top_level_domain_name"
-     */
-    public function testPropertyTopLevelDomainName()
+    public function testPropertyInputItems()
     {
     }
 }
