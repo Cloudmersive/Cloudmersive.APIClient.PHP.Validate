@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.7.1
+- Package version: 1.7.2
 
 
 ## Requirements
@@ -106,8 +106,10 @@ Class | Method | HTTP request | Description
 *DateTimeApi* | [**dateTimeParseStandardDateTime**](docs/Api/DateTimeApi.md#datetimeparsestandarddatetime) | **POST** /validate/date-time/parse/date-time/structured | Parses a standardized date and time string into a date and time
 *DomainApi* | [**domainCheck**](docs/Api/DomainApi.md#domaincheck) | **POST** /validate/domain/check | Validate a domain name
 *DomainApi* | [**domainGetTopLevelDomainFromUrl**](docs/Api/DomainApi.md#domaingettopleveldomainfromurl) | **POST** /validate/domain/url/get-top-level-domain | Get top-level domain name from URL
+*DomainApi* | [**domainPhishingCheck**](docs/Api/DomainApi.md#domainphishingcheck) | **POST** /validate/domain/url/phishing-threat-check | Check a URL for Phishing threats
 *DomainApi* | [**domainPost**](docs/Api/DomainApi.md#domainpost) | **POST** /validate/domain/whois | Get WHOIS information for a domain
 *DomainApi* | [**domainQualityScore**](docs/Api/DomainApi.md#domainqualityscore) | **POST** /validate/domain/quality-score | Validate a domain name&#39;s quality score
+*DomainApi* | [**domainSafetyCheck**](docs/Api/DomainApi.md#domainsafetycheck) | **POST** /validate/domain/url/safety-threat-check | Check a URL for safety threats
 *DomainApi* | [**domainSsrfCheck**](docs/Api/DomainApi.md#domainssrfcheck) | **POST** /validate/domain/url/ssrf-threat-check | Check a URL for SSRF threats
 *DomainApi* | [**domainSsrfCheckBatch**](docs/Api/DomainApi.md#domainssrfcheckbatch) | **POST** /validate/domain/url/ssrf-threat-check/batch | Check a URL for SSRF threats in batches
 *DomainApi* | [**domainUrlFull**](docs/Api/DomainApi.md#domainurlfull) | **POST** /validate/domain/url/full | Validate a URL fully
@@ -171,6 +173,8 @@ Class | Method | HTTP request | Description
  - [NormalizeAddressResponse](docs/Model/NormalizeAddressResponse.md)
  - [ParseAddressRequest](docs/Model/ParseAddressRequest.md)
  - [ParseAddressResponse](docs/Model/ParseAddressResponse.md)
+ - [PhishingCheckRequest](docs/Model/PhishingCheckRequest.md)
+ - [PhishingCheckResponse](docs/Model/PhishingCheckResponse.md)
  - [PhoneNumberValidateRequest](docs/Model/PhoneNumberValidateRequest.md)
  - [PhoneNumberValidationResponse](docs/Model/PhoneNumberValidationResponse.md)
  - [PublicHolidayOccurrence](docs/Model/PublicHolidayOccurrence.md)
@@ -179,6 +183,8 @@ Class | Method | HTTP request | Description
  - [ReverseGeocodeAddressResponse](docs/Model/ReverseGeocodeAddressResponse.md)
  - [Timezone](docs/Model/Timezone.md)
  - [TorNodeResponse](docs/Model/TorNodeResponse.md)
+ - [UrlSafetyCheckRequestFull](docs/Model/UrlSafetyCheckRequestFull.md)
+ - [UrlSafetyCheckResponseFull](docs/Model/UrlSafetyCheckResponseFull.md)
  - [UrlSsrfRequestBatch](docs/Model/UrlSsrfRequestBatch.md)
  - [UrlSsrfRequestFull](docs/Model/UrlSsrfRequestFull.md)
  - [UrlSsrfResponseBatch](docs/Model/UrlSsrfResponseBatch.md)

@@ -92,6 +92,16 @@ class DomainApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for domainPhishingCheck
+     *
+     * Check a URL for Phishing threats.
+     *
+     */
+    public function testDomainPhishingCheck()
+    {
+    }
+
+    /**
      * Test case for domainPost
      *
      * Get WHOIS information for a domain.
@@ -108,6 +118,16 @@ class DomainApiTest extends \PHPUnit_Framework_TestCase
      *
      */
     public function testDomainQualityScore()
+    {
+    }
+
+    /**
+     * Test case for domainSafetyCheck
+     *
+     * Check a URL for safety threats.
+     *
+     */
+    public function testDomainSafetyCheck()
     {
     }
 
