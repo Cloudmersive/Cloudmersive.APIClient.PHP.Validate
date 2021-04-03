@@ -72,6 +72,26 @@ class TextInputApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for textInputCheckSqlInjection
+     *
+     * Check text input for SQL Injection (SQLI) attacks.
+     *
+     */
+    public function testTextInputCheckSqlInjection()
+    {
+    }
+
+    /**
+     * Test case for textInputCheckSqlInjectionBatch
+     *
+     * Check and protect multiple text inputs for SQL Injection (SQLI) attacks in batch.
+     *
+     */
+    public function testTextInputCheckSqlInjectionBatch()
+    {
+    }
+
+    /**
      * Test case for textInputCheckXss
      *
      * Check text input for Cross-Site-Scripting (XSS) attacks.

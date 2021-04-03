@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.7.2
+- Package version: 1.7.3
 
 
 ## Requirements
@@ -131,6 +131,8 @@ Class | Method | HTTP request | Description
 *NameApi* | [**nameValidateFullName**](docs/Api/NameApi.md#namevalidatefullname) | **POST** /validate/name/full-name | Parse and validate a full name
 *NameApi* | [**nameValidateLastName**](docs/Api/NameApi.md#namevalidatelastname) | **POST** /validate/name/last | Validate a last name
 *PhoneNumberApi* | [**phoneNumberSyntaxOnly**](docs/Api/PhoneNumberApi.md#phonenumbersyntaxonly) | **POST** /validate/phonenumber/basic | Validate phone number (basic)
+*TextInputApi* | [**textInputCheckSqlInjection**](docs/Api/TextInputApi.md#textinputchecksqlinjection) | **POST** /validate/text-input/check/sql-injection | Check text input for SQL Injection (SQLI) attacks
+*TextInputApi* | [**textInputCheckSqlInjectionBatch**](docs/Api/TextInputApi.md#textinputchecksqlinjectionbatch) | **POST** /validate/text-input/check/sql-injection/batch | Check and protect multiple text inputs for SQL Injection (SQLI) attacks in batch
 *TextInputApi* | [**textInputCheckXss**](docs/Api/TextInputApi.md#textinputcheckxss) | **POST** /validate/text-input/check/xss | Check text input for Cross-Site-Scripting (XSS) attacks
 *TextInputApi* | [**textInputCheckXssBatch**](docs/Api/TextInputApi.md#textinputcheckxssbatch) | **POST** /validate/text-input/check-and-protect/xss/batch | Check and protect multiple text inputs for Cross-Site-Scripting (XSS) attacks in batch
 *TextInputApi* | [**textInputProtectXss**](docs/Api/TextInputApi.md#textinputprotectxss) | **POST** /validate/text-input/protect/xss | Protect text input from Cross-Site-Scripting (XSS) attacks through normalization
@@ -181,6 +183,10 @@ Class | Method | HTTP request | Description
  - [PublicHolidaysResponse](docs/Model/PublicHolidaysResponse.md)
  - [ReverseGeocodeAddressRequest](docs/Model/ReverseGeocodeAddressRequest.md)
  - [ReverseGeocodeAddressResponse](docs/Model/ReverseGeocodeAddressResponse.md)
+ - [SqlInjectionCheckBatchRequest](docs/Model/SqlInjectionCheckBatchRequest.md)
+ - [SqlInjectionCheckBatchResponse](docs/Model/SqlInjectionCheckBatchResponse.md)
+ - [SqlInjectionCheckRequestItem](docs/Model/SqlInjectionCheckRequestItem.md)
+ - [SqlInjectionDetectionResult](docs/Model/SqlInjectionDetectionResult.md)
  - [Timezone](docs/Model/Timezone.md)
  - [TorNodeResponse](docs/Model/TorNodeResponse.md)
  - [UrlSafetyCheckRequestFull](docs/Model/UrlSafetyCheckRequestFull.md)
