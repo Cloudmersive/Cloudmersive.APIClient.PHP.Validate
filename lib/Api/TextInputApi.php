@@ -1140,6 +1140,557 @@ class TextInputApi
     }
 
     /**
+     * Operation textInputCheckXxe
+     *
+     * Protect text input from XML External Entity (XXE) attacks
+     *
+     * @param  string $value User-facing text input. (required)
+     * @param  bool $allow_internet_urls Optional: Set to true to allow Internet-based dependency URLs for DTDs and other XML External Entitites, set to false to block.  Default is false. (optional)
+     * @param  string $known_safe_urls Optional: Comma separated list of fully-qualified URLs that will automatically be considered safe. (optional)
+     * @param  string $known_unsafe_urls Optional: Comma separated list of fully-qualified URLs that will automatically be considered unsafe. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\XxeDetectionResult
+     */
+    public function textInputCheckXxe($value, $allow_internet_urls = null, $known_safe_urls = null, $known_unsafe_urls = null)
+    {
+        list($response) = $this->textInputCheckXxeWithHttpInfo($value, $allow_internet_urls, $known_safe_urls, $known_unsafe_urls);
+        return $response;
+    }
+
+    /**
+     * Operation textInputCheckXxeWithHttpInfo
+     *
+     * Protect text input from XML External Entity (XXE) attacks
+     *
+     * @param  string $value User-facing text input. (required)
+     * @param  bool $allow_internet_urls Optional: Set to true to allow Internet-based dependency URLs for DTDs and other XML External Entitites, set to false to block.  Default is false. (optional)
+     * @param  string $known_safe_urls Optional: Comma separated list of fully-qualified URLs that will automatically be considered safe. (optional)
+     * @param  string $known_unsafe_urls Optional: Comma separated list of fully-qualified URLs that will automatically be considered unsafe. (optional)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\XxeDetectionResult, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function textInputCheckXxeWithHttpInfo($value, $allow_internet_urls = null, $known_safe_urls = null, $known_unsafe_urls = null)
+    {
+        $returnType = '\Swagger\Client\Model\XxeDetectionResult';
+        $request = $this->textInputCheckXxeRequest($value, $allow_internet_urls, $known_safe_urls, $known_unsafe_urls);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\XxeDetectionResult',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation textInputCheckXxeAsync
+     *
+     * Protect text input from XML External Entity (XXE) attacks
+     *
+     * @param  string $value User-facing text input. (required)
+     * @param  bool $allow_internet_urls Optional: Set to true to allow Internet-based dependency URLs for DTDs and other XML External Entitites, set to false to block.  Default is false. (optional)
+     * @param  string $known_safe_urls Optional: Comma separated list of fully-qualified URLs that will automatically be considered safe. (optional)
+     * @param  string $known_unsafe_urls Optional: Comma separated list of fully-qualified URLs that will automatically be considered unsafe. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function textInputCheckXxeAsync($value, $allow_internet_urls = null, $known_safe_urls = null, $known_unsafe_urls = null)
+    {
+        return $this->textInputCheckXxeAsyncWithHttpInfo($value, $allow_internet_urls, $known_safe_urls, $known_unsafe_urls)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation textInputCheckXxeAsyncWithHttpInfo
+     *
+     * Protect text input from XML External Entity (XXE) attacks
+     *
+     * @param  string $value User-facing text input. (required)
+     * @param  bool $allow_internet_urls Optional: Set to true to allow Internet-based dependency URLs for DTDs and other XML External Entitites, set to false to block.  Default is false. (optional)
+     * @param  string $known_safe_urls Optional: Comma separated list of fully-qualified URLs that will automatically be considered safe. (optional)
+     * @param  string $known_unsafe_urls Optional: Comma separated list of fully-qualified URLs that will automatically be considered unsafe. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function textInputCheckXxeAsyncWithHttpInfo($value, $allow_internet_urls = null, $known_safe_urls = null, $known_unsafe_urls = null)
+    {
+        $returnType = '\Swagger\Client\Model\XxeDetectionResult';
+        $request = $this->textInputCheckXxeRequest($value, $allow_internet_urls, $known_safe_urls, $known_unsafe_urls);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'textInputCheckXxe'
+     *
+     * @param  string $value User-facing text input. (required)
+     * @param  bool $allow_internet_urls Optional: Set to true to allow Internet-based dependency URLs for DTDs and other XML External Entitites, set to false to block.  Default is false. (optional)
+     * @param  string $known_safe_urls Optional: Comma separated list of fully-qualified URLs that will automatically be considered safe. (optional)
+     * @param  string $known_unsafe_urls Optional: Comma separated list of fully-qualified URLs that will automatically be considered unsafe. (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function textInputCheckXxeRequest($value, $allow_internet_urls = null, $known_safe_urls = null, $known_unsafe_urls = null)
+    {
+        // verify the required parameter 'value' is set
+        if ($value === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $value when calling textInputCheckXxe'
+            );
+        }
+
+        $resourcePath = '/validate/text-input/check/xxe';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // header params
+        if ($allow_internet_urls !== null) {
+            $headerParams['allowInternetUrls'] = ObjectSerializer::toHeaderValue($allow_internet_urls);
+        }
+        // header params
+        if ($known_safe_urls !== null) {
+            $headerParams['knownSafeUrls'] = ObjectSerializer::toHeaderValue($known_safe_urls);
+        }
+        // header params
+        if ($known_unsafe_urls !== null) {
+            $headerParams['knownUnsafeUrls'] = ObjectSerializer::toHeaderValue($known_unsafe_urls);
+        }
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($value)) {
+            $_tempBody = $value;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'text/json', 'application/xml', 'text/xml']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'text/json', 'application/xml', 'text/xml'],
+                ['application/json', 'text/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Apikey');
+        if ($apiKey !== null) {
+            $headers['Apikey'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation textInputCheckXxeBatch
+     *
+     * Protect text input from XML External Entity (XXE) attacks
+     *
+     * @param  \Swagger\Client\Model\XxeDetectionBatchRequest $request request (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\XxeDetectionBatchResponse
+     */
+    public function textInputCheckXxeBatch($request)
+    {
+        list($response) = $this->textInputCheckXxeBatchWithHttpInfo($request);
+        return $response;
+    }
+
+    /**
+     * Operation textInputCheckXxeBatchWithHttpInfo
+     *
+     * Protect text input from XML External Entity (XXE) attacks
+     *
+     * @param  \Swagger\Client\Model\XxeDetectionBatchRequest $request (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\XxeDetectionBatchResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function textInputCheckXxeBatchWithHttpInfo($request)
+    {
+        $returnType = '\Swagger\Client\Model\XxeDetectionBatchResponse';
+        $request = $this->textInputCheckXxeBatchRequest($request);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Swagger\Client\Model\XxeDetectionBatchResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation textInputCheckXxeBatchAsync
+     *
+     * Protect text input from XML External Entity (XXE) attacks
+     *
+     * @param  \Swagger\Client\Model\XxeDetectionBatchRequest $request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function textInputCheckXxeBatchAsync($request)
+    {
+        return $this->textInputCheckXxeBatchAsyncWithHttpInfo($request)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation textInputCheckXxeBatchAsyncWithHttpInfo
+     *
+     * Protect text input from XML External Entity (XXE) attacks
+     *
+     * @param  \Swagger\Client\Model\XxeDetectionBatchRequest $request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function textInputCheckXxeBatchAsyncWithHttpInfo($request)
+    {
+        $returnType = '\Swagger\Client\Model\XxeDetectionBatchResponse';
+        $request = $this->textInputCheckXxeBatchRequest($request);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'textInputCheckXxeBatch'
+     *
+     * @param  \Swagger\Client\Model\XxeDetectionBatchRequest $request (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function textInputCheckXxeBatchRequest($request)
+    {
+        // verify the required parameter 'request' is set
+        if ($request === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $request when calling textInputCheckXxeBatch'
+            );
+        }
+
+        $resourcePath = '/validate/text-input/check/xxe/batch';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // body params
+        $_tempBody = null;
+        if (isset($request)) {
+            $_tempBody = $request;
+        }
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'text/json', 'application/xml', 'text/xml']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'text/json', 'application/xml', 'text/xml'],
+                ['application/json', 'text/json']
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Apikey');
+        if ($apiKey !== null) {
+            $headers['Apikey'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'POST',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation textInputProtectXss
      *
      * Protect text input from Cross-Site-Scripting (XSS) attacks through normalization

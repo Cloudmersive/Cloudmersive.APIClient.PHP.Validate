@@ -112,6 +112,26 @@ class TextInputApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for textInputCheckXxe
+     *
+     * Protect text input from XML External Entity (XXE) attacks.
+     *
+     */
+    public function testTextInputCheckXxe()
+    {
+    }
+
+    /**
+     * Test case for textInputCheckXxeBatch
+     *
+     * Protect text input from XML External Entity (XXE) attacks.
+     *
+     */
+    public function testTextInputCheckXxeBatch()
+    {
+    }
+
+    /**
      * Test case for textInputProtectXss
      *
      * Protect text input from Cross-Site-Scripting (XSS) attacks through normalization.

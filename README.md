@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.7.3
+- Package version: 1.7.4
 
 
 ## Requirements
@@ -135,6 +135,8 @@ Class | Method | HTTP request | Description
 *TextInputApi* | [**textInputCheckSqlInjectionBatch**](docs/Api/TextInputApi.md#textinputchecksqlinjectionbatch) | **POST** /validate/text-input/check/sql-injection/batch | Check and protect multiple text inputs for SQL Injection (SQLI) attacks in batch
 *TextInputApi* | [**textInputCheckXss**](docs/Api/TextInputApi.md#textinputcheckxss) | **POST** /validate/text-input/check/xss | Check text input for Cross-Site-Scripting (XSS) attacks
 *TextInputApi* | [**textInputCheckXssBatch**](docs/Api/TextInputApi.md#textinputcheckxssbatch) | **POST** /validate/text-input/check-and-protect/xss/batch | Check and protect multiple text inputs for Cross-Site-Scripting (XSS) attacks in batch
+*TextInputApi* | [**textInputCheckXxe**](docs/Api/TextInputApi.md#textinputcheckxxe) | **POST** /validate/text-input/check/xxe | Protect text input from XML External Entity (XXE) attacks
+*TextInputApi* | [**textInputCheckXxeBatch**](docs/Api/TextInputApi.md#textinputcheckxxebatch) | **POST** /validate/text-input/check/xxe/batch | Protect text input from XML External Entity (XXE) attacks
 *TextInputApi* | [**textInputProtectXss**](docs/Api/TextInputApi.md#textinputprotectxss) | **POST** /validate/text-input/protect/xss | Protect text input from Cross-Site-Scripting (XSS) attacks through normalization
 *UserAgentApi* | [**userAgentParse**](docs/Api/UserAgentApi.md#useragentparse) | **POST** /validate/useragent/parse | Parse an HTTP User-Agent string, identify robots
 *VatApi* | [**vatVatLookup**](docs/Api/VatApi.md#vatvatlookup) | **POST** /validate/vat/lookup | Validate a VAT number
@@ -220,6 +222,10 @@ Class | Method | HTTP request | Description
  - [XssProtectionBatchResponse](docs/Model/XssProtectionBatchResponse.md)
  - [XssProtectionRequestItem](docs/Model/XssProtectionRequestItem.md)
  - [XssProtectionResult](docs/Model/XssProtectionResult.md)
+ - [XxeDetectionBatchRequest](docs/Model/XxeDetectionBatchRequest.md)
+ - [XxeDetectionBatchResponse](docs/Model/XxeDetectionBatchResponse.md)
+ - [XxeDetectionRequestItem](docs/Model/XxeDetectionRequestItem.md)
+ - [XxeDetectionResult](docs/Model/XxeDetectionResult.md)
 
 
 ## Documentation For Authorization
