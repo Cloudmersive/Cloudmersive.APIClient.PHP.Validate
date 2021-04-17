@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**domainCheck**](DomainApi.md#domainCheck) | **POST** /validate/domain/check | Validate a domain name
 [**domainGetTopLevelDomainFromUrl**](DomainApi.md#domainGetTopLevelDomainFromUrl) | **POST** /validate/domain/url/get-top-level-domain | Get top-level domain name from URL
+[**domainIsAdminPath**](DomainApi.md#domainIsAdminPath) | **POST** /validate/domain/url/is-admin-path | Check if path is a high-risk server administration path
 [**domainPhishingCheck**](DomainApi.md#domainPhishingCheck) | **POST** /validate/domain/url/phishing-threat-check | Check a URL for Phishing threats
 [**domainPost**](DomainApi.md#domainPost) | **POST** /validate/domain/whois | Get WHOIS information for a domain
 [**domainQualityScore**](DomainApi.md#domainQualityScore) | **POST** /validate/domain/quality-score | Validate a domain name&#39;s quality score
@@ -114,6 +115,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\ValidateUrlResponseSyntaxOnly**](../Model/ValidateUrlResponseSyntaxOnly.md)
+
+### Authorization
+
+[Apikey](../../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **domainIsAdminPath**
+> \Swagger\Client\Model\IsAdminPathResponse domainIsAdminPath($value)
+
+Check if path is a high-risk server administration path
+
+Check if the input URL or relative path is a server Administration Path, and therefore a risk for remote access.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Apikey
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Apikey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Apikey', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\DomainApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$value = "value_example"; // string | URL or relative path to check, e.g. \"/admin/login\".  The input is a string so be sure to enclose it in double-quotes.
+
+try {
+    $result = $apiInstance->domainIsAdminPath($value);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DomainApi->domainIsAdminPath: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **value** | **string**| URL or relative path to check, e.g. \&quot;/admin/login\&quot;.  The input is a string so be sure to enclose it in double-quotes. |
+
+### Return type
+
+[**\Swagger\Client\Model\IsAdminPathResponse**](../Model/IsAdminPathResponse.md)
 
 ### Authorization
 

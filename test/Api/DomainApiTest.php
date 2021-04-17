@@ -92,6 +92,16 @@ class DomainApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for domainIsAdminPath
+     *
+     * Check if path is a high-risk server administration path.
+     *
+     */
+    public function testDomainIsAdminPath()
+    {
+    }
+
+    /**
      * Test case for domainPhishingCheck
      *
      * Check a URL for Phishing threats.
