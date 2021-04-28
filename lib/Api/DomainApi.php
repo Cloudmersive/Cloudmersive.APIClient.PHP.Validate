@@ -609,7 +609,7 @@ class DomainApi
     /**
      * Operation domainIsAdminPath
      *
-     * Check if path is a high-risk server administration path
+     * Check if path is a high-risk or vulnerable server administration path
      *
      * @param  string $value URL or relative path to check, e.g. \&quot;/admin/login\&quot;.  The input is a string so be sure to enclose it in double-quotes. (required)
      *
@@ -626,7 +626,7 @@ class DomainApi
     /**
      * Operation domainIsAdminPathWithHttpInfo
      *
-     * Check if path is a high-risk server administration path
+     * Check if path is a high-risk or vulnerable server administration path
      *
      * @param  string $value URL or relative path to check, e.g. \&quot;/admin/login\&quot;.  The input is a string so be sure to enclose it in double-quotes. (required)
      *
@@ -701,7 +701,7 @@ class DomainApi
     /**
      * Operation domainIsAdminPathAsync
      *
-     * Check if path is a high-risk server administration path
+     * Check if path is a high-risk or vulnerable server administration path
      *
      * @param  string $value URL or relative path to check, e.g. \&quot;/admin/login\&quot;.  The input is a string so be sure to enclose it in double-quotes. (required)
      *
@@ -721,7 +721,7 @@ class DomainApi
     /**
      * Operation domainIsAdminPathAsyncWithHttpInfo
      *
-     * Check if path is a high-risk server administration path
+     * Check if path is a high-risk or vulnerable server administration path
      *
      * @param  string $value URL or relative path to check, e.g. \&quot;/admin/login\&quot;.  The input is a string so be sure to enclose it in double-quotes. (required)
      *

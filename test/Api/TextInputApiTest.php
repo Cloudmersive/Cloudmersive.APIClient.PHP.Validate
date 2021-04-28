@@ -72,6 +72,16 @@ class TextInputApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for textInputCheckHtmlSsrf
+     *
+     * Protect html input from Server-side Request Forgery (SSRF) attacks.
+     *
+     */
+    public function testTextInputCheckHtmlSsrf()
+    {
+    }
+
+    /**
      * Test case for textInputCheckSqlInjection
      *
      * Check text input for SQL Injection (SQLI) attacks.
