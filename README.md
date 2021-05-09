@@ -4,7 +4,7 @@ The validation APIs help you validate data. Check if an E-mail address is real. 
 [Cloudmersive Validation API](https://www.cloudmersive.com/validate-api) provides data validation capabilities for validating email addresses, phone numbers, IP addresses, and many other types of business data.
 
 - API version: v1
-- Package version: 1.7.7
+- Package version: 1.7.8
 
 
 ## Requirements
@@ -114,6 +114,7 @@ Class | Method | HTTP request | Description
 *DomainApi* | [**domainSsrfCheck**](docs/Api/DomainApi.md#domainssrfcheck) | **POST** /validate/domain/url/ssrf-threat-check | Check a URL for SSRF threats
 *DomainApi* | [**domainSsrfCheckBatch**](docs/Api/DomainApi.md#domainssrfcheckbatch) | **POST** /validate/domain/url/ssrf-threat-check/batch | Check a URL for SSRF threats in batches
 *DomainApi* | [**domainUrlFull**](docs/Api/DomainApi.md#domainurlfull) | **POST** /validate/domain/url/full | Validate a URL fully
+*DomainApi* | [**domainUrlHtmlSsrfCheck**](docs/Api/DomainApi.md#domainurlhtmlssrfcheck) | **POST** /validate/domain/url/ssrf-threat-check/html-embedded | Check a URL for HTML embedded SSRF threats
 *DomainApi* | [**domainUrlSyntaxOnly**](docs/Api/DomainApi.md#domainurlsyntaxonly) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 *EmailApi* | [**emailAddressGetServers**](docs/Api/EmailApi.md#emailaddressgetservers) | **POST** /validate/email/address/servers | Partially check whether an email address is valid
 *EmailApi* | [**emailFullValidation**](docs/Api/EmailApi.md#emailfullvalidation) | **POST** /validate/email/address/full | Fully validate an email address
@@ -195,6 +196,8 @@ Class | Method | HTTP request | Description
  - [SqlInjectionDetectionResult](docs/Model/SqlInjectionDetectionResult.md)
  - [Timezone](docs/Model/Timezone.md)
  - [TorNodeResponse](docs/Model/TorNodeResponse.md)
+ - [UrlHtmlSsrfRequestFull](docs/Model/UrlHtmlSsrfRequestFull.md)
+ - [UrlHtmlSsrfResponseFull](docs/Model/UrlHtmlSsrfResponseFull.md)
  - [UrlSafetyCheckRequestFull](docs/Model/UrlSafetyCheckRequestFull.md)
  - [UrlSafetyCheckResponseFull](docs/Model/UrlSafetyCheckResponseFull.md)
  - [UrlSsrfRequestBatch](docs/Model/UrlSsrfRequestBatch.md)

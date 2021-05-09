@@ -172,6 +172,16 @@ class DomainApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for domainUrlHtmlSsrfCheck
+     *
+     * Check a URL for HTML embedded SSRF threats.
+     *
+     */
+    public function testDomainUrlHtmlSsrfCheck()
+    {
+    }
+
+    /**
      * Test case for domainUrlSyntaxOnly
      *
      * Validate a URL syntactically.

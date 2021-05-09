@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**domainSsrfCheck**](DomainApi.md#domainSsrfCheck) | **POST** /validate/domain/url/ssrf-threat-check | Check a URL for SSRF threats
 [**domainSsrfCheckBatch**](DomainApi.md#domainSsrfCheckBatch) | **POST** /validate/domain/url/ssrf-threat-check/batch | Check a URL for SSRF threats in batches
 [**domainUrlFull**](DomainApi.md#domainUrlFull) | **POST** /validate/domain/url/full | Validate a URL fully
+[**domainUrlHtmlSsrfCheck**](DomainApi.md#domainUrlHtmlSsrfCheck) | **POST** /validate/domain/url/ssrf-threat-check/html-embedded | Check a URL for HTML embedded SSRF threats
 [**domainUrlSyntaxOnly**](DomainApi.md#domainUrlSyntaxOnly) | **POST** /validate/domain/url/syntax-only | Validate a URL syntactically
 
 
@@ -555,6 +556,61 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\Swagger\Client\Model\ValidateUrlResponseFull**](../Model/ValidateUrlResponseFull.md)
+
+### Authorization
+
+[Apikey](../../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json
+ - **Accept**: application/json, text/json, application/xml, text/xml
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **domainUrlHtmlSsrfCheck**
+> \Swagger\Client\Model\UrlHtmlSsrfResponseFull domainUrlHtmlSsrfCheck($request)
+
+Check a URL for HTML embedded SSRF threats
+
+Checks if an input URL HTML is at risk of containing one or more embedded SSRF (Server-side request forgery) threats or attacks.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+// Configure API key authorization: Apikey
+$config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKey('Apikey', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = Swagger\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('Apikey', 'Bearer');
+
+$apiInstance = new Swagger\Client\Api\DomainApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$request = new \Swagger\Client\Model\UrlHtmlSsrfRequestFull(); // \Swagger\Client\Model\UrlHtmlSsrfRequestFull | Input URL request
+
+try {
+    $result = $apiInstance->domainUrlHtmlSsrfCheck($request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DomainApi->domainUrlHtmlSsrfCheck: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\Swagger\Client\Model\UrlHtmlSsrfRequestFull**](../Model/UrlHtmlSsrfRequestFull.md)| Input URL request |
+
+### Return type
+
+[**\Swagger\Client\Model\UrlHtmlSsrfResponseFull**](../Model/UrlHtmlSsrfResponseFull.md)
 
 ### Authorization
 
