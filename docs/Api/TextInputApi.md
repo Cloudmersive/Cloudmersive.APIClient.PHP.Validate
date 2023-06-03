@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **textInputCheckHtmlSsrf**
-> \Swagger\Client\Model\HtmlSsrfDetectionResult textInputCheckHtmlSsrf($value)
+> \Swagger\Client\Model\HtmlSsrfDetectionResult textInputCheckHtmlSsrf($value, $allow_cid_scheme)
 
 Protect html input from Server-side Request Forgery (SSRF) attacks
 
@@ -38,9 +38,10 @@ $apiInstance = new Swagger\Client\Api\TextInputApi(
     $config
 );
 $value = "value_example"; // string | User-facing HTML input.
+$allow_cid_scheme = true; // bool | Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false.
 
 try {
-    $result = $apiInstance->textInputCheckHtmlSsrf($value);
+    $result = $apiInstance->textInputCheckHtmlSsrf($value, $allow_cid_scheme);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TextInputApi->textInputCheckHtmlSsrf: ', $e->getMessage(), PHP_EOL;
@@ -53,6 +54,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **value** | **string**| User-facing HTML input. |
+ **allow_cid_scheme** | **bool**| Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false. | [optional]
 
 ### Return type
 

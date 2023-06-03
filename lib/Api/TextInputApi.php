@@ -88,14 +88,15 @@ class TextInputApi
      * Protect html input from Server-side Request Forgery (SSRF) attacks
      *
      * @param  string $value User-facing HTML input. (required)
+     * @param  bool $allow_cid_scheme Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Swagger\Client\Model\HtmlSsrfDetectionResult
      */
-    public function textInputCheckHtmlSsrf($value)
+    public function textInputCheckHtmlSsrf($value, $allow_cid_scheme = null)
     {
-        list($response) = $this->textInputCheckHtmlSsrfWithHttpInfo($value);
+        list($response) = $this->textInputCheckHtmlSsrfWithHttpInfo($value, $allow_cid_scheme);
         return $response;
     }
 
@@ -105,15 +106,16 @@ class TextInputApi
      * Protect html input from Server-side Request Forgery (SSRF) attacks
      *
      * @param  string $value User-facing HTML input. (required)
+     * @param  bool $allow_cid_scheme Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false. (optional)
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \Swagger\Client\Model\HtmlSsrfDetectionResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function textInputCheckHtmlSsrfWithHttpInfo($value)
+    public function textInputCheckHtmlSsrfWithHttpInfo($value, $allow_cid_scheme = null)
     {
         $returnType = '\Swagger\Client\Model\HtmlSsrfDetectionResult';
-        $request = $this->textInputCheckHtmlSsrfRequest($value);
+        $request = $this->textInputCheckHtmlSsrfRequest($value, $allow_cid_scheme);
 
         try {
             $options = $this->createHttpClientOption();
@@ -180,13 +182,14 @@ class TextInputApi
      * Protect html input from Server-side Request Forgery (SSRF) attacks
      *
      * @param  string $value User-facing HTML input. (required)
+     * @param  bool $allow_cid_scheme Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function textInputCheckHtmlSsrfAsync($value)
+    public function textInputCheckHtmlSsrfAsync($value, $allow_cid_scheme = null)
     {
-        return $this->textInputCheckHtmlSsrfAsyncWithHttpInfo($value)
+        return $this->textInputCheckHtmlSsrfAsyncWithHttpInfo($value, $allow_cid_scheme)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -200,14 +203,15 @@ class TextInputApi
      * Protect html input from Server-side Request Forgery (SSRF) attacks
      *
      * @param  string $value User-facing HTML input. (required)
+     * @param  bool $allow_cid_scheme Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function textInputCheckHtmlSsrfAsyncWithHttpInfo($value)
+    public function textInputCheckHtmlSsrfAsyncWithHttpInfo($value, $allow_cid_scheme = null)
     {
         $returnType = '\Swagger\Client\Model\HtmlSsrfDetectionResult';
-        $request = $this->textInputCheckHtmlSsrfRequest($value);
+        $request = $this->textInputCheckHtmlSsrfRequest($value, $allow_cid_scheme);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -250,11 +254,12 @@ class TextInputApi
      * Create request for operation 'textInputCheckHtmlSsrf'
      *
      * @param  string $value User-facing HTML input. (required)
+     * @param  bool $allow_cid_scheme Optional: Set to true to allow cid: scheme URLs for email message attachments.  Default is false. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function textInputCheckHtmlSsrfRequest($value)
+    protected function textInputCheckHtmlSsrfRequest($value, $allow_cid_scheme = null)
     {
         // verify the required parameter 'value' is set
         if ($value === null) {
@@ -270,6 +275,10 @@ class TextInputApi
         $httpBody = '';
         $multipart = false;
 
+        // header params
+        if ($allow_cid_scheme !== null) {
+            $headerParams['allowCidScheme'] = ObjectSerializer::toHeaderValue($allow_cid_scheme);
+        }
 
 
         // body params
