@@ -14,5 +14,4 @@ Remove-Item –path ./cloudmersive_validate_api_client –recurse
 (Get-Content ./composer.json).replace('https://github.com/swagger-api/swagger-codegen', 'https://cloudmersive.com') | Set-Content ./composer.json
 (Get-Content ./composer.json).replace('http://swagger.io', 'https://cloudmersive.com') | Set-Content ./composer.json
 
-# & C:\tools\php\php C:\ProgramData\ComposerSetup\bin\composer.phar config -g -- disable-tls true
-& C:\tools\php71\php C:\ProgramData\ComposerSetup\bin\composer.phar install
+& php C:\Users\adm101\composer.phar install
