@@ -13,5 +13,28 @@ Remove-Item –path ./cloudmersive_validate_api_client –recurse
 (Get-Content ./composer.json).replace('Swagger and contributors', 'Cloudmersive') | Set-Content ./composer.json
 (Get-Content ./composer.json).replace('https://github.com/swagger-api/swagger-codegen', 'https://cloudmersive.com') | Set-Content ./composer.json
 (Get-Content ./composer.json).replace('http://swagger.io', 'https://cloudmersive.com') | Set-Content ./composer.json
+(Get-Content ./composer.json).replace('^6.2', '^7.5') | Set-Content ./composer.json
+(Get-Content ./composer.json).replace('5.5', '7.2.5') | Set-Content ./composer.json
+
+$old = [regex]::Escape('\GuzzleHttp\Psr7\try_fopen')
+$new = '\GuzzleHttp\Psr7\Utils::tryFopen'
+
+Get-ChildItem ./lib -Recurse -Filter *.php | ForEach-Object {
+    $text = Get-Content $_.FullName
+    $changed = $false
+
+    $newText = @()
+    foreach ($line in $text)
+    {
+        $newLine = $line -replace $old, $new
+        if ($newLine -ne $line) { $changed = $true }
+        $newText += $newLine
+    }
+
+    if ($changed)
+    {
+        [System.IO.File]::WriteAllLines($_.FullName, $newText)
+    }
+}
 
 & php C:\Users\adm101\composer.phar install
